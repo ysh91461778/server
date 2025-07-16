@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>전체 학생 목록</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- ─── 헤더 & 다크 모드 ─── -->
+  <header class="topbar" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.6rem">
+    <h1 style="margin:0">전체 학생</h1>
+    <label class="switch" style="margin:0">
+      <input type="checkbox" id="darkToggle">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <p><a href="/admin">← 관리자 페이지로 돌아가기</a></p>
+
+  <!-- 전체 학생 목록 -->
+  <div id="allWrap">Loading…</div>
+
+  <!-- 진도 모달 -->
+  <div id="progModal" style="display:none;
+       position:fixed;inset:0;background:rgba(0,0,0,.45);
+       justify-content:center;align-items:center;z-index:9999">
+    <div style="background:#fff;padding:1rem;border-radius:8px;
+              max-height:80%;overflow:auto;width:360px">
+      <h3 id="progTitle" style="margin-top:0">진도</h3>
+      <div id="progZone" class="progress-grid" style="
+         display:grid;
+         grid-template-columns:repeat(auto-fill,minmax(60px,1fr));
+         gap:.5rem;
+         margin:.5rem 0;"></div>
+      <div style="text-align:right;margin-top:.6rem">
+        <button id="progSave" class="btn">저장</button>
+        <button id="progClose" class="btn">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 다크모드 토글 복원/저장 -->
+  <script>
+  (function(){
+    const toggle = document.getElementById('darkToggle');
+    if (localStorage.theme === 'dark') {
+      document.body.classList.add('dark');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark', toggle.checked);
+      localStorage.theme = toggle.checked ? 'dark' : 'light';
+    });
+  })();
+  </script>
+
+  <!-- 전체 학생 전용 스크립트 -->
+  <script defer src="/js/all.js"></script>
+</body>
+</html>

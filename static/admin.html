@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>관리자 페이지</title>
+
+  <!-- 기본 공통 스타일 -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- ─── 헤더 ─── -->
+  <header class="topbar">
+    <h1>
+      오늘 학생 <span id="todayCount">0명</span> <button id="extraBtn">+ 보강</button> 
+      <button id="exportLogs" style="margin-left:8px;">내보내기</button>
+    </h1>
+    <!-- 다크 토글 -->
+    <label class="switch">
+      <input type="checkbox" id="darkToggle">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <!-- 오늘 학생 -->
+  <div id="todayWrap">Loading…</div>
+
+  <h2 style="display:flex; align-items:center; gap:8px">
+    자유의 몸
+    <button id="clearDone" class="btn" style="height:32px;padding:4px 8px">
+      기록 완료
+    </button>
+  </h2>
+  <div id="doneWrap">Loading...</div>
+
+  <h2>보강 필요</h2>
+  <div id="absentWrap">– 결석을 표시하면 여기에 나타납니다 –</div>
+
+  <!-- 버튼은 loadToday() 에서 각 행에 추가할 거고, 모달만 미리 선언 -->
+  <div id="logModal" style="display:none;position:fixed;inset:0;
+       background:rgba(0,0,0,.45);justify-content:center;align-items:center;z-index:9999">
+    <div style="background:#fff;padding:1rem;border-radius:8px;max-width:400px;width:100%">
+      <h3 id="logTitle" style="margin-top:0"></h3>
+      <label>특이사항:<textarea id="logNotes" rows="2" style="width:100%"></textarea></label>
+      <div id="logProgress" class="progress-grid"></div>
+      <label>숙제:<textarea id="logHw"    rows="2" style="width:100%"></textarea></label>
+      <div style="text-align:right;margin-top:.6rem">
+        <button id="logSave" class="btn">저장</button>
+        <button type="button" id="doneBtn" class="btn">완료</button>
+        <button id="logClose" class="btn">닫기</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ─── 신규 학생 ─── -->
+  <h2>신규 학생</h2>
+  <div class="form-row">
+    <input type="text" id="stuName" placeholder="이름">
+    <select id="curSel">
+      <option>공수1</option><option>공수2</option><option>미적분1</option>
+      <option>미적분2</option><option>대수</option><option>기하</option><option>확통</option>
+    </select>
+    <select id="subCurSel">
+      <option value="">세부과정 선택</option>
+    </select>
+    <input type="text" id="d1" placeholder="요일1">
+    <input type="text" id="d2" placeholder="요일2">
+    <input type="text" id="d3" placeholder="요일3">
+
+    <select id="levelSel">
+      <option value="">레벨 선택</option>
+      <option value="상">상</option>
+      <option value="중">중</option>
+      <option value="하">하</option>
+    </select>
+    <button id="addStu" class="btn">추가</button>
+  </div>
+
+  <!-- ─── 영상 관리 ─── -->
+  <h2>영상 관리  <button id="toggleVid" class="btn" style="margin-left:1rem;">접기</button>  </h2>
+  <section id="videoSection">
+    <div class="form-row">
+      <select id="vCur"></select>
+      <select id="subVidSel">
+        <option value="">세부과정 선택</option>
+      </select>
+ 
+      <!-- 여기에 3개의 input(서술형 번호) 추가 -->
+      <input type="number" id="exNumHigh" placeholder="상">
+      <input type="number" id="exNumMid"  placeholder="중">
+      <input type="number" id="exNumLow"  placeholder="하">
+   
+      <input id="vChap"   type="number" min="1" placeholder="챕터">
+      <input type="text" id="vTitle"  placeholder="제목">
+      <input type="text" id="vUrl"    placeholder="https://kollus…">
+      <button id="addVid"  class="btn">추가</button>
+      <button id="saveVid" class="btn">저장</button>
+    </div>
+    <table id="vidTable">
+      <thead>
+        <tr>
+          <th style="width:40px">ID</th>
+          <th style="width:70px">커리큘럼</th>
+          <th style="width:40px">챕</th>
+          <th>제목</th>
+          <th style="min-width:260px">URL</th>
+          <th style="width:40px">Del</th>
+        </tr>
+      </thead>
+      <tbody><!-- JS 가 채움 --></tbody>
+    </table>
+  </section>
+  <!-- ─── 자료 업로드 ─── -->
+  <h2>자료 업로드</h2>
+  <div class="form-row">
+    <select id="mCur"></select>
+    <input type="file" id="mFile" accept=".pdf,.ppt,.pptx">
+    <button id="upMat" class="btn">업로드</button>
+  </div>
+
+  <table id="matTable">
+    <thead>
+      <tr><th>커리큘럼</th><th>파일</th><th>지정</th></tr>
+    </thead>
+    <tbody><!-- JS 가 채움 --></tbody>
+  </table>
+
+  <p style="margin-top:2rem"><a href="/students">전체 학생</a></p>
+  
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script defer src="/js/admin.js"></script>
+</body>
+</html>
