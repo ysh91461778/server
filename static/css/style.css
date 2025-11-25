@@ -280,7 +280,7 @@ body.dark a:hover {
 }
 /* Firefox */
 #vChap {
-  -moz-appearance: textfield;
+  -moz-appearance90: textfield;
 }
 
 /* Spinner 제거: Chrome, Safari, Edge */
@@ -339,7 +339,7 @@ body.dark .form-row input[type="text"] {
 /* ─── 숫자 입력 스피너 제거 ─── */
 /* Chrome, Safari, Edge */
 #vChap::-webkit-outer-spin-button,
-#vChap::-webkit-inner-spin-button,
+#vChap::-webkit-inner-spin-button,ㄴ
 #exNumHigh::-webkit-outer-spin-button,
 #exNumHigh::-webkit-inner-spin-button,
 #exNumMid::-webkit-outer-spin-button,
@@ -523,4 +523,118 @@ body.dark #extraModal > div * {
 .sortable-ghost {
   opacity: 0.5;
   background: #f0f8ff;
+}
+
+#allWrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#allWrap .day-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+#allWrap .dayInput {
+  width: 3.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--card-light);
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#allWrap .dayInput:focus {
+  outline: none;
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.35);
+}
+
+/* 다크 모드 대응 */
+body.dark #allWrap .dayInput {
+  background: var(--card-dark);
+  border-color: #475569;
+  color: var(--text-dark);
+}
+
+#allWrap .day-container {
+  display: flex;               /* 플렉스박스로 */
+  flex-direction: row;         /* → 수평 정렬 */
+  flex-wrap: nowrap;           /* 한 줄에 모여 있도록 */
+  gap: 0.5rem;                 /* 칸 사이 간격 */
+  justify-content: center;     /* 가운데 정렬 (원하시면 flex-start 로 바꿔도 됩니다) */
+  align-items: center;
+}
+
+/* 요일 입력창 자체도 크기 조절 */
+#allWrap .dayInput {
+  width: 3rem;                 /* 너비는 3rem 정도로 */
+  padding: 0.3rem 0.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#logNotes {
+  height: 8em;  /* 기존보다 더 넓은 높이 */
+}
+
+textarea::placeholder {
+  color: #bbb;
+}
+
+#yoilModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+#yoilModal > div {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 260px;
+  max-height: 80%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  color: #222; /* ✅ 글자 진하게 */
+}
+
+#yoilTitle {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  color: #111; /* ✅ 제목 더 진하게 */
+}
+
+#yoilList {
+  flex: 1;
+  min-height: 200px;
+  padding: 8px;
+  font-size: 14px;
+  color: #222; /* ✅ 리스트 더 진하게 */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  white-space: pre-line; /* 줄바꿈 유지 */
+}
+
+#yoilModal button {
+  margin-top: 0.8rem;
+  align-self: flex-end;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
 }

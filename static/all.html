@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <title>전체 학생 목록</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
   <!-- ─── 헤더 & 다크 모드 ─── -->
   <header class="topbar" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.6rem">
@@ -17,6 +19,19 @@
 
   <p><a href="/admin">← 관리자 페이지로 돌아가기</a></p>
 
+  <div id="yoilStats" style="margin-bottom:1.5rem"></div>
+
+  <div id="yoilModal" style="display:none;position:fixed;inset:0;
+     background:rgba(0,0,0,.45);justify-content:center;align-items:center;z-index:9999">
+    <div style="background:white;padding:1rem;border-radius:8px;
+       max-height:80%;overflow:auto;width:300px">
+      <h3 id="yoilTitle" style="margin-top:0"></h3>
+      <div id="yoilList" style="white-space:pre-line;font-size:14px"></div>
+      <div style="text-align:right;margin-top:1rem">
+        <button onclick="document.getElementById('yoilModal').style.display='none'">닫기</button>
+      </div>
+    </div>
+  </div>
   <!-- 전체 학생 목록 -->
   <div id="allWrap">Loading…</div>
 
@@ -41,20 +56,21 @@
 
   <!-- 다크모드 토글 복원/저장 -->
   <script>
-  (function(){
-    const toggle = document.getElementById('darkToggle');
-    if (localStorage.theme === 'dark') {
-      document.body.classList.add('dark');
-      toggle.checked = true;
-    }
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark', toggle.checked);
-      localStorage.theme = toggle.checked ? 'dark' : 'light';
-    });
-  })();
+    (function () {
+      const toggle = document.getElementById('darkToggle');
+      if (localStorage.theme === 'dark') {
+        document.body.classList.add('dark');
+        toggle.checked = true;
+      }
+      toggle.addEventListener('change', () => {
+        document.body.classList.toggle('dark', toggle.checked);
+        localStorage.theme = toggle.checked ? 'dark' : 'light';
+      });
+    })();
   </script>
 
   <!-- 전체 학생 전용 스크립트 -->
   <script defer src="/js/all.js"></script>
 </body>
+
 </html>

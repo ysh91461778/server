@@ -1,11 +1,6 @@
 # app.py  — Flask 2.x / Python 3.10+
-"""
-기능
-1) 학생 / 영상 / 진도 CRUD
-2) 자료 업로드 (PDF · PPT) + 전체 목록
-3) 자료 → 학생 지정 (mat_assign.json)
-4) 오늘 학생 목록(api/today), 지정 영상(api/updates)
-"""
+
+
 import jwt, time, urllib.parse
 import json, uuid, datetime, pathlib, os
 import random, re
@@ -27,6 +22,8 @@ PRG_PATH  = p("progress.json", {})      # {date:{sid:{vid_id:status}}}
 MAT_PATH  = p("materials.json", {})     # {mat_id:{title,url}}
 ASN_PATH  = p("mat_assign.json", {})    # {stu_id:[mat_id,...]}
 UPD_PATH  = p("updates.json", {})       # {date:{sid:[vid_id,...]}}
+TODAY_ORDER_PATH= p("today_order.json", [])
+
 KOLLUS_POLICY_KEY   = "서비스키"
 KOLLUS_SERVICE_KEY  = "시크릿키"      # Kollus Admin > 보안 설정에서 확인
 TOKEN_EXPIRE_SEC    = 36000           
@@ -93,13 +90,69 @@ def api_upd():
 def api_asn():
     return crud(ASN_PATH)
 
+@app.route('/api/today_order', methods=['GET'])
+def get_today_order():
+    with open('today_order.json', 'r', encoding='utf-8') as f:
+        return jsonify(json.load(f))
+
+@app.route('/api/today_order', methods=['POST'])
+def save_today_order():
+    data = request.get_json()
+
+    # 기존 데이터 불러오기
+    try:
+        with open('today_order.json', 'r', encoding='utf-8') as f:
+            today_order = json.load(f)
+    except FileNotFoundError:
+        today_order = {}
+
+    # 날짜별 순서 갱신
+    today_order.update(data)
+
+    with open('today_order.json', 'w', encoding='utf-8') as f:
+        json.dump(today_order, f, ensure_ascii=False, indent=2)
+
+    return jsonify({"status": "ok"})
+
+@app.route('/api/update', methods=['POST'])
+def update_student_field():
+    data = request.json
+    sid = data.get('id')
+    field = data.get('field')
+    value = data.get('value')
+
+    with open('students.json', encoding='utf-8') as f:
+        students = json.load(f)
+
+    found = False
+    for s in students:
+        if s['id'] == sid:
+            s[field] = value
+            found = True
+            break
+
+    if not found:
+        return 'Student not found', 404
+
+    with open('students.json', 'w', encoding='utf-8') as f:
+        json.dump(students, f, ensure_ascii=False, indent=2)
+
+    return 'OK'
 
 @app.route('/api/today-order', methods=['POST'])
 def update_today_order():
-    data = request.get_json()
+    if request.method == 'GET':
+        # 저장된 순서 반환
+        order = json.loads(TODAY_ORDER_PATH.read_text("utf-8"))
+        return jsonify({ 'order': order })
+    # POST: 새로운 순서를 파일에 저장
+    data = request.get_json(force=True)
     new_order = data.get('order', [])
-    # TODO: new_order를 세션/DB/파일에 저장하는 로직
-    return jsonify({ 'status': 'ok', 'order': new_order })
+    TODAY_ORDER_PATH.write_text(
+        json.dumps(new_order, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+    return jsonify({ 'status': 'ok', 'order': new_order }), 200
 
 
 # -------- 오늘 등원 학생 -------- #
@@ -147,7 +200,13 @@ def api_materials():
     save(MAT_PATH, request.get_json(force=True))
     return "", 204
 
-
+@app.route('/api/feedback', methods=['POST'])
+def feedback():
+    data = request.json  # { name: '학생이름', text: '내용' }
+    with open('feedbacks.json', 'a', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False)
+        f.write('\n')
+    return '', 204
 
 @app.route("/api/material-upload", methods=["POST"])
 def mat_upload():
@@ -171,9 +230,6 @@ def mat_upload():
     }
     save(MAT_PATH, mats)
     return jsonify(mats)
-
-
-
 
 # -------- 한 영상 진도 PATCH (학생 페이지 버튼용) -------- #
 @app.route("/api/progress-once", methods=["POST"])
@@ -230,18 +286,12 @@ def api_ping():
 
 # ── 글로벌 before_request ──
 @app.before_request
-def guard_local():
-    paths_need_guard = (
-        request.path.startswith("/api")    # 모든 API
-        or request.path.startswith("/files")
-        or request.path.startswith("/student")
-    )
-    if paths_need_guard and not request.remote_addr.startswith(ALLOWED_SUBNET):
-        abort(403)
+def _log_ip():
+    print('IP', request.remote_addr, request.path)
 
 # ───── 파일 경로 추가 ─────
 EXTRA_PATH = p("extra_attend.json", {})   # { "YYYY-MM-DD": [sid, …] }
-LOGS_PATH          = p("logs.json", {})    # { "YYYY-MM-DD": { studentId: { topic, homework, notes } } }
+LOGS_PATH  = p("logs.json", {})    # { "YYYY-MM-DD": { studentId: { topic, homework, notes } } }
 ABS_PATH   = p("absent.json", {})          # { sid: recoveryDate|null }
 
 # ───── CRUD 엔드포인트 (옵션) ─────

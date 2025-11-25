@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <title>학습 페이지</title>
@@ -8,66 +9,201 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <style>
-  /* ─── 1. 플레이어 + 재생목록 레이아웃 ─── */
-  #playerBox{
-    display:flex; gap:1.2rem; align-items:flex-start; flex-wrap:nowrap;
-  }
-  /* 플레이어 카드 */
-  .player-card{ flex:0 0 900px; border-radius:20px; overflow:hidden; }
-  #player{display:block;width:100%;height:506px;border:0;background:#000;}
+    /* ─── 1. 플레이어 + 재생목록 레이아웃 ─── */
+    #playerBox {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
 
-  /* 재생 목록 */
-  #vidList{
-    flex:0 0 300px;            /* 고정폭 200px  */
-    width:300px; max-height:506px;
-    list-style:none;margin:0;padding:0;
-    overflow-y:auto;font-size:15px;
-  }
-  #vidList li{
-    width:100%; padding:.5rem .7rem; border-radius:8px;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    cursor:pointer; transition:background .2s;
-  }
-  #vidList li:hover       { background:rgba(0,0,0,.05);}
-  #vidList li.active      { background:var(--accent); color:#fff!important; font-weight:600; }
+    /* 플레이어 카드 */
+    .player-card {
+      flex: 0 0 900px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
 
-  body.dark #vidList li           { color:var(--text-dark);}
-  body.dark #vidList li:hover     { background:#334155;}
-  body.dark #vidList li.active    { background:var(--accent-dark); color:#fff!important;}
+    #player {
+      display: block;
+      width: 100%;
+      height: 506px;
+      border: 0;
+      background: #000;
+    }
 
-  /* 폭 700px 미만에서는 세로 배치 */
-  @media(max-width:700px){
-    #playerBox{flex-direction:column;}
-    #vidList{width:100%;flex:auto;max-height:none;}
-  }
+    /* 재생 목록 */
+    #vidList {
+      flex: 0 0 300px;
+      /* 고정폭 200px  */
+      width: 300px;
+      max-height: 506px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      font-size: 15px;
+    }
 
-  /* ─── 2. 설정(⚙️) 패널 ─── */
-  .topbar{display:flex;justify-content:space-between;align-items:center}
-  .icon-btn{font-size:24px;background:none;border:0;cursor:pointer;line-height:1;
-            color:var(--text);transition:transform .2s;}
-  #setPanel{
-    position:absolute; top:62px; right:32px;
-    width:220px; padding:14px 16px; z-index:2000;
-    background:var(--card-light); border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.18);
-    display:none; flex-direction:column; gap:10px;
-  }
-  body.dark #setPanel{background:var(--card-dark);}
-  #setPanel.open{display:flex;animation:slide .25s ease-out;}
-  @keyframes slide{from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)}}
-  #setPanel .row{display:flex;justify-content:space-between;align-items:center}
+    #vidList li {
+      width: 100%;
+      padding: .5rem .7rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      transition: background .2s;
+    }
 
-  #suggestBtn{background:#eef1ff;border:0;border-radius:8px;padding:6px 10px;cursor:pointer}
-  body.dark #suggestBtn{background:#334155;color:#e2e8f0}
-  #suggestBtn:hover{background:#dfe3ff}
-  body.dark #suggestBtn:hover{background:#475569}
+    #vidList li:hover {
+      background: rgba(0, 0, 0, .05);
+    }
 
-  /* ─── 3. 자료 다운로드 목록 ─── */
-  #matList{margin-top:.4rem;padding-left:0}
-  #matList li{list-style:none;display:flex;align-items:center;gap:.35rem;margin:.25rem 0}
-  #matList li::before{content:"⇩";font-size:.9rem;opacity:.65}
-  #matList a{color:var(--accent);text-decoration:none}
-  #matList a:hover{text-decoration:underline}
-  body.dark #matList a{color:#93c5fd}
+    #vidList li.active {
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 600;
+    }
+
+    body.dark #vidList li {
+      color: var(--text-dark);
+    }
+
+    body.dark #vidList li:hover {
+      background: #334155;
+    }
+
+    body.dark #vidList li.active {
+      background: var(--accent-dark);
+      color: #fff !important;
+    }
+
+    /* 폭 700px 미만에서는 세로 배치 */
+    @media(max-width:700px) {
+      #playerBox {
+        flex-direction: column;
+      }
+
+      #vidList {
+        width: 100%;
+        flex: auto;
+        max-height: none;
+      }
+    }
+
+    /* ─── 2. 설정(⚙️) 패널 ─── */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .icon-btn {
+      font-size: 24px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      line-height: 1;
+      color: var(--text);
+      transition: transform .2s;
+    }
+
+    #setPanel {
+      position: absolute;
+      top: 62px;
+      right: 32px;
+      width: 220px;
+      padding: 14px 16px;
+      z-index: 2000;
+      background: var(--card-light);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    body.dark #setPanel {
+      background: var(--card-dark);
+    }
+
+    #setPanel.open {
+      display: flex;
+      animation: slide .25s ease-out;
+    }
+
+    @keyframes slide {
+      from {
+        opacity: 0;
+        transform: translateY(-8px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    #setPanel .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    #suggestBtn {
+      background: #eef1ff;
+      border: 0;
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer
+    }
+
+    body.dark #suggestBtn {
+      background: #334155;
+      color: #e2e8f0
+    }
+
+    #suggestBtn:hover {
+      background: #dfe3ff
+    }
+
+    body.dark #suggestBtn:hover {
+      background: #475569
+    }
+
+    /* ─── 3. 자료 다운로드 목록 ─── */
+    #matList {
+      margin-top: .4rem;
+      padding-left: 0
+    }
+
+    #matList li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      margin: .25rem 0
+    }
+
+    #matList li::before {
+      content: "⇩";
+      font-size: .9rem;
+      opacity: .65
+    }
+
+    #matList a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    #matList a:hover {
+      text-decoration: underline
+    }
+
+    body.dark #matList a {
+      color: #93c5fd
+    }
   </style>
 
   <!-- 로직 -->
@@ -80,9 +216,22 @@
     <h1 id="clock" style="font-size:1.4rem"></h1>
 
     <!-- 설정(⚙️) 버튼: 아이콘만 감싸는 span 추가 -->
-       <button id="setBtn" class="icon-btn" aria-label="설정">
-           <span class="icon-rotate">⚙️</span>
-       </button>
+    <button id="setBtn" style="position: relative;">
+      ⚙️
+      <span id="badge" style="
+    display: none;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 999px;
+    line-height: 1;
+  ">1</span>
+    </button>
   </header>
 
   <!-- 설정 패널 -->
@@ -91,7 +240,12 @@
       🌙 다크모드
       <input type="checkbox" id="darkToggle">
     </label>
-       <a id="suggestBtn" href="https://docs.google.com/forms/d/e/1FAIpQLScj4vkWcgyLjcp2O35D5GFtR8VIxZ3DkjVD2nzUXtQUurOh-g/viewform" target="_blank" rel="noopener" class="btn-link">💬건의사항 보내기</a>
+    <div style="margin-top: 1rem">
+      <textarea id="feedbackBox"
+        placeholder="✏️ 익명입니다. 보복 걱정 ㄴ 동훈쌤은 못 보고 조교가 대충 순화해서 전달함. 사이트에 대한 개선 사항도 좋고 동훈쌤 뒷담도 좋습니다. 많은 참여 부탁"
+        style="width:100%; height:100px; resize: none; padding:5px; font-size: 0.9rem;"></textarea>
+      <button id="submitFeedback" style="margin-top:5px; width:100%">건의사항 제출</button>
+    </div>
   </div>
 
   <!-- 학생 이름 -->
@@ -112,6 +266,9 @@
 
   <!-- ───── 자료 다운로드 ───── -->
   <h3 style="margin:1.4rem 0 .6rem">자료 다운로드</h3>
-  <ul id="matList"><li>Loading…</li></ul>
+  <ul id="matList">
+    <li>Loading…</li>
+  </ul>
 </body>
+
 </html>
