@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 
 <head>
@@ -206,6 +206,9 @@
     }
   </style>
 
+  <script src="https://file.kollus.com/vgcontroller/vg-controller-client.latest.min.js"
+    crossorigin="anonymous"></script>
+
   <!-- 로직 -->
   <script defer src="/js/student.js"></script>
 </head>
@@ -213,7 +216,7 @@
 <body>
   <!-- ─── 헤더 : 시계 + 설정 버튼 ─── -->
   <header class="topbar">
-    <h1 id="clock" style="font-size:1.4rem"></h1>
+    <div id="clock" class="clock-header"></div>
 
     <!-- 설정(⚙️) 버튼: 아이콘만 감싸는 span 추가 -->
     <button id="setBtn" style="position: relative;">
@@ -241,15 +244,17 @@
       <input type="checkbox" id="darkToggle">
     </label>
     <div style="margin-top: 1rem">
-      <textarea id="feedbackBox"
-        placeholder="✏️ 익명입니다. 보복 걱정 ㄴ 동훈쌤은 못 보고 조교가 대충 순화해서 전달함. 사이트에 대한 개선 사항도 좋고 동훈쌤 뒷담도 좋습니다. 많은 참여 부탁"
+      <textarea id="feedbackBox" placeholder="✏️ 건의 사항 부탁드립니다."
         style="width:100%; height:100px; resize: none; padding:5px; font-size: 0.9rem;"></textarea>
       <button id="submitFeedback" style="margin-top:5px; width:100%">건의사항 제출</button>
     </div>
   </div>
 
   <!-- 학생 이름 -->
-  <h2 id="stuName" style="margin:.8rem 0 1rem;font-size:2rem;font-weight:600"></h2>
+  <div class="namebar">
+    <h2 id="stuName" class="namebar-title" style="margin:.8rem 0 1rem;font-size:2.5rem;font-weight:600"></h2>
+    <button id="openTestSubmit" class="ts-btn">🧪 테스트 성적 제출</button>
+  </div>
 
   <!-- ───── 오늘 영상 ───── -->
   <section>
@@ -257,7 +262,8 @@
 
     <div id="playerBox">
       <article class="player-card">
-        <iframe id="player" allowfullscreen allow="autoplay"></iframe>
+        <iframe id="player" allow="autoplay; local-network-access" allowfullscreen webkitallowfullscreen
+          mozallowfullscreen></iframe>
       </article>
 
       <ul id="vidList"></ul>
@@ -269,6 +275,105 @@
   <ul id="matList">
     <li>Loading…</li>
   </ul>
+  <div id="announceModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);
+     align-items:center;justify-content:center;z-index:9999">
+    <div style="background:#fff;padding:1rem;border-radius:10px;width:460px;max-height:85%;overflow:auto">
+      <h3 id="annTitle" style="margin-top:0"></h3>
+      <div id="annContent" style="white-space:pre-wrap;margin-bottom:.5rem"></div>
+
+      <div id="annPoll" style="display:none;border:1px solid #e5e7eb;padding:.5rem;border-radius:8px;margin:.5rem 0">
+        <div id="annPollQ" style="font-weight:600;margin-bottom:.25rem"></div>
+        <div id="annPollOpts"></div>
+      </div>
+
+      <div id="annSurvey" style="display:none;border:1px solid #e5e7eb;padding:.5rem;border-radius:8px;margin:.5rem 0">
+      </div>
+
+      <div style="display:flex;gap:.5rem;justify-content:flex-end;margin-top:.75rem">
+        <button id="annSubmit">제출</button>
+        <button id="annConfirm">확인</button>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        if (document.getElementById('announce-dark-style')) return;
+        const css = `
+  :root{
+    --modal-bg:#ffffff;        /* 라이트 기본 */
+    --modal-fg:#111827;
+    --modal-border:#e5e7eb;
+    --input-bg:#ffffff;
+    --input-fg:#111827;
+    --input-border:#d1d5db;
+    --muted:#6b7280;
+  }
+  body.dark{
+    --modal-bg:#0b1220;        /* 다크 기본 */
+    --modal-fg:#e5e7eb;
+    --modal-border:#374151;
+    --input-bg:#0f172a;
+    --input-fg:#e5e7eb;
+    --input-border:#3b4455;
+    --muted:#9ca3af;
+  }
+
+  /* 공지 작성 모달 (admin) */
+  #annModal > div{
+    background:var(--modal-bg) !important;
+    color:var(--modal-fg) !important;
+    border:1px solid var(--modal-border);
+  }
+  #annModal input, #annModal textarea, #annModal select{
+    background:var(--input-bg);
+    color:var(--input-fg);
+    border:1px solid var(--input-border);
+  }
+  #annModal fieldset{
+    border-color:var(--modal-border) !important;
+  }
+  #annModal small{ color:var(--muted); }
+
+  /* 학생 팝업 모달 (student) */
+  #announceModal > div{
+    background:var(--modal-bg) !important;
+    color:var(--modal-fg) !important;
+    border:1px solid var(--modal-border);
+  }
+  #announceModal input, #announceModal textarea, #announceModal select{
+    background:var(--input-bg);
+    color:var(--input-fg);
+    border:1px solid var(--input-border);
+  }
+  /* 투표/설문 박스 테두리 */
+  #announceModal #annPoll,
+  #announceModal #annSurvey{
+    border-color:var(--modal-border) !important;
+  }
+
+  /* 체크박스/라디오 강조색 */
+  body.dark #annModal input[type="checkbox"],
+  body.dark #announceModal input[type="checkbox"],
+  body.dark #announceModal input[type="radio"]{
+    accent-color:#60a5fa;
+  }
+
+  /* 버튼 가독성(라이트/다크 공통) */
+  #annModal button, #announceModal button{
+    background:#3b82f6;color:#fff;border:none;border-radius:8px;
+    padding:6px 12px;cursor:pointer;
+  }
+  #annModal button:hover, #announceModal button:hover{
+    filter:brightness(0.95);
+  }
+  `;
+        const style = document.createElement('style');
+        style.id = 'announce-dark-style';
+        style.textContent = css;
+        document.head.appendChild(style);
+      })();
+    </script>
+
 </body>
 
 </html>

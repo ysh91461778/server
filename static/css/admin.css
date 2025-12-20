@@ -1,0 +1,311 @@
+/* =========================================
+   admin.css (관리자 전용) — body.admin 범위
+   비율 업사이징 + 라이트/다크 테마 완전본
+   ========================================= */
+
+/* ===== Theme tokens (Light / Dark) ===== */
+:root{
+  --bg:#f8f9fc;
+  --fg:#0f172a;
+  --card:#ffffff;
+  --panel:#ffffff;
+  --line:#e5e7eb;
+  --muted:#475569;
+  --accent:#2563eb;         /* 링크/강조 */
+  --chip:#eef2ff;           /* 라이트 칩/아이콘 버튼 배경 */
+
+  /* alias (기존 코드 호환) */
+  --card-light:#ffffff;
+  --card-dark:#0f172a;
+  --text:var(--fg);
+  --text-dark:#e5e7eb;
+}
+body.dark{
+  --bg:#0b1220;
+  --fg:#e5e7eb;
+  --card:#0f172a;
+  --panel:#0f172a;
+  --line:#334155;
+  --muted:#94a3b8;
+  --accent:#60a5fa;
+  --chip:rgba(96,165,250,.12);
+
+  --card-light:#0f172a;
+  --card-dark:#0f172a;
+  --text:#e5e7eb;
+  --text-dark:#e5e7eb;
+}
+
+/* ===== Base ===== */
+html, body{ width:100%; height:100%; }
+body{ background:var(--bg); color:var(--fg); }
+
+/* 페이지 배경/텍스트는 main.css가 담당 */
+body.admin{ margin:0; }
+
+/* 공통 카드/패널 */
+.panel, .card, .section {
+  background:var(--card);
+  color:var(--fg);
+  border:1px solid var(--line);
+}
+hr, .divider { border-color:var(--line); }
+
+/* =========================================
+   Topbar (업사이징)
+========================================= */
+body.admin .topbar{
+  position:sticky; top:0; z-index:1000;
+  display:flex; gap:14px; align-items:center; justify-content:space-between;
+  padding:22px 32px;
+  min-height:68px;
+  background:var(--panel);
+  color:var(--fg);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(120%) blur(6px);
+}
+body.admin .topbar-title{
+  margin:0; font-size:22px;
+  display:flex; align-items:center; gap:10px; line-height:1.1;
+}
+body.admin .topbar-nav a{
+  color:inherit; opacity:.95; margin-right:12px; text-decoration:none;
+  padding:.55rem .9rem; border-radius:12px; font-size:15px;
+}
+body.admin .topbar-nav a:hover{ background:color-mix(in oklab, var(--panel) 70%, var(--accent) 30% / 10%); }
+.topbar .btn, .topbar a.btn{
+  border:1px solid var(--line);
+  background:var(--chip);
+  color:var(--fg);
+}
+
+/* =========================================
+   Buttons (업사이징)
+========================================= */
+body.admin .btn{
+  background:#3b82f6; color:#fff; border:none;
+  border-radius:12px;
+  padding:.6rem .95rem; font-size:15px; line-height:1; cursor:pointer;
+}
+body.admin .btn.secondary{ background:#1f2937; color:#e5e7eb; }
+
+/* =========================================
+   Layout
+========================================= */
+body.admin .page{
+  width:100%; max-width:100vw; box-sizing:border-box;
+  padding:26px 36px 32px;
+  display:grid; grid-template-columns:minmax(0,1fr) 860px;
+  gap:26px; align-items:start;
+}
+@media (max-width:1200px){ body.admin .page{ grid-template-columns:1fr; } }
+
+/* 카드(관리자 카드만 그라디언트 유지) */
+body.admin .card{
+  background: var(--card);          /* ← 단색 */
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  padding:18px;
+}
+body.admin .card-head{ display:flex; align-items:center; gap:10px; }
+body.admin .card-head.between{ justify-content:space-between; }
+
+body.admin .row{ display:flex; align-items:center; }
+body.admin .gap-6{ gap:6px; } .gap-8{ gap:8px; }
+body.admin .mt-0{ margin-top:0; } .mt-8{ margin-top:8px; } .mt-10{ margin-top:10px; }
+body.admin .spacer-10{ height:10px; }
+body.admin .flex-1{ flex:1 1 auto; }
+body.admin .scroll{ overflow:auto; }
+
+/* =========================================
+   Tables (오늘학생/완료 표 공통 업사이징 + 테마)
+========================================= */
+body.admin table{ width:100%; border-collapse:separate; border-spacing:0; }
+body.admin thead th{
+  background:color-mix(in oklab, var(--card) 88%, var(--accent) 12%);
+  color:var(--fg); font-weight:600;
+  padding:10px 12px; font-size:14.5px; text-align:left;
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:1;
+}
+body.admin tbody td{
+  padding:10px 12px; font-size:14px; border-top:1px solid color-mix(in oklab, var(--line) 60%, transparent);
+}
+body.admin tbody tr:nth-child(odd){ background:color-mix(in oklab, var(--card) 94%, var(--fg) 6%); }
+body.admin tbody tr:nth-child(even){ background:color-mix(in oklab, var(--card) 97%, var(--fg) 3%); }
+body.admin tbody tr:hover{ background:color-mix(in oklab, var(--card) 90%, var(--accent) 10% / 12%); }
+body.admin .drag-handle{ cursor:grab; user-select:none; color:#9ca3af; }
+
+/* 오늘학생/완료 표에서 액션 버튼(둥근 알약) */
+body.admin #todayWrap table td button,
+body.admin #todayWrap table td a,
+body.admin #doneWrap  table td button,
+body.admin #doneWrap  table td a{
+  height:36px; min-width:36px; padding:0 12px;
+  border-radius:14px;
+  background:color-mix(in oklab, var(--chip) 70%, var(--accent) 30% / 20%);
+  border:1px solid color-mix(in oklab, var(--line) 60%, var(--accent) 40% / 40%);
+  color:var(--fg);
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-size:14px; text-decoration:none; cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  transition:filter .15s ease, transform .06s ease, border-color .15s ease;
+}
+body.admin #todayWrap table td button:hover,
+body.admin #todayWrap table td a:hover,
+body.admin #doneWrap  table td button:hover,
+body.admin #doneWrap  table td a:hover{
+  filter:brightness(1.07);
+  border-color:color-mix(in oklab, var(--accent) 60%, var(--line) 40%);
+}
+body.admin #todayWrap table td .danger,
+body.admin #doneWrap  table td .danger{
+  background:color-mix(in oklab, #ef4444 30%, var(--chip));
+  border-color:color-mix(in oklab, #ef4444 50%, var(--line));
+  color:#fee2e2;
+}
+
+/* 표 안의 작은 칩/아이콘 버튼(공통) */
+.pill, .chip, .icon-btn, .btn.round{
+  border:1px solid var(--line);
+  background:var(--chip);
+  color:var(--fg);
+}
+
+/* =========================================
+   Calendar (FullCalendar) — 테마 적용
+========================================= */
+body.admin #calendar .fc{ --fc-page-bg-color:transparent; }
+
+.calendar, .cal-wrap, body.admin #calendar{
+  background:var(--card);
+  color:var(--fg);
+  border:1px solid var(--line);
+  border-radius:12px;
+}
+.calendar table, .calendar th, .calendar td{
+  background:transparent;
+  color:var(--fg);
+  border-color:var(--line);
+}
+.calendar .day.today, .calendar .cell.today{
+  background:color-mix(in oklab, var(--accent) 18%, var(--card) 82%);
+  color:var(--fg);
+}
+.calendar .nav button, .calendar .nav .btn{
+  background:var(--card);
+  color:var(--fg);
+  border:1px solid var(--line);
+}
+
+/* 캘린더 내부 스크롤러 비활성화 + 컨테이너가 자유롭게 커지도록 */
+body.admin #calendar .fc-scroller,
+body.admin #calendar .fc-scroller-harness,
+body.admin #calendar .fc-daygrid-body,
+body.admin #calendar .fc-daygrid-body-unbalanced{
+  overflow: visible !important;
+}
+/* 카드/컨테이너 쪽에 높이 제한이 없도록 */
+body.admin #calendar{ max-height:none !important; }
+
+/* =========================================
+   Announcements / Modals
+========================================= */
+body.admin .ann-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; }
+body.admin .ann-card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; }
+body.admin .ann-meta{ color:var(--muted); font-size:12.5px; }
+
+/* 모달 공통 (업사이징) */
+body.admin .modal-backdrop{
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,.45);
+  justify-content:center; align-items:center; z-index:10000;
+}
+body.admin .modal-panel{
+  position:relative; background:var(--card); color:var(--fg);
+  border:1px solid var(--line); border-radius:12px;
+  padding:18px; max-width:560px; width:92%; max-height:82%;
+  overflow:auto; box-shadow:0 12px 34px rgba(0,0,0,.34);
+  font-size:15px;
+}
+body.admin .modal-panel.narrow{ max-width:460px; }
+body.admin .modal-panel.wide{ max-width:620px; }
+body.admin .modal-panel.tiny{ width:300px; max-width:300px; }
+body.admin .modal-panel.column{ display:flex; flex-direction:column; }
+body.admin .modal-close{
+  position:absolute; top:10px; right:10px; background:none; border:none;
+  font-size:22px; cursor:pointer; color:inherit;
+}
+body.admin .list{ padding-left:1.2rem; margin:1rem 0; }
+body.admin .modal-actions{
+  margin-top:.8rem; display:flex; gap:.6rem; justify-content:flex-end;
+}
+body.admin .modal-footer{
+  text-align:right; padding-top:.6rem; border-top:1px solid var(--line);
+}
+
+/* 공지/학생 모달 (기존 변수 호환) */
+body.admin #annModal > div,
+body.admin #announceModal > div{
+  background:var(--card); color:var(--fg); border:1px solid var(--line);
+}
+body.admin #annModal input,
+body.admin #annModal textarea,
+body.admin #annModal select,
+body.admin #announceModal input,
+body.admin #announceModal textarea,
+body.admin #announceModal select{
+  background:var(--card); color:var(--fg); border:1px solid var(--line);
+  font-size:14px;
+}
+body.admin #annModal fieldset{ border-color:var(--line); }
+body.admin #annModal .muted{ color:var(--muted); }
+
+/* =========================================
+   로그 모달 입력칸 보정
+========================================= */
+#logModal .modal-panel label{
+  display:block; margin:10px 0 12px; font-size:14.5px;
+}
+#logModal label > textarea,
+#logModal label > input{
+  display:block; width:100%; box-sizing:border-box; font-size:14.5px;
+}
+#logNotes{ min-height:108px; }
+#logHw{    min-height:76px; }
+#logModal textarea,
+#logModal input{
+  background:var(--card-light);
+  border:1px solid #cbd5e1;
+  color:var(--text);
+}
+body.dark #logModal textarea,
+body.dark #logModal input{
+  background:var(--card-dark);
+  border-color:#475569;
+  color:var(--text-dark);
+}
+
+/* =========================================
+   Assign Chips
+========================================= */
+.assign-cell { min-width:200px; }
+.assign-chip {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 12px; border-radius:999px; font-size:13px;
+  border:1px solid transparent;
+}
+.assign-chip.ok {
+  background: rgba(16,185,129,.16); color:#34d399;
+  border-color: rgba(16,185,129,.35);
+}
+.assign-chip.none {
+  background: rgba(239,68,68,.16); color:#f87171;
+  border-color: rgba(239,68,68,.35);
+}
+.assign-list { display:flex; flex-wrap:wrap; gap:8px; }
+
+/* =========================================
+   Drag helpers
+========================================= */
+body.admin .sortable-ghost{ opacity:.5; background:#f0f8ff; }

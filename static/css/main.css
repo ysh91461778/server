@@ -1,0 +1,84 @@
+/* =========================
+   main.css (전역 베이스)
+   - 폰트, 컬러 토큰, 라이트/다크 베이스만
+   ========================= */
+
+/* 색 · 폰트 토큰 */
+:root {
+    --bg-light: #f8f9fc;
+    --bg-dark: #0d1117;
+
+    --card-light: #ffffff;
+    --card-dark: #1e293b;
+
+    --text: #111827;
+    --text-dark: #e5e7eb;
+
+    --muted: #94a3b8;
+    --line: #334155;
+
+    --accent: #3b82f6;
+    --accent-dark: #60a5fa;
+    --accent-opaque: rgba(59, 130, 246, .12);
+
+    --radius: 18px;
+    --shadow: 0 6px 14px rgba(0, 0, 0, .08);
+}
+
+/* 바디 베이스(페이지 공통) */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans KR', system-ui, sans-serif;
+    margin: 0;
+    background: var(--bg-light);
+    color: var(--text);
+    transition: background .25s, color .25s;
+}
+
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* 기본 링크 톤 (페이지 공통) */
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    transition: color .2s;
+}
+
+a:hover {
+    color: var(--accent-dark);
+}
+
+body.dark a {
+    color: var(--accent-dark);
+}
+
+body.dark a:hover {
+    color: var(--accent);
+}
+
+/* 기본 폼 포커스 톤(모든 페이지 공통) */
+:where(input, select, textarea):focus {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent);
+    border-color: var(--accent);
+}
+
+/* 라이트/다크 입력 배경만 통일 (세부 레이아웃은 각 페이지 CSS에서) */
+:where(input[type="text"], input[type="number"], select, textarea) {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: var(--text);
+}
+
+body.dark :where(input[type="text"], input[type="number"], select, textarea) {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: var(--text-dark);
+}

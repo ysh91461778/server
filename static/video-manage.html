@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>영상 관리</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>영상 관리</h1>
+    <label style="float:right; margin-top:0.5rem;">
+      <input type="checkbox" id="darkToggle"> 다크 모드
+    </label>
+    <p><a href="/admin">← 관리자 페이지로 돌아가기</a></p>
+  </header>
+  <section id="videoSection">
+    <div class="form-row">
+      <select id="vCur"></select>
+      <select id="subVidSel">
+        <option value="">세부과정 선택</option>
+      </select>
+      <input type="number" id="exNumHigh" placeholder="상">
+      <input type="number" id="exNumMid" placeholder="중">
+      <input type="number" id="exNumLow" placeholder="하">
+      <input id="vChap" type="number" min="1" placeholder="챕터">
+      <input type="text" id="vTitle" placeholder="제목">
+      <input type="text" id="vUrl" placeholder="https://kollus…">
+      <button id="addVid" class="btn">추가</button>
+      <button id="saveVid" class="btn">저장</button>
+    </div>
+    <table id="vidTable">
+      <thead>
+        <tr>
+          <th style="width:40px">ID</th>
+          <th style="width:70px">커리큘럼</th>
+          <th style="width:40px">챕</th>
+          <th>제목</th>
+          <th style="min-width:260px">URL</th>
+          <th style="width:40px">Del</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- js 로직만 떼어온 전용 스크립트 -->
+  <script defer src="/js/video-manage.js"></script>
+</body>
+</html>

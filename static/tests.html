@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>테스트 관리 / 통계</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 기본 공통 스타일 -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #11161d;
+      --card-soft: #0f141b;
+      --border: #1e2633;
+      --text: #c7d1e0;
+      --muted: #8f9bad;
+      --accent: #4ea3ff;
+      --accent-soft: rgba(78, 163, 255, 0.18);
+      --danger: #d14f4f;
+      --danger-fg: #fff4f4;
+      --primary: #2fbf7a;
+      --primary-fg: #0c1f17;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    #testsRoot {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 20px 24px;
+    }
+
+    #testsRoot h1 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      font-weight: 800;
+    }
+
+    #testsRoot .page-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    #testsRoot .layout {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    #testsRoot .card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 12px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .45);
+    }
+
+    #testsRoot .card h2 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    #testsRoot .card-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    #testsRoot .flex {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    #testsRoot .pill-label {
+      font-size: 12px;
+      color: var(--muted);
+      min-width: 60px;
+    }
+
+    #testsRoot select,
+    #testsRoot input[type="text"],
+    #testsRoot input[type="number"],
+    #testsRoot textarea {
+      background: var(--card-soft);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 4px 8px;
+      font-size: 13px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    #testsRoot textarea {
+      width: 100%;
+      min-height: 88px;
+      resize: vertical;
+    }
+
+    #testsRoot select:focus,
+    #testsRoot input[type="text"]:focus,
+    #testsRoot input[type="number"]:focus,
+    #testsRoot textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(78, 163, 255, .4);
+    }
+
+    #testsRoot .tests-top {
+      padding: 16px;
+    }
+
+    #testsRoot .top-controls {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    #testsRoot .top-controls .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #testsRoot .top-controls .row .pill-label {
+      min-width: 46px;
+    }
+
+    #testsRoot .top-grid {
+      display: grid;
+      grid-template-columns: 520px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      #testsRoot .top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #testsRoot .test-list {
+      max-height: 420px;
+      overflow: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 4px;
+      background: var(--card-soft);
+    }
+
+    #testsRoot .test-list button {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 10px;
+      margin: 2px 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    #testsRoot .test-list button:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    #testsRoot .test-list button.active {
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+    }
+
+    #testsRoot .test-list button span.small {
+      font-size: 11px;
+      color: var(--muted);
+      margin-left: 6px;
+    }
+
+    #testsRoot .field-row {
+      display: grid;
+      grid-template-columns: 80px 1.4fr 1fr;
+      gap: 8px;
+      margin-top: 6px;
+      align-items: center;
+    }
+
+    @media (max-width: 980px) {
+      #testsRoot .field-row {
+        grid-template-columns: 80px 1fr;
+      }
+
+      #testsRoot .field-row .helper {
+        grid-column: 1 / -1;
+      }
+    }
+
+    #testsRoot .field-row label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    #testsRoot .field-row div.helper {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    #testsRoot .answers-help {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    #testsRoot .answers-help code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 11px;
+    }
+
+    #testsRoot .btn-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    #testsRoot .btn {
+      border-radius: 10px;
+      border: none;
+      padding: 6px 12px;
+      font-size: 13px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    #testsRoot .btn-primary {
+      background: var(--primary);
+      color: var(--primary-fg);
+    }
+
+    #testsRoot .btn-danger {
+      background: var(--danger);
+      color: var(--danger-fg);
+    }
+
+    #testsRoot .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    #testsRoot .stats-summary {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+      font-size: 12px;
+    }
+
+    #testsRoot .stats-summary div {
+      background: var(--card-soft);
+      border-radius: 999px;
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    #testsRoot .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    #testsRoot .stats-table th,
+    #testsRoot .stats-table td {
+      padding: 4px 6px;
+      border-bottom: 1px solid var(--border);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    #testsRoot .stats-table th:first-child,
+    #testsRoot .stats-table td:first-child {
+      text-align: left;
+    }
+
+    #testsRoot .stats-table thead {
+      background: var(--card);
+    }
+
+    #testsRoot .stats-table tbody tr:nth-child(odd) {
+      background: var(--card);
+    }
+
+    #testsRoot .stats-table tbody tr:nth-child(even) {
+      background: var(--card-soft);
+    }
+
+    #testsRoot .stats-table tbody tr:hover {
+      background: rgba(255, 255, 255, 0.07);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="testsRoot">
+    <h1>테스트 관리 / 통계</h1>
+    <div class="page-sub">
+      커리큘럼별로 테스트를 등록하고 정답(회차 1~3)을 세팅한 뒤, 학생이 입력한 답안을 채점하여 통계를 봅니다.
+    </div>
+
+    <div class="layout">
+
+      <section class="card tests-top">
+        <h2>테스트 목록</h2>
+        <div class="card-sub">
+          종류/커리 선택 → 목록에서 시험 선택 → 시험명/문항수/정답(3줄) 수정 후 저장
+        </div>
+
+        <div class="top-controls">
+          <div class="row">
+            <span class="pill-label">종류</span>
+            <select id="cfgType">
+              <option value="단원평가">단원평가</option>
+              <option value="FINAL">APEX FINAL</option>
+              <option value="HELL">APEX HELL</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <span class="pill-label">커리</span>
+            <select id="cfgCur">
+              <option value="공수1">공수1</option>
+              <option value="공수2">공수2</option>
+              <option value="대수">대수</option>
+              <option value="미적1">미적1</option>
+              <option value="미적2">미적2</option>
+              <option value="확통">확통</option>
+              <option value="기하">기하</option>
+            </select>
+            <button id="btnNewTest" class="btn btn-ghost" type="button">+ 새 시험</button>
+          </div>
+        </div>
+
+        <div class="top-grid">
+          <div>
+            <div style="font-size:12px; color:var(--muted); margin:0 0 6px;">
+              선택된 종류/커리에 속한 시험 목록
+            </div>
+            <div id="testList" class="test-list"></div>
+          </div>
+
+          <div style="border:1px solid var(--border); border-radius:12px; padding:12px; background:rgba(255,255,255,.02);">
+            <div class="field-row">
+              <label for="cfgName">시험명</label>
+              <input type="text" id="cfgName" placeholder="예: 평면좌표 L4">
+              <div class="helper">레벨/난이도 시험을 분리하려면 이름을 다르게(예: L3/L4/L5/L6) 해두면 통계가 섞이지 않습니다.</div>
+            </div>
+
+            <div class="field-row">
+              <label for="cfgProblems">문항 수</label>
+              <input type="number" id="cfgProblems" min="1" max="100" step="1">
+              <div class="helper">정답도 문항 수만큼 맞춰 저장됩니다.</div>
+            </div>
+
+            <div style="margin-top:10px;">
+              <label for="cfgAnswers" style="font-size:12px; color:var(--muted); display:block; margin-bottom:4px;">정답 (회차 1~3)</label>
+              <textarea id="cfgAnswers"
+                placeholder="1회차 정답&#10;2회차 정답&#10;3회차 정답"></textarea>
+              <div class="answers-help">
+                · 정답은 <code>1 3 4 2</code> / <code>1,3,4,2</code> / <code>1342</code> 전부 가능<br>
+                · <b>3줄</b>이면 각각 1회차/2회차/3회차로 저장됩니다.<br>
+                · 1줄만 입력하면 1~3회차 모두 동일 정답으로 저장됩니다.
+              </div>
+            </div>
+
+            <div class="btn-row">
+              <button id="btnDeleteTest" class="btn btn-danger" type="button">삭제</button>
+              <button id="btnSaveTest" class="btn btn-primary" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>테스트 통계</h2>
+        <div class="card-sub">
+          최근 제출 기준으로 시험별 평균/최소/최대를 보여줍니다. (중앙값 제거)
+        </div>
+
+        <div class="flex">
+          <span class="pill-label">기간</span>
+          <select id="statRecent">
+            <option value="30" selected>최근 30일</option>
+            <option value="90">최근 90일</option>
+            <option value="365">최근 1년</option>
+          </select>
+          <button id="btnReloadStats" class="btn btn-ghost" type="button">↻ 새로고침</button>
+        </div>
+
+        <div id="statsSummary" class="stats-summary"></div>
+
+        <table class="stats-table" id="statsTable">
+          <thead>
+            <tr>
+              <th>시험명</th>
+              <th>응시수</th>
+              <th>평균</th>
+              <th>최소</th>
+              <th>최대</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="/js/tests.js" type="module"></script>
+</body>
+
+</html>

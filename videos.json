@@ -315,130 +315,355 @@
     "url": "https://v.kr.kollus.com/F4smFWt4?"
   },
   {
+    "chapter": 27,
+    "curriculum": "공수1",
     "id": 117,
     "mid": "LZ4kFWt4",
-    "curriculum": "공수1",
     "subCurriculum": "APEX",
-    "chapter": 27,
     "title": "오메가",
     "url": "https://v.kr.kollus.com/LZ4kFWt4?"
+  },
+  {
+    "chapter": 28,
+    "curriculum": "공수1",
+    "id": 125,
+    "mid": "DJPCFWt4",
+    "subCurriculum": "APEX",
+    "title": "사차방정식의 풀이",
+    "url": "https://v.kr.kollus.com/DJPCFWt4?"
+  },
+  {
+    "chapter": 29,
+    "curriculum": "공수1",
+    "id": 126,
+    "mid": "2vAJFWt4",
+    "subCurriculum": "APEX",
+    "title": "사차방정식의 근과 활용",
+    "url": "https://v.kr.kollus.com/2vAJFWt4?"
+  },
+  {
+    "chapter": 30,
+    "curriculum": "공수1",
+    "id": 127,
+    "mid": "CxlKFWt4",
+    "subCurriculum": "APEX",
+    "title": "연립방정식",
+    "url": "https://v.kr.kollus.com/CxlKFWt4?"
+  },
+  {
+    "chapter": 31,
+    "curriculum": "공수1",
+    "id": 128,
+    "mid": "PcS4FWt4",
+    "subCurriculum": "APEX",
+    "title": "연립방정식의 활용",
+    "url": "https://v.kr.kollus.com/PcS4FWt4?"
+  },
+  {
+    "chapter": 32,
+    "curriculum": "공수1",
+    "id": 129,
+    "mid": "8mgjFWt4",
+    "subCurriculum": "APEX",
+    "title": "부정방정식",
+    "url": "https://v.kr.kollus.com/8mgjFWt4?"
+  },
+  {
+    "chapter": 33,
+    "curriculum": "공수1",
+    "id": 130,
+    "mid": "pPVGFWt4",
+    "subCurriculum": "APEX",
+    "title": "연립일차부등식",
+    "url": "https://v.kr.kollus.com/pPVGFWt4?"
+  },
+  {
+    "chapter": 34,
+    "curriculum": "공수1",
+    "id": 131,
+    "mid": "M44zFWt4",
+    "subCurriculum": "APEX",
+    "title": "이차부등식",
+    "url": "https://v.kr.kollus.com/M44zFWt4?"
+  },
+  {
+    "chapter": 35,
+    "curriculum": "공수1",
+    "id": 132,
+    "mid": "BtypFWt4",
+    "subCurriculum": "APEX",
+    "title": "이차부등식2",
+    "url": "https://v.kr.kollus.com/BtypFWt4?"
+  },
+  {
+    "chapter": 36,
+    "curriculum": "공수1",
+    "id": 133,
+    "mid": "jVcFFWt4",
+    "subCurriculum": "APEX",
+    "title": "연립이차부등식",
+    "url": "https://v.kr.kollus.com/jVcFFWt4?"
+  },
+  {
+    "chapter": 37,
+    "curriculum": "공수1",
+    "id": 134,
+    "mid": "ThiGFWt4",
+    "subCurriculum": "APEX",
+    "title": "[고] 이차부등식 추론",
+    "url": "https://v.kr.kollus.com/ThiGFWt4?"
+  },
+  {
+    "chapter": 38,
+    "curriculum": "공수1",
+    "id": 135,
+    "mid": "Rrn7FWt4",
+    "subCurriculum": "APEX",
+    "title": "근의 분리",
+    "url": "https://v.kr.kollus.com/Rrn7FWt4?"
+  },
+  {
+    "chapter": 39,
+    "curriculum": "공수1",
+    "id": 136,
+    "mid": "WaddFWt4",
+    "subCurriculum": "APEX",
+    "title": "경우의 수 1",
+    "url": "https://v.kr.kollus.com/WaddFWt4?"
+  },
+  {
+    "chapter": 40,
+    "curriculum": "공수1",
+    "id": 137,
+    "mid": "BRvcFWt4",
+    "subCurriculum": "APEX",
+    "title": "경우의 수 2",
+    "url": "https://v.kr.kollus.com/BRvcFWt4?"
+  },
+  {
+    "chapter": 41,
+    "curriculum": "공수1",
+    "id": 138,
+    "mid": "P8a5FWt4",
+    "subCurriculum": "APEX",
+    "title": "순열1",
+    "url": "https://v.kr.kollus.com/P8a5FWt4?"
+  },
+  {
+    "chapter": 41,
+    "curriculum": "공수1",
+    "id": 139,
+    "mid": "0DSYFWt4",
+    "subCurriculum": "APEX",
+    "title": "순열2",
+    "url": "https://v.kr.kollus.com/0DSYFWt4?"
+  },
+  {
+    "chapter": 42,
+    "curriculum": "공수1",
+    "id": 140,
+    "mid": "pz8HFWt5",
+    "subCurriculum": "APEX",
+    "title": "순열3",
+    "url": "https://v.kr.kollus.com/pz8HFWt5?"
+  },
+  {
+    "chapter": 43,
+    "curriculum": "공수1",
+    "id": 141,
+    "mid": "OzhgFWt4",
+    "subCurriculum": "APEX",
+    "title": "조합1",
+    "url": "https://v.kr.kollus.com/OzhgFWt4?"
+  },
+  {
+    "chapter": 44,
+    "curriculum": "공수1",
+    "id": 142,
+    "mid": "0ug0FWt4",
+    "subCurriculum": "APEX",
+    "title": "조합2",
+    "url": "https://v.kr.kollus.com/0ug0FWt4?"
+  },
+  {
+    "chapter": 45,
+    "curriculum": "공수1",
+    "id": 143,
+    "mid": "R5r9FWt4",
+    "subCurriculum": "APEX",
+    "title": "조합2",
+    "url": "https://v.kr.kollus.com/R5r9FWt4?"
+  },
+  {
+    "chapter": 46,
+    "curriculum": "공수1",
+    "id": 144,
+    "mid": "R5r9FWt4",
+    "subCurriculum": "APEX",
+    "title": "조합3",
+    "url": "https://v.kr.kollus.com/R5r9FWt4?"
+  },
+  {
+    "chapter": 47,
+    "curriculum": "공수1",
+    "id": 145,
+    "mid": "4iQlFWt4",
+    "subCurriculum": "APEX",
+    "title": "조합4",
+    "url": "https://v.kr.kollus.com/4iQlFWt4?"
+  },
+  {
+    "chapter": 48,
+    "curriculum": "공수1",
+    "id": 146,
+    "mid": "pE16FWt4",
+    "subCurriculum": "APEX",
+    "title": "조합5",
+    "url": "https://v.kr.kollus.com/pE16FWt4?"
+  },
+  {
+    "chapter": 49,
+    "curriculum": "공수1",
+    "id": 147,
+    "mid": "lpaaFWt5",
+    "subCurriculum": "APEX",
+    "title": "행렬의 연산",
+    "url": "https://v.kr.kollus.com/lpaaFWt5?"
+  },
+  {
+    "chapter": 50,
+    "curriculum": "공수1",
+    "id": 148,
+    "mid": "6DMdFWt5",
+    "subCurriculum": "APEX",
+    "title": "행렬의 곱셈",
+    "url": "https://v.kr.kollus.com/6DMdFWt5?"
+  },
+  {
+    "chapter": 51,
+    "curriculum": "공수1",
+    "id": 149,
+    "mid": "BK6jFWt5",
+    "subCurriculum": "APEX",
+    "title": "행렬의 의미",
+    "url": "https://v.kr.kollus.com/BK6jFWt5?"
   },
   {
     "chapter": 1,
     "curriculum": "공수2",
     "id": 1,
-    "mid": "otRgIp3N",
+    "mid": "BZ8Tpfvy",
     "subCurriculum": "A:Ble",
     "title": "평면좌표",
-    "url": "https://v.kr.kollus.com/otRgIp3N?"
+    "url": "https://v.kr.kollus.com/BZ8Tpfvy?"
   },
   {
     "chapter": 2,
     "curriculum": "공수2",
     "id": 2,
-    "mid": "kEu5HFLk",
+    "mid": "y0bHpfvy",
     "subCurriculum": "A:Ble",
     "title": "직선의 방정식",
-    "url": "https://v.kr.kollus.com/kEu5HFLk?"
+    "url": "https://v.kr.kollus.com/y0bHpfvy?"
   },
   {
     "chapter": 3,
     "curriculum": "공수2",
     "id": 3,
-    "mid": "cJFMvoef",
+    "mid": "Yb4Fpfvy",
     "subCurriculum": "A:Ble",
     "title": "원의 방정식(1)",
-    "url": "https://v.kr.kollus.com/cJFMvoef?"
+    "url": "https://v.kr.kollus.com/Yb4Fpfvy?"
   },
   {
     "chapter": 4,
     "curriculum": "공수2",
     "id": 4,
-    "mid": "DUf3voef",
+    "mid": "vqJrpfy4",
     "subCurriculum": "A:Ble",
     "title": "원의 방정식(2)",
-    "url": "https://v.kr.kollus.com/DUf3voef?"
+    "url": "https://v.kr.kollus.com/vqJrpfy4?"
   },
   {
     "chapter": 5,
     "curriculum": "공수2",
     "id": 5,
-    "mid": "s8Dcvoef",
+    "mid": "S8l6pfy4",
     "subCurriculum": "A:Ble",
     "title": "도형의 이동",
-    "url": "https://v.kr.kollus.com/s8Dcvoef?"
+    "url": "https://v.kr.kollus.com/S8l6pfy4?"
   },
   {
     "chapter": 6,
     "curriculum": "공수2",
     "id": 6,
-    "mid": "amLVvoef",
+    "mid": "eEZKpfy4",
     "subCurriculum": "A:Ble",
     "title": "집합",
-    "url": "https://v.kr.kollus.com/amLVvoef?"
+    "url": "https://v.kr.kollus.com/eEZKpfy4?"
   },
   {
     "chapter": 7,
     "curriculum": "공수2",
     "id": 7,
-    "mid": "LOwovoef",
+    "mid": "5zcppfy4",
     "subCurriculum": "A:Ble",
     "title": "집합의 연산",
-    "url": "https://v.kr.kollus.com/LOwovoef?"
+    "url": "https://v.kr.kollus.com/5zcppfy4?"
   },
   {
     "chapter": 8,
     "curriculum": "공수2",
     "id": 8,
-    "mid": "OyXpvoef",
+    "mid": "JA2Epfy4",
     "subCurriculum": "A:Ble",
     "title": "명제",
-    "url": "https://v.kr.kollus.com/OyXpvoef?"
+    "url": "https://v.kr.kollus.com/JA2Epfy4?"
   },
   {
     "chapter": 9,
     "curriculum": "공수2",
     "id": 9,
-    "mid": "gAyfvoef",
+    "mid": "6Sagpfy4",
     "subCurriculum": "A:Ble",
     "title": "명제의 증명과 절대부등식",
-    "url": "https://v.kr.kollus.com/gAyfvoef?"
+    "url": "https://v.kr.kollus.com/6Sagpfy4?"
   },
   {
     "chapter": 10,
     "curriculum": "공수2",
     "id": 10,
-    "mid": "evdsvoef",
+    "mid": "zcKVpfy4",
     "subCurriculum": "A:Ble",
     "title": "함수(1)",
-    "url": "https://v.kr.kollus.com/evdsvoef?"
+    "url": "https://v.kr.kollus.com/zcKVpfy4?"
   },
   {
     "chapter": 11,
     "curriculum": "공수2",
     "id": 11,
-    "mid": "rkjHvoef",
+    "mid": "jVhfpfy4",
     "subCurriculum": "A:Ble",
     "title": "함수(2)",
-    "url": "https://v.kr.kollus.com/rkjHvoef?"
+    "url": "https://v.kr.kollus.com/jVhfpfy4?"
   },
   {
     "chapter": 12,
     "curriculum": "공수2",
     "id": 12,
-    "mid": "peoxvoef",
+    "mid": "cq4gpfy4",
     "subCurriculum": "A:Ble",
     "title": "유리식과 유리함수",
-    "url": "https://v.kr.kollus.com/peoxvoef?"
+    "url": "https://v.kr.kollus.com/cq4gpfy4?"
   },
   {
     "chapter": 13,
     "curriculum": "공수2",
     "id": 13,
-    "mid": "PtHivoef",
+    "mid": "sU3tpfy4",
     "subCurriculum": "A:Ble",
     "title": "무리식과 무리함수",
-    "url": "https://v.kr.kollus.com/PtHivoef?"
+    "url": "https://v.kr.kollus.com/sU3tpfy4?"
   },
   {
     "chapter": 1,
@@ -575,10 +800,10 @@
       "하": 0
     },
     "id": 23,
-    "mid": "pGLYwtBe",
+    "mid": "umKtwOe7",
     "subCurriculum": "APEX",
     "title": "[고] 직선의 방정식 활용",
-    "url": "https://v.kr.kollus.com/pGLYwtBe?"
+    "url": "https://v.kr.kollus.com/umKtwOe7?"
   },
   {
     "chapter": 11,
@@ -667,6 +892,11 @@
   {
     "chapter": 17,
     "curriculum": "공수2",
+    "exNum": {
+      "상": 238,
+      "중": 235,
+      "하": 0
+    },
     "id": 85,
     "mid": "yKo1BWnw",
     "subCurriculum": "APEX",
@@ -758,6 +988,20 @@
     "url": "https://v.kr.kollus.com/mkJfFsg4?"
   },
   {
+    "chapter": 23,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 303,
+      "중": 301,
+      "하": 300
+    },
+    "id": 109,
+    "mid": "1N81GfJP",
+    "subCurriculum": "APEX",
+    "title": "함수의 증감",
+    "url": "https://v.kr.kollus.com/1N81GfJP?"
+  },
+  {
     "chapter": 24,
     "curriculum": "공수2",
     "exNum": {
@@ -765,7 +1009,7 @@
       "중": 353,
       "하": 347
     },
-    "id": 109,
+    "id": 110,
     "mid": "rHW7Fsg4",
     "subCurriculum": "APEX",
     "title": "부분집합의 개수",
@@ -779,16 +1023,56 @@
       "중": 367,
       "하": 0
     },
-    "id": 110,
+    "id": 165,
     "mid": "RgayFsCU",
     "subCurriculum": "APEX",
     "title": "[고] 집합의 해석",
     "url": "https://v.kr.kollus.com/RgayFsCU?"
   },
   {
+    "chapter": 30,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 77,
+      "중": 65
+    },
+    "id": 160,
+    "mid": "dIsIHZ58",
+    "subCurriculum": "APEX",
+    "title": "[고] 집합의 해석2",
+    "url": "https://v.kr.kollus.com/dIsIHZ58?"
+  },
+  {
+    "chapter": 34,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 155,
+      "중": 149,
+      "하": 146
+    },
+    "id": 161,
+    "mid": "t67YHZ7L",
+    "subCurriculum": "APEX",
+    "title": "절대부등식",
+    "url": "https://v.kr.kollus.com/t67YHZ7L?"
+  },
+  {
+    "chapter": 35,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 165,
+      "중": 160
+    },
+    "id": 162,
+    "mid": "wRyRHZEi",
+    "subCurriculum": "APEX",
+    "title": "[고] 명제의 해석",
+    "url": "https://v.kr.kollus.com/wRyRHZEi?"
+  },
+  {
     "chapter": 1,
     "curriculum": "대수",
-    "id": 46,
+    "id": 49,
     "mid": "uDK9znMh",
     "subCurriculum": "A:Ble",
     "title": "지수",
@@ -797,7 +1081,7 @@
   {
     "chapter": 2,
     "curriculum": "대수",
-    "id": 47,
+    "id": 50,
     "mid": "BPPuznMh",
     "subCurriculum": "A:Ble",
     "title": "로그",
@@ -806,7 +1090,7 @@
   {
     "chapter": 3,
     "curriculum": "대수",
-    "id": 48,
+    "id": 51,
     "mid": "IyiTznMh",
     "subCurriculum": "A:Ble",
     "title": "지수함수",
@@ -815,7 +1099,7 @@
   {
     "chapter": 4,
     "curriculum": "대수",
-    "id": 49,
+    "id": 52,
     "mid": "nqxGznMh",
     "subCurriculum": "A:Ble",
     "title": "로그함수",
@@ -824,7 +1108,7 @@
   {
     "chapter": 5,
     "curriculum": "대수",
-    "id": 50,
+    "id": 53,
     "mid": "8cYkznMh",
     "subCurriculum": "A:Ble",
     "title": "지수로그 활용",
@@ -833,7 +1117,7 @@
   {
     "chapter": 6,
     "curriculum": "대수",
-    "id": 51,
+    "id": 54,
     "mid": "YS9yznMh",
     "subCurriculum": "A:Ble",
     "title": "삼각함수",
@@ -842,7 +1126,7 @@
   {
     "chapter": 7,
     "curriculum": "대수",
-    "id": 52,
+    "id": 55,
     "mid": "Od8kznMh",
     "subCurriculum": "A:Ble",
     "title": "삼각함수 그래프",
@@ -851,7 +1135,7 @@
   {
     "chapter": 8,
     "curriculum": "대수",
-    "id": 53,
+    "id": 56,
     "mid": "fl3NznMh",
     "subCurriculum": "A:Ble",
     "title": "삼각함수와 삼각형",
@@ -860,7 +1144,7 @@
   {
     "chapter": 9,
     "curriculum": "대수",
-    "id": 54,
+    "id": 57,
     "mid": "7A0UznMh",
     "subCurriculum": "A:Ble",
     "title": "등차수열",
@@ -869,29 +1153,11 @@
   {
     "chapter": 10,
     "curriculum": "대수",
-    "id": 55,
+    "id": 40,
     "mid": "UwBQznMh",
     "subCurriculum": "A:Ble",
     "title": "등비수열",
     "url": "https://v.kr.kollus.com/UwBQznMh?"
-  },
-  {
-    "chapter": 11,
-    "curriculum": "대수",
-    "id": 56,
-    "mid": "qV9MznMh",
-    "subCurriculum": "A:Ble",
-    "title": "수열의 합",
-    "url": "https://v.kr.kollus.com/qV9MznMh?"
-  },
-  {
-    "chapter": 12,
-    "curriculum": "대수",
-    "id": 57,
-    "mid": "hN0aznMh",
-    "subCurriculum": "A:Ble",
-    "title": "수학적 귀납법",
-    "url": "https://v.kr.kollus.com/hN0aznMh?"
   },
   {
     "chapter": 1,
@@ -901,7 +1167,7 @@
       "중": 22,
       "하": 16
     },
-    "id": 40,
+    "id": 59,
     "mid": "Eq6lyGzt",
     "subCurriculum": "APEX",
     "title": "거듭제곱근",
@@ -915,7 +1181,7 @@
       "중": 60,
       "하": 60
     },
-    "id": 41,
+    "id": 60,
     "mid": "Om1byGFT",
     "subCurriculum": "APEX",
     "title": "지수 법칙",
@@ -929,7 +1195,7 @@
       "중": 66,
       "하": 67
     },
-    "id": 58,
+    "id": 63,
     "mid": "V89JznVt",
     "subCurriculum": "APEX",
     "title": "로그의 정의와 연산",
@@ -943,7 +1209,7 @@
       "중": 84,
       "하": 87
     },
-    "id": 59,
+    "id": 83,
     "mid": "cBwPznVt",
     "subCurriculum": "APEX",
     "title": "로그의 성질",
@@ -957,7 +1223,7 @@
       "중": 107,
       "하": 100
     },
-    "id": 60,
+    "id": 84,
     "mid": "b2WUznVt",
     "subCurriculum": "APEX",
     "title": "상용로그",
@@ -968,13 +1234,12 @@
     "curriculum": "대수",
     "exNum": {
       "상": 116,
-      "중": 108,
-      "하": 0
+      "중": 108
     },
-    "id": 63,
+    "id": 86,
     "mid": "shdbzLTz",
     "subCurriculum": "APEX",
-    "title": "로그의 활용",
+    "title": "[고] 로그의 활용",
     "url": "https://v.kr.kollus.com/shdbzLTz?"
   },
   {
@@ -985,7 +1250,7 @@
       "중": 122,
       "하": 120
     },
-    "id": 83,
+    "id": 106,
     "mid": "UBaUBWnw",
     "subCurriculum": "APEX",
     "title": "지수함수의 그래프",
@@ -999,7 +1264,7 @@
       "중": 136,
       "하": 135
     },
-    "id": 84,
+    "id": 107,
     "mid": "2yiMBWnw",
     "subCurriculum": "APEX",
     "title": "지수함수의 그래프와 길이",
@@ -1013,7 +1278,7 @@
       "중": 141,
       "하": 146
     },
-    "id": 86,
+    "id": 111,
     "mid": "L02HBWzW",
     "subCurriculum": "APEX",
     "title": "지수함수의 최대최소",
@@ -1027,24 +1292,41 @@
       "중": 157,
       "하": 157
     },
-    "id": 106,
+    "id": 112,
     "mid": "KPTbEuaD",
     "subCurriculum": "APEX",
     "title": "지수함수와 방부등식",
     "url": "https://v.kr.kollus.com/KPTbEuaD?"
   },
   {
+    "chapter": 11,
+    "curriculum": "대수",
+    "id": 114,
+    "mid": "qV9MznMh",
+    "subCurriculum": "A:Ble",
+    "title": "수열의 합",
+    "url": "https://v.kr.kollus.com/qV9MznMh?"
+  },
+  {
+    "chapter": 12,
+    "curriculum": "대수",
+    "id": 113,
+    "mid": "hN0aznMh",
+    "subCurriculum": "A:Ble",
+    "title": "수학적 귀납법",
+    "url": "https://v.kr.kollus.com/hN0aznMh?"
+  },
+  {
     "chapter": 12,
     "curriculum": "대수",
     "exNum": {
       "상": 180,
-      "중": 173,
-      "하": 0
+      "중": 173
     },
-    "id": 107,
+    "id": 87,
     "mid": "yxIVEudj",
     "subCurriculum": "APEX",
-    "title": "지수함수의 해석",
+    "title": "[고] 지수함수의 해석",
     "url": "https://v.kr.kollus.com/yxIVEudj?"
   },
   {
@@ -1055,53 +1337,11 @@
       "중": 189,
       "하": 187
     },
-    "id": 111,
+    "id": 88,
     "mid": "u6OCFPCV",
     "subCurriculum": "APEX",
     "title": "로그함수의 그래프",
     "url": "https://v.kr.kollus.com/u6OCFPCV?"
-  },
-  {
-    "chapter": 16,
-    "curriculum": "대수",
-    "exNum": {
-      "상": 228,
-      "중": 227,
-      "하": 226
-    },
-    "id": 112,
-    "mid": "rWOuFPCV",
-    "subCurriculum": "APEX",
-    "title": "지수함수와 로그함수",
-    "url": "https://v.kr.kollus.com/rWOuFPCV?"
-  },
-  {
-    "chapter": 18,
-    "curriculum": "대수",
-    "exNum": {
-      "상": 256,
-      "중": 253,
-      "하": 0
-    },
-    "id": 114,
-    "mid": "SoqmFPCV",
-    "subCurriculum": "APEX",
-    "title": "로그함수의 해석",
-    "url": "https://v.kr.kollus.com/SoqmFPCV?"
-  },
-  {
-    "chapter": 20,
-    "curriculum": "대수",
-    "exNum": {
-      "상": 280,
-      "중": 281,
-      "하": 279
-    },
-    "id": 113,
-    "mid": "K7MOFPCV",
-    "subCurriculum": "APEX",
-    "title": "부채꼴",
-    "url": "https://v.kr.kollus.com/K7MOFPCV?"
   },
   {
     "chapter": 1,
@@ -1111,7 +1351,7 @@
       "중": 8,
       "하": 5
     },
-    "id": 87,
+    "id": 90,
     "mid": "0x6ZBWzV",
     "subCurriculum": "APEX",
     "title": "함수의 극한",
@@ -1125,7 +1365,7 @@
       "중": 27,
       "하": 23
     },
-    "id": 88,
+    "id": 91,
     "mid": "yYxSBWA4",
     "subCurriculum": "APEX",
     "title": "극한식의 꼴",
@@ -1139,7 +1379,7 @@
       "중": 41,
       "하": 35
     },
-    "id": 89,
+    "id": 92,
     "mid": "6I0FBWzV",
     "subCurriculum": "APEX",
     "title": "샌드위치와 근사",
@@ -1153,7 +1393,7 @@
       "중": 54,
       "하": 52
     },
-    "id": 90,
+    "id": 99,
     "mid": "70tBBWzV",
     "subCurriculum": "APEX",
     "title": "미정계수의 결정",
@@ -1167,7 +1407,7 @@
       "중": 68,
       "하": 66
     },
-    "id": 91,
+    "id": 98,
     "mid": "WFm4BWzW",
     "subCurriculum": "APEX",
     "title": "다항함수 구하기",
@@ -1181,7 +1421,7 @@
       "중": 76,
       "하": 72
     },
-    "id": 92,
+    "id": 100,
     "mid": "QdRXBWzW",
     "subCurriculum": "APEX",
     "title": "극한의 활용",
@@ -1192,10 +1432,9 @@
     "curriculum": "미적분1",
     "exNum": {
       "상": 90,
-      "중": 89,
-      "하": 0
+      "중": 89
     },
-    "id": 99,
+    "id": 101,
     "mid": "p3xUDKFr",
     "subCurriculum": "APEX",
     "title": "극한의 해석",
@@ -1209,7 +1448,7 @@
       "중": 123,
       "하": 126
     },
-    "id": 98,
+    "id": 102,
     "mid": "hrFTDKFr",
     "subCurriculum": "APEX",
     "title": "함수의 연속",
@@ -1223,7 +1462,7 @@
       "중": 132,
       "하": 124
     },
-    "id": 100,
+    "id": 103,
     "mid": "GWjHDKFr",
     "subCurriculum": "APEX",
     "title": "연속 조건의 활용",
@@ -1237,7 +1476,7 @@
       "중": 141,
       "하": 137
     },
-    "id": 101,
+    "id": 104,
     "mid": "GUHsDKKL",
     "subCurriculum": "APEX",
     "title": "사잇값 정리",
@@ -1250,7 +1489,7 @@
       "상": 152,
       "중": 151
     },
-    "id": 102,
+    "id": 105,
     "mid": "B1GLEuaD",
     "subCurriculum": "APEX",
     "title": "[고] 연속의 해석",
@@ -1264,7 +1503,7 @@
       "중": 201,
       "하": 198
     },
-    "id": 103,
+    "id": 118,
     "mid": "emaZEuaD",
     "subCurriculum": "APEX",
     "title": "곱의 미분법",
@@ -1278,11 +1517,25 @@
       "중": 208,
       "하": 202
     },
-    "id": 104,
+    "id": 120,
     "mid": "A7bUEuaD",
     "subCurriculum": "APEX",
     "title": "다항함수 구하기",
     "url": "https://v.kr.kollus.com/A7bUEuaD?"
+  },
+  {
+    "chapter": 16,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 228,
+      "중": 227,
+      "하": 226
+    },
+    "id": 121,
+    "mid": "rWOuFPCV",
+    "subCurriculum": "APEX",
+    "title": "지수함수와 로그함수",
+    "url": "https://v.kr.kollus.com/rWOuFPCV?"
   },
   {
     "chapter": 16,
@@ -1292,10 +1545,924 @@
       "중": 221,
       "하": 218
     },
-    "id": 105,
+    "id": 122,
     "mid": "s27YEuaD",
     "subCurriculum": "APEX",
     "title": "미분가능성",
     "url": "https://v.kr.kollus.com/s27YEuaD?"
+  },
+  {
+    "chapter": 18,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 256,
+      "중": 253
+    },
+    "id": 123,
+    "mid": "SoqmFPCV",
+    "subCurriculum": "APEX",
+    "title": "[고] 로그함수의 해석",
+    "url": "https://v.kr.kollus.com/SoqmFPCV?"
+  },
+  {
+    "chapter": 18,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 256,
+      "중": 255,
+      "하": 252
+    },
+    "id": 124,
+    "mid": "3FWqGfJP",
+    "subCurriculum": "APEX",
+    "title": "접선의 방정식",
+    "url": "https://v.kr.kollus.com/3FWqGfJP?"
+  },
+  {
+    "chapter": 20,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 280,
+      "중": 281,
+      "하": 279
+    },
+    "id": 151,
+    "mid": "K7MOFPCV",
+    "subCurriculum": "APEX",
+    "title": "부채꼴",
+    "url": "https://v.kr.kollus.com/K7MOFPCV?"
+  },
+  {
+    "chapter": 22,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 292,
+      "중": 292
+    },
+    "id": 152,
+    "mid": "DYpOGfJP",
+    "subCurriculum": "APEX",
+    "title": "[고] 도함수의 해석",
+    "url": "https://v.kr.kollus.com/DYpOGfJP?"
+  },
+  {
+    "chapter": 21,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 288,
+      "중": 290,
+      "하": 290
+    },
+    "id": 163,
+    "mid": "qJ2lI0t8",
+    "subCurriculum": "APEX",
+    "title": "삼각함수의 정의",
+    "url": "https://v.kr.kollus.com/qJ2lI0t8?"
+  },
+  {
+    "chapter": 22,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 304,
+      "중": 302,
+      "하": 303
+    },
+    "id": 164,
+    "mid": "qDhRI1Pa",
+    "subCurriculum": "APEX",
+    "title": "삼각함수의 계산",
+    "url": "https://v.kr.kollus.com/qDhRI1Pa?"
+  },
+  {
+    "chapter": 26,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 40,
+      "중": 37,
+      "하": 33
+    },
+    "id": 166,
+    "mid": "MxkLIl6a",
+    "subCurriculum": "APEX",
+    "title": "삼각방정식",
+    "url": "https://v.kr.kollus.com/MxkLIl6a?"
+  },
+  {
+    "chapter": 27,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 51,
+      "중": 48,
+      "하": 46
+    },
+    "id": 167,
+    "mid": "gp9OIn8K",
+    "subCurriculum": "APEX",
+    "title": "삼각부등식",
+    "url": "https://v.kr.kollus.com/gp9OIn8K?"
+  },
+  {
+    "chapter": 28,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 71,
+      "중": 65
+    },
+    "id": 168,
+    "mid": "FHmEIn7n",
+    "subCurriculum": "APEX",
+    "title": "[고] 삼각함수의 그래프 해석",
+    "url": "https://v.kr.kollus.com/FHmEIn7n?"
+  },
+  {
+    "chapter": 29,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 31,
+      "중": 32,
+      "하": 25
+    },
+    "id": 169,
+    "mid": "SNdXILc4",
+    "subCurriculum": "APEX",
+    "title": "부등식과 미분",
+    "url": "https://v.kr.kollus.com/SNdXILc4?"
+  },
+  {
+    "chapter": 30,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 48,
+      "중": 48,
+      "하": 39
+    },
+    "id": 170,
+    "mid": "z5EJINsZ",
+    "subCurriculum": "APEX",
+    "title": "속도와 가숙도",
+    "url": "https://v.kr.kollus.com/z5EJINsZ?"
+  },
+  {
+    "chapter": 31,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 56,
+      "중": 50,
+      "하": 0
+    },
+    "id": 171,
+    "mid": "XnySINyi",
+    "subCurriculum": "APEX",
+    "title": "[고] 다항함수 그래프의 해석",
+    "url": "https://v.kr.kollus.com/XnySINyi?"
+  },
+  {
+    "chapter": 33,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 92,
+      "중": 87,
+      "하": 80
+    },
+    "id": 172,
+    "mid": "4fXnIPOh",
+    "subCurriculum": "APEX",
+    "title": "다항함수 구하기",
+    "url": "https://v.kr.kollus.com/4fXnIPOh?"
+  },
+  {
+    "chapter": 27,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 7,
+      "중": 8,
+      "하": 3
+    },
+    "id": 173,
+    "mid": "dMXjIOZ6",
+    "subCurriculum": "APEX",
+    "title": "다항함수의 근",
+    "url": "https://v.kr.kollus.com/dMXjIOZ6?"
+  },
+  {
+    "chapter": 34,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 98,
+      "중": 94,
+      "하": 93
+    },
+    "id": 174,
+    "mid": "yxL3Jywn",
+    "subCurriculum": "APEX",
+    "title": "도함수와 그래프",
+    "url": "https://v.kr.kollus.com/yxL3Jywn?"
+  },
+  {
+    "chapter": 29,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 91,
+      "중": 90,
+      "하": 76
+    },
+    "id": 175,
+    "mid": "UgF3KvZQ",
+    "subCurriculum": "APEX",
+    "title": "사인법칙",
+    "url": "https://v.kr.kollus.com/UgF3KvZQ?"
+  },
+  {
+    "chapter": 30,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 104,
+      "중": 102,
+      "하": 98
+    },
+    "id": 176,
+    "mid": "arXSKwzk",
+    "subCurriculum": "APEX",
+    "title": "코사인법칙",
+    "url": "https://v.kr.kollus.com/arXSKwzk?"
+  },
+  {
+    "chapter": 31,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 111,
+      "중": 110,
+      "하": 108
+    },
+    "id": 177,
+    "mid": "cHbsKybr",
+    "subCurriculum": "APEX",
+    "title": "삼각형의 해석",
+    "url": "https://v.kr.kollus.com/cHbsKybr?"
+  },
+  {
+    "chapter": 34,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 159,
+      "중": 155,
+      "하": 148
+    },
+    "id": 178,
+    "mid": "VlL6KSTa",
+    "subCurriculum": "APEX",
+    "title": "등차수열",
+    "url": "https://v.kr.kollus.com/VlL6KSTa?"
+  },
+  {
+    "chapter": 35,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 176,
+      "중": 171,
+      "하": 162
+    },
+    "id": 179,
+    "mid": "NNMCKSSY",
+    "subCurriculum": "APEX",
+    "title": "등차수열의 합",
+    "url": "https://v.kr.kollus.com/NNMCKSSY?"
+  },
+  {
+    "chapter": 36,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 224,
+      "중": 222
+    },
+    "id": 180,
+    "mid": "XQk0KTCf",
+    "subCurriculum": "APEX",
+    "title": "[고] 수열의 해석",
+    "url": "https://v.kr.kollus.com/XQk0KTCf?"
+  },
+  {
+    "chapter": 38,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 136,
+      "중": 131,
+      "하": 128
+    },
+    "id": 181,
+    "mid": "wfxeLmFS",
+    "subCurriculum": "APEX",
+    "title": "정적분과 다항함수",
+    "url": "https://v.kr.kollus.com/wfxeLmFS?"
+  },
+  {
+    "chapter": 40,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 173,
+      "중": 172,
+      "하": 161
+    },
+    "id": 182,
+    "mid": "LboELmFo",
+    "subCurriculum": "APEX",
+    "title": "정적분으로 정의된 함수",
+    "url": "https://v.kr.kollus.com/LboELmFo?"
+  },
+  {
+    "chapter": 41,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 191,
+      "중": 189,
+      "하": 180
+    },
+    "id": 183,
+    "mid": "6bMBLmN4",
+    "subCurriculum": "APEX",
+    "title": "정적분으로 정의된 함수2",
+    "url": "https://v.kr.kollus.com/6bMBLmN4?"
+  },
+  {
+    "chapter": 42,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 204,
+      "중": 202
+    },
+    "id": 184,
+    "mid": "i2HBM4bC",
+    "subCurriculum": "APEX",
+    "title": "[고] 적분의 해석",
+    "url": "https://v.kr.kollus.com/i2HBM4bC?"
+  },
+  {
+    "chapter": 44,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 228,
+      "중": 231,
+      "하": 222
+    },
+    "id": 185,
+    "mid": "i2HBM4bC",
+    "subCurriculum": "APEX",
+    "title": "다항함수의 넓이",
+    "url": "https://v.kr.kollus.com/CaV5M49d?"
+  },
+  {
+    "chapter": 47,
+    "curriculum": "미적분1",
+    "exNum": {
+      "상": 280,
+      "중": 268,
+      "하": 267
+    },
+    "id": 186,
+    "mid": "6ZZgM4sp",
+    "subCurriculum": "APEX",
+    "title": "속도와 가속도",
+    "url": "https://v.kr.kollus.com/6ZZgM4sp?"
+  },
+  {
+    "chapter": 42,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 270,
+      "중": 267,
+      "하": 257
+    },
+    "id": 187,
+    "mid": "yAgQN5TD",
+    "subCurriculum": "APEX",
+    "title": "망원화",
+    "url": "https://v.kr.kollus.com/yAgQN5TD?"
+  },
+  {
+    "chapter": 43,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 285,
+      "중": 276,
+      "하": 274
+    },
+    "id": 188,
+    "mid": "WWUuN654",
+    "subCurriculum": "APEX",
+    "title": "일반항 구하기",
+    "url": "https://v.kr.kollus.com/WWUuN654?"
+  },
+  {
+    "chapter": 45,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 309,
+      "중": 311,
+      "하": 308
+    },
+    "id": 189,
+    "mid": "QcYiN5SB",
+    "subCurriculum": "APEX",
+    "title": "등차, 등비수열의 점화식",
+    "url": "https://v.kr.kollus.com/QcYiN5SB?"
+  },
+  {
+    "chapter": 46,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 330,
+      "중": 324,
+      "하": 318
+    },
+    "id": 190,
+    "mid": "4jXkN5U2",
+    "subCurriculum": "APEX",
+    "title": "여러가지 점화식",
+    "url": "https://v.kr.kollus.com/4jXkN5U2?"
+  },
+  {
+    "chapter": 47,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 340,
+      "중": 340,
+      "하": 340
+    },
+    "id": 191,
+    "mid": "msHfNqwn",
+    "subCurriculum": "APEX",
+    "title": "수학적 귀납법",
+    "url": "https://v.kr.kollus.com/msHfNqwn?"
+  },
+  {
+    "chapter": 26,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 11,
+      "중": 11,
+      "하": 8
+    },
+    "id": 192,
+    "mid": "BGs1RaGN",
+    "subCurriculum": "APEX",
+    "title": "집합의 연산",
+    "url": "https://v.kr.kollus.com/BGs1RaGN?"
+  },
+  {
+    "chapter": 27,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 24,
+      "중": 25,
+      "하": 23
+    },
+    "id": 193,
+    "mid": "ZkWVRaGz",
+    "subCurriculum": "APEX",
+    "title": "집합의 연산법칙",
+    "url": "https://v.kr.kollus.com/ZkWVRaGz?"
+  },
+  {
+    "chapter": 28,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 56,
+      "중": 54,
+      "하": 49
+    },
+    "id": 194,
+    "mid": "K3D2WdS3",
+    "subCurriculum": "APEX",
+    "title": "집합의 표현",
+    "url": "https://v.kr.kollus.com/K3D2WdS3?"
+  },
+  {
+    "chapter": 29,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 62,
+      "중": 63,
+      "하": 60
+    },
+    "id": 195,
+    "mid": "k5mrWdSy",
+    "subCurriculum": "APEX",
+    "title": "원소의 개수",
+    "url": "https://v.kr.kollus.com/k5mrWdSy?"
+  },
+  {
+    "chapter": 1,
+    "curriculum": "공수1",
+    "id": 196,
+    "mid": "0FbXydJS",
+    "subCurriculum": "APEX",
+    "title": "다항식의 연산",
+    "url": "https://v.kr.kollus.com/0FbXydJS?"
+  },
+  {
+    "chapter": 2,
+    "curriculum": "공수1",
+    "id": 197,
+    "mid": "Ll5lydJS",
+    "subCurriculum": "APEX",
+    "title": "곱셈 공식의 활용",
+    "url": "https://v.kr.kollus.com/Ll5lydJS?"
+  },
+  {
+    "chapter": 3,
+    "curriculum": "공수1",
+    "id": 198,
+    "mid": "UPDkydJS",
+    "subCurriculum": "APEX",
+    "title": "다항식 나눗셈",
+    "url": "https://v.kr.kollus.com/UPDkydJS?"
+  },
+  {
+    "chapter": 4,
+    "curriculum": "공수1",
+    "id": 199,
+    "mid": "fzzfydJS",
+    "subCurriculum": "APEX",
+    "title": "항등식의 이해",
+    "url": "https://v.kr.kollus.com/fzzfydJS?"
+  },
+  {
+    "chapter": 5,
+    "curriculum": "공수1",
+    "id": 200,
+    "mid": "c5PxydJS",
+    "subCurriculum": "APEX",
+    "title": "나머지 정리",
+    "url": "https://v.kr.kollus.com/c5PxydJS?"
+  },
+  {
+    "chapter": 6,
+    "curriculum": "공수1",
+    "id": 201,
+    "mid": "kLntydJS",
+    "subCurriculum": "APEX",
+    "title": "연속조립제법",
+    "url": "https://v.kr.kollus.com/kLntydJS?"
+  },
+  {
+    "chapter": 31,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 107,
+      "중": 105,
+      "하": 85
+    },
+    "id": 202,
+    "mid": "8C0VWXme",
+    "subCurriculum": "APEX",
+    "title": "명제",
+    "url": "https://v.kr.kollus.com/8C0VWXme?"
+  },
+  {
+    "chapter": 32,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 115,
+      "중": 115,
+      "하": 115
+    },
+    "id": 203,
+    "mid": "dbbzWXlR",
+    "subCurriculum": "APEX",
+    "title": "역과 대우",
+    "url": "https://v.kr.kollus.com/dbbzWXlR?"
+  },
+  {
+    "chapter": 33,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 128,
+      "중": 122,
+      "하": 122
+    },
+    "id": 204,
+    "mid": "AnwuWXk2",
+    "subCurriculum": "APEX",
+    "title": "충분조건과 필요조건",
+    "url": "https://v.kr.kollus.com/AnwuWXk2?"
+  },
+  {
+    "chapter": 36,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 181,
+      "중": 185,
+      "하": 188
+    },
+    "id": 205,
+    "mid": "8xEm4OWF",
+    "subCurriculum": "APEX",
+    "title": "함수의 뜻과 종류",
+    "url": "https://v.kr.kollus.com/8xEm4OWF?"
+  },
+  {
+    "chapter": 37,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 197,
+      "중": 193,
+      "하": 190
+    },
+    "id": 206,
+    "mid": "GhY14PJS",
+    "subCurriculum": "APEX",
+    "title": "함수의 개수",
+    "url": "https://v.kr.kollus.com/GhY14PJS?"
+  },
+  {
+    "chapter": 38,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 214,
+      "중": 213,
+      "하": 205
+    },
+    "id": 207,
+    "mid": "Wc3F72Oi",
+    "subCurriculum": "APEX",
+    "title": "합성함수",
+    "url": "https://v.kr.kollus.com/Wc3F72Oi?"
+  },
+  {
+    "chapter": 39,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 225,
+      "중": 229,
+      "하": 229
+    },
+    "id": 208,
+    "mid": "NTvB73gc",
+    "subCurriculum": "APEX",
+    "title": "역함수",
+    "url": "https://v.kr.kollus.com/NTvB73gc?"
+  },
+  {
+    "chapter": 40,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 244,
+      "중": 233
+    },
+    "id": 209,
+    "mid": "Wip08TfD",
+    "subCurriculum": "APEX",
+    "title": "[고] 함수의 해석",
+    "url": "https://v.kr.kollus.com/Wip08TfD?"
+  },
+  {
+    "chapter": 41,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 257,
+      "중": 255,
+      "하": 256
+    },
+    "id": 210,
+    "mid": "bjpO8Thm",
+    "subCurriculum": "APEX",
+    "title": "유리식의 계산",
+    "url": "https://v.kr.kollus.com/bjpO8Thm?"
+  },
+  {
+    "chapter": 42,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 270,
+      "중": 270,
+      "하": 283
+    },
+    "id": 211,
+    "mid": "EziQ8U3j",
+    "subCurriculum": "APEX",
+    "title": "유리함수의 그래프",
+    "url": "https://v.kr.kollus.com/EziQ8U3j?"
+  },
+  {
+    "chapter": 43,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 294,
+      "중": 289,
+      "하": 286
+    },
+    "id": 212,
+    "mid": "ljfN9ToH",
+    "subCurriculum": "APEX",
+    "title": "유리함수 그래프 활용",
+    "url": "https://v.kr.kollus.com/ljfN9ToH?"
+  },
+  {
+    "chapter": 44,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 313,
+      "중": 311,
+      "하": 306
+    },
+    "id": 213,
+    "mid": "HipI9UhK",
+    "subCurriculum": "APEX",
+    "title": "유리함수와 합성함수, 역함수",
+    "url": "https://v.kr.kollus.com/HipI9UhK?"
+  },
+  {
+    "chapter": 45,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 319,
+      "중": 318,
+      "하": 316
+    },
+    "id": 214,
+    "mid": "jWBK9Uwz",
+    "subCurriculum": "APEX",
+    "title": "유리함수 자투리",
+    "url": "https://v.kr.kollus.com/jWBK9Uwz?"
+  },
+  {
+    "chapter": 46,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 346,
+      "중": 340
+    },
+    "id": 215,
+    "mid": "hcOkbqSR",
+    "subCurriculum": "APEX",
+    "title": "[고] 유리함수의 해석",
+    "url": "https://v.kr.kollus.com/hcOkbqSR?"
+  },
+  {
+    "chapter": 47,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 357,
+      "중": 356,
+      "하": 356
+    },
+    "id": 216,
+    "mid": "JJX8brpR",
+    "subCurriculum": "APEX",
+    "title": "무리식의 계산",
+    "url": "https://v.kr.kollus.com/JJX8brpR?"
+  },
+  {
+    "chapter": 48,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 366,
+      "중": 363,
+      "하": 361
+    },
+    "id": 217,
+    "mid": "Y2pMbsxg",
+    "subCurriculum": "APEX",
+    "title": "무리함수의 그래프",
+    "url": "https://v.kr.kollus.com/Y2pMbsxg?"
+  },
+  {
+    "chapter": 49,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 383,
+      "중": 384,
+      "하": 376
+    },
+    "id": 218,
+    "mid": "j3EbbsxP",
+    "subCurriculum": "APEX",
+    "title": "무리함수 그래프의 활용",
+    "url": "https://v.kr.kollus.com/j3EbbsxP?"
+  },
+  {
+    "chapter": 50,
+    "curriculum": "공수2",
+    "exNum": {
+      "상": 397,
+      "중": 400
+    },
+    "id": 219,
+    "mid": "lSBIdhhi",
+    "subCurriculum": "APEX",
+    "title": "[고] 무리함수의 해석",
+    "url": "https://v.kr.kollus.com/lSBIdhhi?"
+  },
+  {
+    "chapter": 11,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 163,
+      "중": 163,
+      "하": 162
+    },
+    "id": 220,
+    "mid": "rxE2kuJT",
+    "subCurriculum": "APEX",
+    "title": "지수함수의 활용",
+    "url": "https://v.kr.kollus.com/rxE2kuJT?"
+  },
+  {
+    "chapter": 14,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 206,
+      "중": 205,
+      "하": 199
+    },
+    "id": 221,
+    "mid": "644pkuJU",
+    "subCurriculum": "APEX",
+    "title": "로그함수의 그래프와 길이",
+    "url": "https://v.kr.kollus.com/644pkuJU?"
+  },
+  {
+    "chapter": 15,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 209,
+      "중": 209,
+      "하": 209
+    },
+    "id": 222,
+    "mid": "8N1nkuJU",
+    "subCurriculum": "APEX",
+    "title": "로그함수의 최대최소",
+    "url": "https://v.kr.kollus.com/8N1nkuJU?"
+  },
+  {
+    "chapter": 17,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 245,
+      "중": 244,
+      "하": 241
+    },
+    "id": 223,
+    "mid": "jzhynneM",
+    "subCurriculum": "APEX",
+    "title": "로그함수와 방부등식",
+    "url": "https://v.kr.kollus.com/jzhynneM?"
+  },
+  {
+    "chapter": 19,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 268,
+      "중": 266,
+      "하": 263
+    },
+    "id": 224,
+    "mid": "uZjBnng1",
+    "subCurriculum": "APEX",
+    "title": "일반각",
+    "url": "https://v.kr.kollus.com/uZjBnng1?"
+  },
+  {
+    "chapter": 23,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 313,
+      "중": 314,
+      "하": 308
+    },
+    "id": 225,
+    "mid": "9KBXvJPV",
+    "subCurriculum": "APEX",
+    "title": "삼각함수의 활용",
+    "url": "https://v.kr.kollus.com/9KBXvJPV?"
+  },
+  {
+    "chapter": 25,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 26,
+      "중": 25,
+      "하": 25
+    },
+    "id": 226,
+    "mid": "Xz3FvKd0",
+    "subCurriculum": "APEX",
+    "title": "삼각함수의 그래프 활용",
+    "url": "https://v.kr.kollus.com/Xz3FvKd0?"
+  },
+  {
+    "chapter": 24,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 23,
+      "중": 14,
+      "하": 11
+    },
+    "id": 227,
+    "mid": "Xz3FvKd0",
+    "subCurriculum": "APEX",
+    "title": "삼각함수의 그래프",
+    "url": "https://v.kr.kollus.com/SlUAvLKi?"
   }
 ]

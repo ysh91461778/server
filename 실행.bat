@@ -33,6 +33,6 @@ start "" /B py -3 app.py
 
 REM 6) 3초 대기 후 브라우저 열기
 timeout /t 3 >nul
-start "" "http://192.168.0.39:8003/"
+start "" "http://192.168.0.5:8003/"
 
 exit /b

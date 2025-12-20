@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>학생 로그인</title>
+
+  <style>
+    :root{
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --line:#e5e7eb;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#e0e7ff;
+      --danger:#dc2626;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI,
+                   Apple SD Gothic Neo, Noto Sans KR, sans-serif;
+      padding:24px;
+    }
+
+    .layout{
+      width:min(1120px, 96vw);
+      display:flex;
+      gap:40px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* ✅ 안 잘리게 전체 보이도록 contain */
+    .hero{
+      flex: 1 1 640px;
+      height: 560px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,.06);
+
+      background-image: url("/files/landing.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;   /* ⭐ 핵심 */
+
+      background-color: #fff;     /* 여백 색 */
+      box-shadow: 0 10px 30px rgba(0,0,0,.10);
+    }
+
+    .card{
+      flex: 0 0 420px;
+      width:420px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:24px 20px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    }
+
+    h1{
+      margin:0 0 6px;
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .sub{
+      margin:0 0 18px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    label{
+      display:block;
+      margin:12px 0 6px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    input{
+      width:100%;
+      padding:11px 12px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      font-size:14px;
+    }
+
+    input:focus{
+      outline:none;
+      border-color:var(--accent);
+      box-shadow:0 0 0 2px var(--accent-soft);
+    }
+
+    .row{
+      display:flex;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    button{
+      flex:1;
+      padding:11px;
+      border-radius:8px;
+      border:1px solid transparent;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .btn{
+      background:var(--accent);
+      color:#fff;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+    }
+
+    .btn2{
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    .btn2:hover{
+      background:#f9fafb;
+    }
+
+    .spinner{
+      display:none;
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .msg{
+      margin-top:12px;
+      font-size:13px;
+    }
+
+    .msg.ok{ color:#059669; }
+    .msg.err{ color:var(--danger); }
+
+    .mini{
+      margin-top:14px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    @media (max-width: 980px){
+      .layout{
+        flex-direction:column;
+        gap:18px;
+      }
+      .hero{
+        width:100%;
+        height:240px;
+        flex: 0 0 auto;
+      }
+      .card{
+        width:min(420px, 92vw);
+        flex: 0 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="hero" aria-label="landing"></div>
+
+    <div class="card">
+      <h1>학생 로그인</h1>
+      <p class="sub">
+        아이디 예: <b>aaa123</b> · 초기 비밀번호: <b>1234</b>
+      </p>
+
+      <label for="sid">아이디</label>
+      <input id="sid" autocomplete="username" placeholder="aaa123">
+
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" autocomplete="current-password" placeholder="1234">
+
+      <div class="row">
+        <button class="btn" id="loginBtn">로그인</button>
+        <button class="btn2" id="clearBtn" type="button">자동로그인 해제</button>
+      </div>
+
+      <div class="row" style="margin-top:10px">
+        <button class="btn2" id="goBtn" type="button">학습 페이지로 이동</button>
+      </div>
+
+      <div class="spinner" id="spin">처리 중…</div>
+      <div class="msg" id="msg"></div>
+
+      <div class="mini">
+        · 로그인 상태는 이 기기에 저장됩니다<br>
+        · 로그인 후 메인에서 아이디 / 비밀번호 변경 가능
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>
+  

@@ -4,143 +4,190 @@
 <head>
   <meta charset="utf-8">
   <title>관리자 페이지</title>
-  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- 전역 테마/폰트 -->
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- 관리자 전용 스타일 -->
+  <link rel="stylesheet" href="/css/admin.css">
+
+  <!-- FullCalendar -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+  <!-- SortableJS (행 드래그 정렬) -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 </head>
 
-<body>
+<body class="admin">
+  <!-- 상단바 -->
   <header class="topbar">
-    <h1>
-      오늘 학생 <span id="todayCount">0명</span> <button id="extraBtn">+ 보강</button>
-      <button id="exportLogs" style="margin-left:8px;">내보내기</button>
-    </h1>
-    <label class="switch">
+    <div class="topbar-left">
+      <h1 class="topbar-title">
+        오늘 학생 <span id="todayCount" class="pill">0 명</span><small id="todaySlotCounts" class="muted"
+          style="margin-left:8px"></small>
+        <button id="extraBtn" class="btn">+ 보강</button>
+        <button id="exportLogs" class="btn secondary">내보내기</button>
+        <button id="exportTodayCsv" class="btn secondary">오늘 명단 다운로드</button>
+      </h1>
+    </div>
+
+    <nav class="topbar-nav" aria-label="주요 링크">
+      <a href="/video-manage" class="btn secondary" target="_blank" rel="noopener noreferrer">영상관리</a>
+      <a href="/students" target="_blank" rel="noopener noreferrer">전체학생</a>
+      <a href="/school-cal" target="_blank" rel="noopener noreferrer">학사일정</a>
+      <a href="/tests" target="_blank" rel="noopener noreferrer">테스트관리</a>
+      <a href="/file-manage" target="_blank" rel="noopener noreferrer">파일</a>
+    </nav>
+
+    <label class="switch" title="다크모드">
       <input type="checkbox" id="darkToggle">
       <span class="slider"></span>
     </label>
   </header>
 
-  <div id="todayWrap">Loading…</div>
+  <!-- 본문 -->
+  <main class="page" role="main">
+    <!-- 왼쪽: 오늘/완료 -->
+    <section aria-label="오늘 학생 & 자유의 몸">
+      <div class="card" aria-labelledby="today-title">
+        <div class="card-head">
+          <h2 id="today-title">오늘 학생</h2>
+        </div>
+        <div id="todayWrap">Loading…</div>
+        <button id="absentRecoverBtn" class="btn secondary mt-10">결석 복구</button>
+      </div>
 
-  <h2 style="display:flex; align-items:center; gap:8px">
-    자유의 몸
-    <button id="clearAllBtn" class="btn" style="height:32px;padding:4px 8px">
-      기록 완료
-    </button>
-  </h2>
-  <div id="doneWrap">Loading...</div>
+      <div class="spacer-10"></div>
 
-  <h2>보강 필요</h2>
-  <div id="absentWrap">– 결석을 표시하면 여기에 나타날 예정입니다 –</div>
+      <div class="card">
+        <div class="card-head between">
+          <h2>자유의 몸</h2>
+          <button id="clearAllBtn" class="btn">기록 완료</button>
+        </div>
+        <div id="doneWrap" class="mt-8">Loading...</div>
+      </div>
+    </section>
+
+    <!-- 오른쪽: 캘린더 + 공지 (고정폭 칼럼) -->
+    <section aria-label="캘린더 & 공지">
+      <div class="card">
+        <div class="card-head">
+          <h2 class="row gap-8">
+            <span>캘린더</span>
+            <span class="badge" id="calTodayBadge" hidden></span>
+          </h2>
+        </div>
+
+        <!-- ▼ 시간대별 학생 수 그래프 자리 -->
+        <div id="timeGraphWrap" class="mt-8">Loading...</div>
+
+        <!-- ▼ 기존 캘린더 -->
+        <div id="calendar" class="mt-8"></div>
+      </div>
+
+
+      <div class="spacer-10"></div>
+
+      <div class="card">
+        <div class="card-head between">
+          <h2>공지 현황</h2>
+          <div class="row gap-6">
+            <button id="newAnnBtn" class="btn">공지 만들기</button>
+            <button id="annRefresh" class="btn secondary">새로고침</button>
+          </div>
+        </div>
+        <div id="annBoard" class="ann-grid mt-10"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 모달들 (ID/구조 보존) ===== -->
+
+  <!-- 출결 보기 모달 -->
+  <div id="attendModal" class="modal-backdrop">
+    <div class="modal-panel narrow">
+      <button id="attendClose" class="modal-close">×</button>
+      <h3 id="attendDateTitle" class="mt-0"></h3>
+      <ul id="attendList" class="list"></ul>
+      <div class="modal-actions">
+        <button id="addExtraBtn" class="btn">보강 추가</button>
+        <button id="markAbsentBtn" class="btn">결석 처리</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 학생 선택 모달 -->
+  <div id="selectionModal" class="modal-backdrop">
+    <div class="modal-panel narrow column">
+      <button id="selectionClose" class="modal-close">×</button>
+      <h3 id="selectionTitle" class="mt-0">학생 선택</h3>
+      <ul id="selectionList" class="list flex-1 scroll"></ul>
+      <div class="modal-footer">
+        <button id="selectionSave" class="btn">확인</button>
+      </div>
+    </div>
+  </div>
 
   <!-- 수업 기록 모달 -->
-  <div id="logModal"
-    style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);justify-content:center;align-items:center;z-index:9999">
-    <div style="background:#fff;padding:1rem;border-radius:8px;max-width:400px;width:100%">
-      <h3 id="logTitle" style="margin-top:0"></h3>
-      <label>특이사항:<textarea id="logNotes" rows="2" style="width:100%" placeholder=""></textarea></label>
-      <div id="logProgress" class="progress-grid"></div>
-      <label>숙제:<textarea id="logHw" rows="2" style="width:100%"></textarea></label>
-      <div style="text-align:right;margin-top:.6rem">
+  <div id="logModal" class="modal-backdrop">
+    <div class="modal-panel wide">
+      <h3 id="logTitle" class="mt-0"></h3>
+      <label>특이사항:
+        <textarea id="logNotes" rows="2" placeholder=""></textarea>
+      </label>
+      <div id="logProgress" class="progress-grid mt-8"></div>
+      <label>숙제:
+        <textarea id="logHw" rows="2"></textarea>
+      </label>
+      <div class="modal-actions">
         <button id="logSave" class="btn">저장</button>
-        <button type="button" id="doneBtn" class="btn">완료</button>
-        <button id="logClose" class="btn">닫기</button>
+        <button type="button" id="logdoneBtn" class="btn">완료</button>
+        <button id="logClose" class="btn secondary">닫기</button>
       </div>
     </div>
   </div>
 
   <!-- 요일 학생 수 확인 모달 -->
-  <div id="yoilModal"
-    style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;justify-content:center;align-items:center">
-    <div
-      style="background:#fff;padding:1rem;border-radius:8px;width:260px;max-height:80%;overflow:auto;display:flex;flex-direction:column">
-      <div id="yoilTitle" style="font-weight:bold;font-size:16px;margin-bottom:.5rem">요일 - 0명</div>
-      <textarea id="yoilList" readonly
-        style="flex:1;min-height:200px;padding:8px;font-size:14px;border:1px solid #ccc;border-radius:4px"></textarea>
-      <button onclick="document.getElementById('yoilModal').style.display='none'"
-        style="margin-top:.8rem;align-self:flex-end">닫기</button>
+  <div id="yoilModal" class="modal-backdrop">
+    <div class="modal-panel tiny column">
+      <div id="yoilTitle" class="modal-title">요일 - 0명</div>
+      <textarea id="yoilList" readonly class="yoil-list"></textarea>
+      <button class="btn secondary mt-8" onclick="document.getElementById('yoilModal').style.display='none'">닫기</button>
     </div>
   </div>
 
-  <h2>신규 학생</h2>
-  <div class="form-row">
-    <input type="text" id="stuName" placeholder="이름">
-    <select id="curSel">
-      <option>공수1</option>
-      <option>공수2</option>
-      <option>미적분1</option>
-      <option>미적분2</option>
-      <option>대수</option>
-      <option>기하</option>
-      <option>확통</option>
-    </select>
-    <select id="subCurSel">
-      <option value="">세부과정 선택</option>
-    </select>
-    <input type="text" id="d1" placeholder="요일1">
-    <input type="text" id="d2" placeholder="요일2">
-    <input type="text" id="d3" placeholder="요일3">
-    <select id="levelSel">
-      <option value="">레벨 선택</option>
-      <option value="상">상</option>
-      <option value="중">중</option>
-      <option value="하">하</option>
-    </select>
-    <button id="addStu" class="btn">추가</button>
-  </div>
+  <!-- 공지 작성 모달 -->
+  <div id="annModal" class="modal-backdrop">
+    <div class="modal-panel narrow">
+      <h3 class="mt-0">공지 작성</h3>
 
-  <h2>영상 관리 <button id="toggleVid" class="btn" style="margin-left:1rem;">접기</button></h2>
-  <section id="videoSection">
-    <div class="form-row">
-      <select id="vCur"></select>
-      <select id="subVidSel">
-        <option value="">세부과정 선택</option>
-      </select>
-      <input type="number" id="exNumHigh" placeholder="상">
-      <input type="number" id="exNumMid" placeholder="중">
-      <input type="number" id="exNumLow" placeholder="하">
-      <input id="vChap" type="number" min="1" placeholder="챕터">
-      <input type="text" id="vTitle" placeholder="제목">
-      <input type="text" id="vUrl" placeholder="https://kollus…">
-      <button id="addVid" class="btn">추가</button>
-      <button id="saveVid" class="btn">저장</button>
+      <label>제목<br><input id="annTitle"></label><br>
+      <label>내용<br><textarea id="annContent" rows="5"></textarea></label><br>
+
+      <fieldset class="ann-fieldset">
+        <legend>투표 (옵션)</legend>
+        <label>질문<br><input id="pollQ"></label><br>
+        <label>보기(줄바꿈 구분)<br><textarea id="pollOpts" rows="3"></textarea></label><br>
+        <label class="row gap-6"><input type="checkbox" id="pollMulti"> 다중 선택 허용</label>
+      </fieldset>
+
+      <fieldset class="ann-fieldset">
+        <legend>설문 (옵션, 간단버전)</legend>
+        <small class="muted">한 줄에 문항 라벨만 적으세요. <b>필수</b>면 라벨 끝에 <b>*</b>를 붙이세요.<br>예) 연락처*<br>예) 보강 희망 시간대</small>
+        <textarea id="surveyLines" rows="4" placeholder="연락처*\n보강 희망 시간대\n추가 요청사항"></textarea>
+      </fieldset>
+
+      <label class="row gap-6"><input type="checkbox" id="annRequire"> 투표/설문을 완료해야 사라지게 하기</label><br>
+
+      <div class="modal-actions">
+        <button id="annSave" class="btn">저장</button>
+        <button id="annClose" class="btn secondary">닫기</button>
+      </div>
     </div>
-    <table id="vidTable">
-      <thead>
-        <tr>
-          <th style="width:40px">ID</th>
-          <th style="width:70px">커리큘럼</th>
-          <th style="width:40px">챕</th>
-          <th>제목</th>
-          <th style="min-width:260px">URL</th>
-          <th style="width:40px">Del</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </section>
-
-  <h2>자료 업로드</h2>
-  <div class="form-row">
-    <select id="mCur"></select>
-    <input type="file" id="mFile" accept=".pdf,.ppt,.pptx">
-    <button id="upMat" class="btn">업로드</button>
   </div>
 
-  <table id="matTable">
-    <thead>
-      <tr>
-        <th>커리큘럼</th>
-        <th>파일</th>
-        <th>지정</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
-  <p style="margin-top:2rem"><a href="/students">전체 학생</a></p>
-
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
-  <script defer src="/js/admin.js"></script>
+  <!-- 메인 스크립트 -->
+  <script type="module" src="/js/admin/main.js"></script>
 </body>
 
 </html>

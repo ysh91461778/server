@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>학교 일정 관리</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .tool-row{display:flex;gap:.5rem;align-items:center;margin:.6rem 0 1rem}
+    .tbl{width:100%;border-collapse:collapse}
+    .tbl th,.tbl td{border:1px solid #e5e7eb;padding:8px}
+    .tbl th{background:#f8fafc}
+    body.dark .tbl th{background:#0f172a;color:#e2e8f0;border-color:#334155}
+    body.dark .tbl td{border-color:#334155}
+    .num{width:9rem}
+    .sname{min-width:220px}
+    .btn{padding:6px 10px;border-radius:6px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer}
+    body.dark .btn{background:#0b1220;border-color:#334155;color:#e2e8f0}
+    input[type="text"]{width:100%;box-sizing:border-box;height:34px;padding:0 8px}
+    /* 보기 전환 버튼 */
+    .seg{display:inline-flex;border:1px solid #cbd5e1;border-radius:8px;overflow:hidden}
+    .seg button{padding:6px 10px;border:0;background:#f8fafc;cursor:pointer}
+    .seg button.active{background:#3b82f6;color:#fff}
+    body.dark .seg{border-color:#334155}
+    body.dark .seg button{background:#0b1220;color:#e2e8f0}
+    body.dark .seg button.active{background:#2563eb;color:#fff}
+  </style>
+</head>
+<body>
+  <header class="topbar" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.0rem">
+    <h1 style="margin:0">학교 일정 관리</h1>
+    <label class="switch" style="margin:0">
+      <input type="checkbox" id="darkToggle"><span class="slider"></span>
+    </label>
+  </header>
+
+  <p><a href="/admin">← 관리자 페이지로 돌아가기</a></p>
+
+  <div class="tool-row">
+    <button id="addRow" class="btn">+ 행 추가</button>
+    <button id="saveBtn" class="btn">저장</button>
+    <div style="flex:1"></div>
+    <!-- ▶ 보기 전환 -->
+    <div class="seg" id="viewSeg">
+      <button type="button" data-mode="mid"   class="active">중간</button>
+      <button type="button" data-mode="final">기말</button>
+    </div>
+    <span id="status" style="margin-left:.5rem;opacity:.8"></span>
+  </div>
+
+  <div id="wrap">
+    <table class="tbl" id="calTable">
+      <thead><tr id="theadRow"></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    // 다크모드
+    (function(){
+      const t=document.getElementById('darkToggle');
+      if(localStorage.theme==='dark'){document.body.classList.add('dark');t.checked=true;}
+      t.addEventListener('change',()=>{document.body.classList.toggle('dark',t.checked);localStorage.theme=t.checked?'dark':'light';});
+    })();
+  </script>
+  <script defer src="/js/school-cal.js"></script>
+</body>
+</html>

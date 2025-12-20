@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>파일 관리</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    :root{ --line:#324255; --muted:#94a3b8; --accent:#3b82f6; --accent-opaque:rgba(59,130,246,.14); }
+    body{ margin:0 }
+    header{ display:flex; align-items:center; gap:10px; padding:12px 16px; border-bottom:1px solid var(--line) }
+    .top-right{ margin-left:auto; display:flex; align-items:center; gap:8px }
+    .pill{ background:#1f2937;color:#cbd5e1;border-radius:999px;padding:2px 8px }
+
+    /* 토글 버튼 */
+    .theme-btn{
+      border:1px solid var(--line);
+      background:transparent;
+      color:inherit;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    main.fm{
+      display:grid; grid-template-columns: 280px minmax(600px,1fr) 420px;
+      gap:12px; padding:12px; align-items:stretch; min-height:calc(100vh - 60px);
+    }
+    @media (max-width:1100px){ main.fm{ grid-template-columns:240px 1fr 360px } }
+    @media (max-width:900px){  main.fm{ grid-template-columns:1fr } }
+
+    .card{ background:var(--card-dark); border:1px solid var(--line); border-radius:12px; padding:12px; display:flex; flex-direction:column; min-height:0 }
+    body:not(.dark) .card{ background:var(--card-light) }
+
+    #tree{ max-height:calc(100vh - 170px); overflow:auto; font-size:14px }
+    .tree-row{ padding:4px 6px; border-radius:6px; cursor:pointer }
+    .tree-row.sel div{ background:var(--accent-opaque) }
+    .tree-row .drop-target{ outline:2px solid var(--accent); border-radius:6px }
+
+    .dropzone{ border:2px dashed var(--line); border-radius:12px; padding:16px; text-align:center; margin-bottom:8px }
+    .dropzone.drag{ border-color:var(--accent) }
+    .bar{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin:6px 0 10px }
+    #list{ overflow:auto }
+    table{ width:100%; border-collapse:collapse }
+    th,td{ padding:8px; border-bottom:1px solid var(--line) }
+    .right{ text-align:right }
+    #list tbody tr.sel{ background:rgba(59,130,246,.1) }
+
+    .btn{ border:none; background:#334155; color:#e5e7eb; border-radius:8px; padding:4px 8px; cursor:pointer }
+    .btn.primary{ background:#2563eb; color:#fff }
+    .btn.ghost{ background:transparent; border:1px solid var(--line) }
+    .btn.small{ padding:3px 7px; font-size:12px }
+
+    .seg{ display:flex; gap:6px; background:transparent; border:1px solid var(--line); border-radius:9px; padding:2px }
+    .seg .segbtn{ border:none; background:transparent; color:inherit; padding:6px 10px; border-radius:7px; cursor:pointer }
+    .seg .segbtn.on{ background:var(--accent-opaque); color:#cfe1ff }
+
+    .assign{ gap:10px }
+    .assign .box{ border:1px solid var(--line); border-radius:10px; padding:8px }
+    .lbl{ font-size:12px; opacity:.85; display:block; margin-bottom:4px }
+    .chips{ display:flex; gap:6px; flex-wrap:wrap }
+    .chip{ border:1px solid var(--line); border-radius:999px; padding:4px 10px; display:inline-flex; gap:6px; align-items:center; cursor:pointer }
+    .chip input{ margin:0 }
+    .two{ display:grid; grid-template-columns:1fr 1fr; gap:8px }
+    .list{ max-height:220px; overflow:auto; display:grid; grid-template-columns:1fr 1fr; gap:6px }
+    .list > label{ border:1px solid var(--line); border-radius:8px; padding:6px; display:flex; gap:8px; align-items:flex-start }
+    .muted{ opacity:.7 }
+    #amMatList.drop-target{ outline:2px dashed var(--accent); border-radius:10px }
+    #amCurList{ grid-template-columns:1fr }
+
+    /* ───────────── 라이트 모드 대응 추가 ───────────── */
+    body:not(.dark){
+      --bg:#f8fafc;
+      --card-light:#ffffff;
+      --text:#0f172a;
+      --line:#cbd5e1;
+      --accent:#3b82f6;
+      --accent-opaque:rgba(59,130,246,.12);
+      --muted:#64748b;
+    }
+
+    /* 카드 배경 및 테두리 */
+    body:not(.dark) .card{
+      background:var(--card-light);
+      border-color:var(--line);
+      color:var(--text);
+      box-shadow:0 4px 14px rgba(0,0,0,.05);
+    }
+
+    /* 헤더 */
+    body:not(.dark) header{
+      background:#ffffff;
+      border-bottom:1px solid var(--line);
+      color:var(--text);
+    }
+
+    /* pill */
+    body:not(.dark) .pill{
+      background:#e2e8f0;
+      color:#0f172a;
+    }
+
+    /* 버튼 */
+    body:not(.dark) .btn{
+      background:#e2e8f0;
+      color:#0f172a;
+      border:1px solid #cbd5e1;
+    }
+    body:not(.dark) .btn.primary{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+    }
+    body:not(.dark) .btn.ghost{
+      background:transparent;
+      border:1px solid var(--line);
+      color:#1e293b;
+    }
+
+    /* 드롭존 */
+    body:not(.dark) .dropzone{
+      border-color:var(--line);
+      background:#f1f5f9;
+      color:#1e293b;
+    }
+    body:not(.dark) .dropzone.drag{
+      border-color:var(--accent);
+      background:var(--accent-opaque);
+    }
+
+    /* 테이블 */
+    body:not(.dark) table{
+      color:#0f172a;
+    }
+    body:not(.dark) th{
+      background:#f1f5f9;
+      border-bottom:1px solid var(--line);
+    }
+    body:not(.dark) tr:hover td{
+      background:rgba(59,130,246,.06);
+    }
+
+    /* 선택 상태 */
+    body:not(.dark) #list tbody tr.sel{
+      background:rgba(59,130,246,.14);
+    }
+
+    /* 세그먼트 버튼 */
+    body:not(.dark) .seg{
+      border-color:var(--line);
+    }
+    body:not(.dark) .seg .segbtn.on{
+      background:var(--accent-opaque);
+      color:#1e40af;
+    }
+
+    /* 칩 */
+    body:not(.dark) .chip{
+      border-color:var(--line);
+      background:#f8fafc;
+      color:#1e293b;
+    }
+
+    /* 오른쪽 패널 박스 */
+    body:not(.dark) aside.card.assign .box{
+      background:#f9fafb;
+      border:1px solid #e2e8f0;
+    }
+
+    /* 텍스트 보조색 */
+    body:not(.dark) .muted{
+      color:#64748b;
+      opacity:1;
+    }
+
+    /* 드롭 대상 표시 */
+    body:not(.dark) #amMatList.drop-target{
+      outline:2px dashed var(--accent);
+    }
+  </style>
+</head>
+<body class="dark fm-page">
+  <header>
+    <h1 style="margin:0;font-size:18px">파일 관리</h1>
+    <span id="curPath" class="pill">/</span>
+
+    <div class="top-right">
+      <button id="themeToggle" class="theme-btn" aria-label="테마 전환">🌙</button>
+    </div>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <input id="newFolderName" placeholder="새 폴더명">
+      <button id="btnMake"   class="btn">폴더 생성</button>
+      <button id="btnRename" class="btn">이름 변경</button>
+      <button id="btnMove"   class="btn">선택 이동</button>
+      <button id="btnDelete" class="btn">선택 삭제</button>
+    </div>
+  </header>
+
+  <main class="fm">
+    <!-- 좌: 트리 -->
+    <aside class="card">
+      <div style="display:flex;gap:8px;margin-bottom:8px">
+        <button id="btnRefresh" class="btn">새로고침</button>
+      </div>
+      <div id="tree"></div>
+    </aside>
+
+    <!-- 가운데: 파일 -->
+    <section class="card">
+      <div class="dropzone" id="drop">
+        이 영역으로 파일을 드래그·드롭하거나
+        <input type="file" id="fileInput" multiple style="display:inline-block">
+        <button id="btnUpload" class="btn">업로드</button>
+      </div>
+
+      <div class="bar">
+        <div>
+          정렬:
+          <select id="sortSel" disabled>
+            <option>표 헤더(이름/크기/수정) 클릭</option>
+          </select>
+        </div>
+        <div class="muted">파일 행을 체크/드래그 선택 → 우클릭: 이름변경/이동/삭제/배정 담기</div>
+      </div>
+
+      <div id="list"></div>
+    </section>
+
+    <!-- 우: 배정 패널 -->
+    <aside class="card assign">
+      <div class="box">
+        <div class="lbl">모드</div>
+        <div class="seg">
+          <button id="modeAdd" class="segbtn on">➕ 추가(배정)</button>
+          <button id="modeRemove" class="segbtn">➖ 해제(빼기)</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="lbl">커리큘럼</div>
+        <select id="amCur"></select>
+      </div>
+
+      <div class="two">
+        <div class="box">
+          <div class="lbl">세부 커리큘럼</div>
+          <select id="amSub"><option value="">(전체)</option></select>
+        </div>
+        <div class="box">
+          <div class="lbl">레벨(복수)</div>
+          <div id="amLvWrap" class="chips"></div>
+          <button id="amLvAll" class="btn small" style="margin-top:6px">레벨 전체</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <b>대상 학생 <span id="amStuCount" class="muted">(0명)</span></b>
+        </div>
+        <div id="amStuList" class="list" style="grid-template-columns:1fr"></div>
+      </div>
+
+      <!-- 추가(배정) -->
+      <div class="box" id="boxAdd">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <b>배정할 자료(드래그·드롭)</b>
+          <div><button id="amPickClear" class="btn small ghost">비우기</button></div>
+        </div>
+        <div id="amMatList" class="list"></div>
+      </div>
+
+      <!-- 해제(빼기) -->
+      <div class="box" id="boxRemove" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <b>현재 배정된 자료(합집합)</b>
+          <div>
+            <button id="rmAll" class="btn small">전체선택</button>
+            <button id="rmNone" class="btn small ghost">해제</button>
+          </div>
+        </div>
+        <div id="amCurList" class="list"></div>
+      </div>
+
+      <div style="display:flex;gap:8px;justify-content:flex-end">
+        <button id="amDoAssign" class="btn primary">실행</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js" defer></script>
+  <script type="module" src="/js/file-manage.js"></script>
+
+  <script>
+    // ── 테마 초기화
+    (function initTheme(){
+      try{
+        const saved = localStorage.getItem('theme'); // 'dark' | 'light'
+        if (saved === 'light') document.body.classList.remove('dark');
+        else document.body.classList.add('dark'); // 기본 다크
+      }catch{}
+      updateThemeIcon();
+    })();
+
+    // ── 토글 버튼
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', ()=>{
+      const isDark = document.body.classList.toggle('dark');
+      try{ localStorage.setItem('theme', isDark ? 'dark' : 'light'); }catch{}
+      updateThemeIcon();
+    });
+
+    function updateThemeIcon(){
+      const isDark = document.body.classList.contains('dark');
+      const el = document.getElementById('themeToggle');
+      if (el) el.textContent = isDark ? '🌙' : '☀️';
+      // 헤더/버튼 대비 유지(라이트에서 더 선명)
+      document.documentElement.style.setProperty('--line', isDark ? '#324255' : '#cbd5e1');
+    }
+  </script>
+</body>
+</html>
