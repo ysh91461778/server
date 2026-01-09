@@ -3,7 +3,8 @@
 // - 챕터 번호 기준 정렬
 // - sid 키 정규화
 // - 드래그 다중 선택 유지
-// - ✅ updates 저장 포맷을 "배열"로 통일 (핵심 수정)
+// - ✅ updates 저장 포맷을 "배열"로 통일
+// - ✅ A:Ble 자동배정 1개 / APEX 자동배정 2개
 
 import { $, CT, toast, todayLocalKey } from '../core/utils.js';
 import { state } from '../core/state.js';
@@ -38,7 +39,7 @@ const byChapterAsc = (a, b) =>
   String(a.title || '').localeCompare(String(b.title || ''), 'ko') ||
   String(a.mid).localeCompare(String(b.mid));
 
-/* ───────────── updates 읽기/쓰기 (핵심 수정) ───────────── */
+/* ───────────── updates 읽기/쓰기 ───────────── */
 
 // ✅ 읽기는 배열 / {videos:[]} 둘 다 허용
 function readAssignFor(updates, day, sid) {
@@ -52,7 +53,7 @@ function readAssignFor(updates, day, sid) {
   return [];
 }
 
-// ✅ 쓰기는 무조건 배열로만 저장 (중요)
+// ✅ 쓰기는 무조건 배열로만 저장
 function writeAssignFor(updates, day, sid, arr) {
   const k = String(sid);
   updates[day] = updates[day] || {};
@@ -132,7 +133,16 @@ export function initVideoModal() {
         if (st === 'done' || st === 'skip') blocked[mid] = true;
       }
 
-      const maxAssign = (stu.subCurriculum === 'APEX') ? 3 : 2;
+      // ✅ 자동배정 개수 규칙
+      // - A:Ble: 1개
+      // - APEX : 2개
+      // - 그 외 : 2개
+      const subRaw = (stu.subCurriculum || '').trim();
+      const maxAssign =
+        subRaw === 'A:Ble' ? 1 :
+        subRaw === 'APEX'  ? 2 :
+        2;
+
       const toAssign = [];
       for (const v of curVids) {
         if (!blocked[v.mid]) toAssign.push(String(v.mid));
@@ -173,7 +183,7 @@ export function initVideoModal() {
     }
   });
 
-  /* ───────────── 드래그 다중 선택 (기존 그대로) ───────────── */
+  /* ───────────── 드래그 다중 선택 ───────────── */
   let pointerDown = false;
   let dragActive = false;
   let dragCheckValue = null;

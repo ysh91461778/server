@@ -3,32 +3,26 @@
 // - 기준: 오늘 학생 명단(결석/완료/보강 반영)
 // - 각 학생은 예정 등원시간 ~ +4시간까지 학원에 있다고 가정
 // - ✅ 보강은 state.extra 대신 /api/extra-attend 최신을 기준으로 집계(누락 방지)
+// - ✅ 주말 슬롯(토1/2/3, 일1/2/3) 은 /api/weekend-slots(날짜별 편집값) 반영 (today.js와 동일)
 
 import { state } from '../core/state.js';
 import { todayLocalKey } from '../core/utils.js';
 
-const WCHR = '일월화수목금토';
+const WCHR = '일월화수목금토';x
 const ARRIVE_PREFIX = 'arrive_time:';
 
-// today.js 와 동일한 기본 시간 매핑
 const ARRIVE_TIME_MAP = {
-  // 토요일
-  '토1': '10:00',
-  '토2': '14:00',
-  '토3': '18:00',
-
-  // 일요일
-  '일1': '10:00',
-  '일2': '14:00',
-  '일3': '18:00',
-
-  // 평일 공통
-  '월': '18:00',
-  '화': '18:00',
-  '수': '18:00',
-  '목': '18:00',
-  '금': '18:00',
+  '토1': '13:00', '토2': '18:00',
+  '일1': '13:00', '일2': '18:00',
+  '월1': '18:00', '월2': '18:00',
+  '화1': '18:00', '화2': '18:00',
+  '수1': '18:00', '수2': '18:00',
+  '목1': '18:00', '목2': '18:00',
+  '금1': '18:00', '금2': '18:00',
 };
+
+
+let WEEKEND_SLOTS = {}; // { "YYYY-MM-DD": { sid: 1|2|3 | [1,2,3] } }
 
 function injectStyles() {
   if (document.getElementById('timeGraphStyles')) return;
@@ -127,7 +121,16 @@ function getArriveOverride(dateKey, sid) {
   return m[String(sid)] ?? '';
 }
 
-/* 공용 헬퍼들 (today.js 축약 버전) */
+/* ✅ weekend-slots 로드 (today.js와 동일 소스) */
+async function loadWeekendSlots() {
+  try {
+    WEEKEND_SLOTS = await fetch('/api/weekend-slots', { cache: 'no-store' }).then(r => r.json());
+    if (!WEEKEND_SLOTS || typeof WEEKEND_SLOTS !== 'object') WEEKEND_SLOTS = {};
+  } catch {
+    WEEKEND_SLOTS = {};
+  }
+}
+
 function dayValues(stu) {
   return Object.keys(stu).filter(k => /^day\d+$/.test(k) && stu[k])
     .sort((a, b) => parseInt(a.slice(3), 10) - parseInt(b.slice(3), 10))
@@ -137,10 +140,40 @@ function hasWeekday(stu, wchr) {
   return dayValues(stu).some(v => String(v).startsWith(wchr));
 }
 
+function yoilOf(dateStr) {
+  return WCHR[new Date(dateStr).getDay()];
+}
+
+/* ✅ today.js 방식으로 해당 날짜/학생 슬롯 추출 (연강 지원) */
+function getSlots(dateStr, sid, stu) {
+  sid = String(sid);
+  const raw = WEEKEND_SLOTS?.[dateStr]?.[sid];
+
+  if (Array.isArray(raw)) {
+    return raw.filter(n => Number.isInteger(n)).sort((a, b) => a - b);
+  }
+  if (Number.isInteger(raw)) return [raw];
+
+  const w = yoilOf(dateStr);
+  if (w !== '토' && w !== '일') return [];
+
+  // fallback: 학생 day값에서 추출
+  const nums = dayValues(stu)
+    .filter(v => String(v).startsWith(w))
+    .map(v => {
+      const m = String(v).match(/\d+/);
+      return m ? parseInt(m[0], 10) : null;
+    })
+    .filter(n => Number.isInteger(n));
+
+  if (nums.length) return Array.from(new Set(nums)).sort((a, b) => a - b);
+  return [];
+}
+
 /* 예정 등원 시간 계산 */
 function plannedTimeFor(dateStr, stu) {
   if (!stu) return '';
-  const w = WCHR[new Date(dateStr).getDay()];
+  const w = yoilOf(dateStr);
 
   // 1) localStorage override (오늘표에서 직접 수정한 시간)
   const ov = getArriveOverride(dateStr, stu.id);
@@ -155,16 +188,11 @@ function plannedTimeFor(dateStr, stu) {
     if (vt) return vt;
   }
 
-  // 3) 주말: 슬롯 기반 기본값
+  // 3) 주말: ✅ 날짜별 weekend-slots 우선 반영
   if (w === '토' || w === '일') {
-    const nums = dayValues(stu)
-      .filter(v => String(v).startsWith(w))
-      .map(v => {
-        const m = String(v).match(/\d+/);
-        return m ? parseInt(m[0], 10) : null;
-      })
-      .filter(n => Number.isInteger(n));
-    const minSlot = nums.length ? Math.min(...nums) : null;
+    const slots = getSlots(dateStr, stu.id, stu);
+    const minSlot = slots.length ? Math.min(...slots) : null;
+
     if (minSlot != null) {
       const key = `${w}${minSlot}`;
       if (ARRIVE_TIME_MAP[key]) return ARRIVE_TIME_MAP[key];
@@ -198,23 +226,20 @@ async function loadExtraAttendMap() {
   }
 }
 
-/* 특정 날짜 기준 오늘 학생 명단 (완료는 제외X, 결석만 제외, 보강 포함) */
+/* 특정 날짜 기준 학생 명단 (결석만 제외, 보강 포함, 완료 제외X) */
 async function computeListForGraph(dateStr) {
   const wchr = WCHR[new Date(dateStr).getDay()];
   const studs = state.students || [];
   const absentByDate = state.absentByDate || {};
 
-  // ✅ 보강은 서버 최신 기준
   const extraMap = await loadExtraAttendMap();
 
-  // 정규 + 보강
   const regular = studs.filter(s => hasWeekday(s, wchr));
   const extraIds = (extraMap[dateStr] || []).map(String);
   const extraStudents = extraIds
     .map(id => studs.find(s => String(s.id) === id))
     .filter(Boolean);
 
-  // 중복 제거
   const seen = new Set();
   let list = [...regular, ...extraStudents].filter(s => {
     const id = String(s.id);
@@ -223,11 +248,9 @@ async function computeListForGraph(dateStr) {
     return true;
   });
 
-  // 결석만 제외
   const absentSet = new Set((absentByDate[dateStr] || []).map(String));
   list = list.filter(s => !absentSet.has(String(s.id)));
 
-  // 완료인 학생은 제외하지 않는다!
   return list;
 }
 
@@ -278,7 +301,6 @@ function formatHourRange(h) {
   return `${h1}시~${h2}시`;
 }
 
-/* 실제 DOM 렌더 공용 함수 */
 function renderTimeGraphInto(dateStr, list, wrap, emptyLabel) {
   const slots = buildSlots(dateStr, list);
 
@@ -323,6 +345,10 @@ async function renderTimeGraph() {
   if (!wrap) return;
 
   const today = todayLocalKey();
+
+  // ✅ weekend-slots 먼저 로드 (오늘표 편집 반영)
+  await loadWeekendSlots();
+
   const list = await computeListForGraph(today);
   renderTimeGraphInto(today, list, wrap, '(오늘 학생 없음)');
 }
@@ -337,12 +363,9 @@ export function renderTimeGraphForDate(dateStr, students, wrapId = 'timeGraphWra
 }
 
 export function initTimeGraph() {
-  // 초기 렌더
   renderTimeGraph();
 
-  // 오늘표 갱신(admin:refresh) 할 때마다 같이 다시 계산
   document.addEventListener('admin:refresh', () => {
     renderTimeGraph();
   });
 }
-  

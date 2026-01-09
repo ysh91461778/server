@@ -54704,18 +54704,48 @@
   },
   "2025-12-19": {
     "null": {
-      "0FbXydJS": "done",
-      "8mGsydJS": "done",
-      "G4vDydJS": "done",
-      "Ll5lydJS": "done",
-      "UPDkydJS": "done",
-      "c5PxydJS": "done",
-      "fzzfydJS": "done",
-      "ipsqydJS": "done",
-      "kLntydJS": "done"
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "곽교림265": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
     },
     "김태준033": {
       "uDK9znMh": "done"
+    },
+    "김태희646": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남보영031": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남소영220": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박성준439": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "배이현940": {
+      "uDK9znMh": "done"
+    },
+    "백지호424": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "양연준902": {
+      "uDK9znMh": "interrupted"
     },
     "오세현078": {
       "Eq6lyGzt": "done",
@@ -54725,16 +54755,26 @@
       "cBwPznVt": "done",
       "shdbzLTz": "done"
     },
-    "이현우149": {
-      "0FbXydJS": "done",
-      "8mGsydJS": "done",
-      "G4vDydJS": "done",
-      "Ll5lydJS": "done",
-      "UPDkydJS": "done",
-      "c5PxydJS": "done",
-      "fzzfydJS": "done",
-      "ipsqydJS": "done",
-      "kLntydJS": "done"
+    "이정무756": {},
+    "임하영964": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "장서윤583": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "주아린938": {
+      "4AkxxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "interrupted"
     },
     "황지훈457": {
       "44omxR9g": "done",
@@ -54752,58 +54792,4037 @@
       "by5yxR9g": "done",
       "rbtDxR9g": "done",
       "sXRSxR9g": "done"
+    }
+  },
+  "2025-12-20": {
+    "강규현849": {
+      "BPPuznMh": "none",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "강지후347": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "권태은523": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김가현990": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김시은938": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김연후279": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태준033": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남보영031": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남소영220": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박상준127": {
+      "Eq6lyGzt": "done",
+      "Om1byGFT": "done",
+      "V89JznVt": "done"
+    },
+    "박성준439": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박슬우182": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "배이현940": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "신민결261": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "양연준902": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "왕수연084": {
+      "uDK9znMh": "done"
+    },
+    "유현동053": {
+      "uDK9znMh": "done"
+    },
+    "이규민455": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BBmzxR9g": "done",
+      "BHPnxR9g": "done",
+      "DPO0xR9g": "done",
+      "DgE5xR9g": "done",
+      "E0s3xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "RRMzxR9g": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "이시원318": {},
+    "이현서551": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임서진067": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "장서윤583": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "장헌태611": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "전강우282": {
+      "2yiMBWnw": "done",
+      "4jXkN5U2": "none",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "FHmEIn7n": "none",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "MxkLIl6a": "done",
+      "NNMCKSSY": "none",
+      "Om1byGFT": "done",
+      "QcYiN5SB": "none",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "UgF3KvZQ": "done",
+      "V89JznVt": "done",
+      "VlL6KSTa": "none",
+      "WWUuN654": "none",
+      "XQk0KTCf": "none",
+      "Xz3FvKd0": "done",
+      "arXSKwzk": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "cHbsKybr": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "msHfNqwn": "none",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yAgQN5TD": "none",
+      "yxIVEudj": "done"
     },
     "전강우334": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "8C0VWXme": "done",
+      "8xEm4OWF": "done",
+      "AjShwtBe": "done",
+      "AnwuWXk2": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "EziQ8U3j": "done",
+      "GhY14PJS": "done",
+      "HipI9UhK": "done",
+      "JJX8brpR": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "NTvB73gc": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "Wc3F72Oi": "done",
+      "Wip08TfD": "done",
+      "XnwpDKFr": "done",
+      "Y2pMbsxg": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "bjpO8Thm": "done",
+      "dIsIHZ58": "done",
+      "dbbzWXlR": "done",
+      "hcOkbqSR": "done",
+      "j3EbbsxP": "done",
+      "jWBK9Uwz": "done",
+      "k5mrWdSy": "done",
+      "k6hcwtBe": "done",
+      "lSBIdhhi": "done",
+      "ljfN9ToH": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
       "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "s3aJwtBe": "done",
+      "t67YHZ7L": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "skip",
+      "wRyRHZEi": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "전수민451": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정유진790": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BBmzxR9g": "done",
+      "BHPnxR9g": "done",
+      "DPO0xR9g": "done",
+      "DgE5xR9g": "done",
+      "E0s3xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "RRMzxR9g": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "황유림974": {
+      "5zcppfy4": "done",
+      "6Sagpfy4": "skip",
+      "BZ8Tpfvy": "done",
+      "JA2Epfy4": "done",
+      "S8l6pfy4": "done",
+      "Yb4Fpfvy": "done",
+      "eEZKpfy4": "done",
+      "jVhfpfy4": "done",
+      "vqJrpfy4": "done",
+      "y0bHpfvy": "done",
+      "zcKVpfy4": "done"
+    }
+  },
+  "2025-12-21": {
+    "강규현849": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "강지후347": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "권태은523": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김도영642": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채965": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김시은938": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "문종호734": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "민주혜499": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박상준127": {
+      "Eq6lyGzt": "done",
+      "Om1byGFT": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "shdbzLTz": "done"
+    },
+    "신민결261": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "오세현078": {
+      "Eq6lyGzt": "done",
+      "Om1byGFT": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "shdbzLTz": "done"
+    },
+    "오형임864": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "왕수연084": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이서하137": {
+      "uDK9znMh": "done"
+    },
+    "임하영964": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "장서윤583": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "장헌태611": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "전강우282": {
+      "2yiMBWnw": "done",
+      "4jXkN5U2": "skip",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "FHmEIn7n": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "MxkLIl6a": "done",
+      "NNMCKSSY": "skip",
+      "Om1byGFT": "done",
+      "QcYiN5SB": "skip",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "UgF3KvZQ": "done",
+      "V89JznVt": "done",
+      "VlL6KSTa": "skip",
+      "WWUuN654": "skip",
+      "XQk0KTCf": "skip",
+      "Xz3FvKd0": "done",
+      "arXSKwzk": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "cHbsKybr": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "msHfNqwn": "skip",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yAgQN5TD": "skip",
+      "yxIVEudj": "done"
+    },
+    "정석원934": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "정은찬321": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정지효286": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "지병찬417": {
+      "uDK9znMh": "done"
+    },
+    "진성윤057": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "5zcppfy4": "done",
+      "6Sagpfy4": "skip",
+      "BZ8Tpfvy": "done",
+      "JA2Epfy4": "done",
+      "S8l6pfy4": "done",
+      "Yb4Fpfvy": "done",
+      "eEZKpfy4": "done",
+      "jVhfpfy4": "done",
+      "vqJrpfy4": "done",
+      "y0bHpfvy": "done",
+      "zcKVpfy4": "done"
+    },
+    "황정원121": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    }
+  },
+  "2025-12-22": {
+    "null": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "곽교림699": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김시은938": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김연후279": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "민주혜499": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박성준439": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박시은394": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "백지호424": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BHPnxR9g": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "양연준902": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "이시원318": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "이은효570": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "2vAJFWt4": "done",
+      "3wDIxhOS": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pPVGFWt4": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "이현우149": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "N0LRydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done"
+    },
+    "장서윤583": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BHPnxR9g": "interrupted",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "전강우334": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "8C0VWXme": "done",
+      "8xEm4OWF": "done",
+      "AjShwtBe": "done",
+      "AnwuWXk2": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "EziQ8U3j": "done",
+      "GhY14PJS": "done",
+      "HipI9UhK": "done",
+      "JJX8brpR": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "NTvB73gc": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "Wc3F72Oi": "done",
+      "Wip08TfD": "done",
+      "XnwpDKFr": "done",
+      "Y2pMbsxg": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "bjpO8Thm": "done",
+      "dIsIHZ58": "done",
+      "dbbzWXlR": "done",
+      "hcOkbqSR": "done",
+      "j3EbbsxP": "done",
+      "jWBK9Uwz": "done",
+      "k5mrWdSy": "done",
+      "k6hcwtBe": "done",
+      "lSBIdhhi": "done",
+      "ljfN9ToH": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "s3aJwtBe": "done",
+      "t67YHZ7L": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "skip",
+      "wRyRHZEi": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "전수민451": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정은찬321": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "진성윤057": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "채희윤254": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "최수빈228": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "최창민720": {
+      "uDK9znMh": "done"
+    },
+    "한용원832": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "5zcppfy4": "done",
+      "6Sagpfy4": "skip",
+      "BZ8Tpfvy": "done",
+      "JA2Epfy4": "done",
+      "S8l6pfy4": "done",
+      "Yb4Fpfvy": "done",
+      "eEZKpfy4": "done",
+      "jVhfpfy4": "done",
+      "vqJrpfy4": "done",
+      "y0bHpfvy": "done",
+      "zcKVpfy4": "done"
+    },
+    "황정원121": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황지훈457": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    }
+  },
+  "2025-12-23": {
+    "김시은938": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태준033": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박슬우182": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "배이현940": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정유진790": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "none"
+    }
+  },
+  "2025-12-24": {
+    "김가현990": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김도영642": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민서310": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김연후279": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김지후802": {},
+    "문종호734": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박시은394": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "배이현940": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "백지호424": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BHPnxR9g": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "양연준902": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "오세현078": {
+      "2yiMBWnw": "done",
+      "Eq6lyGzt": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "shdbzLTz": "done"
+    },
+    "왕수연084": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "유현동053": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이규민455": {},
+    "이서진571": {
+      "4AkxxR9f": "skip",
+      "6e7exR9f": "skip",
+      "MAqCxR9f": "skip",
+      "NcArxR9f": "skip",
+      "WkTfxR9f": "skip"
+    },
+    "이서하137": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이은효570": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "2vAJFWt4": "done",
+      "3wDIxhOS": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "Rrn7FWt4": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pPVGFWt4": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "이정무756": {
+      "uDK9znMh": "done"
+    },
+    "이현서551": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임서진067": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임지유363": {},
+    "전강우282": {
+      "2yiMBWnw": "done",
+      "4jXkN5U2": "skip",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "FHmEIn7n": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "MxkLIl6a": "done",
+      "NNMCKSSY": "skip",
+      "Om1byGFT": "done",
+      "QcYiN5SB": "skip",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "UgF3KvZQ": "done",
+      "V89JznVt": "done",
+      "VlL6KSTa": "skip",
+      "WWUuN654": "skip",
+      "XQk0KTCf": "skip",
+      "Xz3FvKd0": "done",
+      "arXSKwzk": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "cHbsKybr": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "msHfNqwn": "skip",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yAgQN5TD": "skip",
+      "yxIVEudj": "done"
+    },
+    "정석원934": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "정지효286": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "채희윤254": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "최수빈228": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "한용원832": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "홍예준249": {
+      "uDK9znMh": "done"
+    }
+  },
+  "2025-12-26": {
+    "null": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "강규현849": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "곽교림699": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채965": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김태준033": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태희646": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남보영031": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남소영220": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "민주혜499": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박성준439": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "배이현940": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "양연준902": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "유현동053": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이은효570": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "2vAJFWt4": "done",
+      "3wDIxhOS": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BRvcFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "Rrn7FWt4": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "WaddFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pPVGFWt4": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "이정무756": {
+      "BPPuznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "이현우149": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "N0LRydJS": "done",
+      "QZoCydJS": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "임하영964": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "전강우334": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "8C0VWXme": "done",
+      "8xEm4OWF": "done",
+      "AjShwtBe": "done",
+      "AnwuWXk2": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "EziQ8U3j": "done",
+      "GhY14PJS": "done",
+      "HipI9UhK": "done",
+      "JJX8brpR": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "NTvB73gc": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "Wc3F72Oi": "done",
+      "Wip08TfD": "done",
+      "XnwpDKFr": "done",
+      "Y2pMbsxg": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "bjpO8Thm": "done",
+      "dIsIHZ58": "done",
+      "dbbzWXlR": "done",
+      "hcOkbqSR": "done",
+      "j3EbbsxP": "done",
+      "jWBK9Uwz": "done",
+      "k5mrWdSy": "done",
+      "k6hcwtBe": "done",
+      "lSBIdhhi": "done",
+      "ljfN9ToH": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "s3aJwtBe": "done",
+      "t67YHZ7L": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "skip",
+      "wRyRHZEi": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "정은찬321": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "주아린938": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "interrupted",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done"
+    },
+    "지병찬417": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "진성윤057": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "최수빈228": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done"
+    },
+    "최유진811": {
+      "uDK9znMh": "done"
+    },
+    "최창민720": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "한용원832": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황지훈457": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    }
+  },
+  "2025-12-27": {
+    "강규현849": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "강지후347": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "권태은523": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채514": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "skip",
+      "IyiTznMh": "skip",
+      "nqxGznMh": "skip",
+      "uDK9znMh": "skip"
+    },
+    "김시은938": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김지후802": {
+      "uDK9znMh": "done"
+    },
+    "김태우955": {
+      "uDK9znMh": "done"
+    },
+    "남보영031": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남소영220": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "명우진259": {
+      "uDK9znMh": "done"
+    },
+    "박상준127": {
+      "2yiMBWnw": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "shdbzLTz": "done"
+    },
+    "박슬우182": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "박시은394": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "서지우148": {
+      "Eq6lyGzt": "skip",
+      "Om1byGFT": "skip",
+      "V89JznVt": "skip",
+      "b2WUznVt": "done",
+      "cBwPznVt": "skip",
+      "shdbzLTz": "interrupted"
+    },
+    "신민결261": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "안정민330": {
+      "uDK9znMh": "interrupted"
+    },
+    "안호율866": {
+      "uDK9znMh": "done"
+    },
+    "양연준902": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "왕수연084": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "원예준988": {
+      "uDK9znMh": "interrupted"
+    },
+    "유현동053": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이규민455": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done"
+    },
+    "이서진571": {
+      "4AkxxR9f": "skip",
+      "6e7exR9f": "skip",
+      "MAqCxR9f": "skip",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "skip",
+      "sXRSxR9g": "done"
+    },
+    "이서하137": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이은효237": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "AjShwtBe": "done",
+      "Eog3zLTz": "done",
+      "K32pAnd5": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "XnwpDKFr": "done",
+      "bjKZAnd5": "done",
+      "k6hcwtBe": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "s3aJwtBe": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "이현서551": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임서진067": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임지유363": {
+      "uDK9znMh": "done"
+    },
+    "임하영964": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "전강우334": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "8C0VWXme": "done",
+      "8xEm4OWF": "done",
+      "AjShwtBe": "done",
+      "AnwuWXk2": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "EziQ8U3j": "done",
+      "GhY14PJS": "done",
+      "HipI9UhK": "done",
+      "JJX8brpR": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "NTvB73gc": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "Wc3F72Oi": "done",
+      "Wip08TfD": "done",
+      "XnwpDKFr": "done",
+      "Y2pMbsxg": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "bjpO8Thm": "done",
+      "dIsIHZ58": "done",
+      "dbbzWXlR": "done",
+      "hcOkbqSR": "done",
+      "j3EbbsxP": "done",
+      "jWBK9Uwz": "done",
+      "k5mrWdSy": "done",
+      "k6hcwtBe": "done",
+      "lSBIdhhi": "done",
+      "ljfN9ToH": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "s3aJwtBe": "done",
+      "t67YHZ7L": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "skip",
+      "wRyRHZEi": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "정유진790": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "interrupted"
+    },
+    "정지효286": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "주아린938": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yxIVEudj": "done"
+    },
+    "최수빈228": {
+      "0FbXydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "N0LRydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done"
+    },
+    "최유진811": {
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "5zcppfy4": "done",
+      "6Sagpfy4": "skip",
+      "BZ8Tpfvy": "done",
+      "JA2Epfy4": "done",
+      "S8l6pfy4": "done",
+      "Yb4Fpfvy": "done",
+      "cq4gpfy4": "interrupted",
+      "eEZKpfy4": "done",
+      "jVhfpfy4": "done",
+      "vqJrpfy4": "done",
+      "y0bHpfvy": "done",
+      "zcKVpfy4": "done"
+    },
+    "황정원121": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    }
+  },
+  "2025-12-28": {
+    "강규현849": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "강지후347": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "권태은523": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김도영642": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민서310": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채514": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "skip",
+      "IyiTznMh": "skip",
+      "nqxGznMh": "skip",
+      "uDK9znMh": "skip"
+    },
+    "김민채965": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김시은938": {
+      "7A0UznMh": "interrupted",
+      "8cYkznMh": "interrupted",
+      "BPPuznMh": "done",
+      "IyiTznMh": "interrupted",
+      "Od8kznMh": "interrupted",
+      "UwBQznMh": "interrupted",
+      "YS9yznMh": "interrupted",
+      "fl3NznMh": "interrupted",
+      "nqxGznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "김연후279": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "명우진259": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "문종호734": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "민주혜499": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박상준127": {
+      "2yiMBWnw": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "yxIVEudj": "done"
+    },
+    "신민결261": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "안정민330": {
+      "BPPuznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "안호율866": {
+      "uDK9znMh": "done"
+    },
+    "오형임864": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "원예준988": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이서하137": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이은효570": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "2vAJFWt4": "done",
+      "3wDIxhOS": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BRvcFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "Rrn7FWt4": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "WaddFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pPVGFWt4": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "장서윤583": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BHPnxR9g": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "전강우282": {
+      "2yiMBWnw": "done",
+      "4jXkN5U2": "skip",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "FHmEIn7n": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Mv6Mz1da": "done",
+      "MxkLIl6a": "done",
+      "NNMCKSSY": "skip",
+      "Om1byGFT": "done",
+      "PUTtz0pu": "done",
+      "QcYiN5SB": "skip",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "UgF3KvZQ": "done",
+      "V89JznVt": "done",
+      "VlL6KSTa": "skip",
+      "WWUuN654": "skip",
+      "XQk0KTCf": "skip",
+      "Xz3FvKd0": "done",
+      "arXSKwzk": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "cHbsKybr": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "msHfNqwn": "skip",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yAgQN5TD": "skip",
+      "yxIVEudj": "done"
+    },
+    "전수민451": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정유진790": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "fzzfydJS": "done"
+    },
+    "정은찬321": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "지병찬417": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "진성윤057": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "홍예준249": {
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "5zcppfy4": "done",
+      "6Sagpfy4": "skip",
+      "BZ8Tpfvy": "done",
+      "JA2Epfy4": "done",
+      "S8l6pfy4": "done",
+      "Yb4Fpfvy": "done",
+      "cq4gpfy4": "interrupted",
+      "eEZKpfy4": "done",
+      "jVhfpfy4": "done",
+      "vqJrpfy4": "done",
+      "y0bHpfvy": "done",
+      "zcKVpfy4": "done"
+    }
+  },
+  "2025-12-29": {
+    "김가현990": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김시은938": {
+      "7A0UznMh": "none",
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "interrupted",
+      "UwBQznMh": "none",
+      "YS9yznMh": "done",
+      "fl3NznMh": "none",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김연후279": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김유민614": {
+      "0x6ZBWzV": "done",
+      "6I0FBWzV": "done",
+      "yYxSBWA4": "done"
+    },
+    "김지우296": {
+      "0x6ZBWzV": "done",
+      "yYxSBWA4": "interrupted"
+    },
+    "김지후802": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태희646": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박성준439": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박시은394": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이은효237": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "AjShwtBe": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "XnwpDKFr": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "k6hcwtBe": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "s3aJwtBe": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "이현우149": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "QZoCydJS": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "전강우282": {
+      "2yiMBWnw": "done",
+      "4jXkN5U2": "skip",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "FHmEIn7n": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Mv6Mz1da": "done",
+      "MxkLIl6a": "done",
+      "NNMCKSSY": "skip",
+      "Om1byGFT": "done",
+      "PUTtz0pu": "done",
+      "QcYiN5SB": "skip",
+      "SlUAvLKi": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "UgF3KvZQ": "done",
+      "V89JznVt": "done",
+      "VlL6KSTa": "skip",
+      "WWUuN654": "skip",
+      "XQk0KTCf": "skip",
+      "Xz3FvKd0": "done",
+      "arXSKwzk": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "cHbsKybr": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "msHfNqwn": "skip",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yAgQN5TD": "skip",
+      "yxIVEudj": "done"
+    },
+    "전수민451": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정석원934": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "주아린938": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "Xz3FvKd0": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yxIVEudj": "done"
+    },
+    "채희윤254": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "최수인517": {
+      "0FbXydJS": "done",
+      "E2GKydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "최창민720": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "한용원832": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "홍예준249": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황정원121": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황지훈457": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "fzzfydJS": "done"
+    }
+  },
+  "2025-12-30": {
+    "김시은938": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "interrupted",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박슬우182": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yxIVEudj": "done"
+    },
+    "오세현078": {
+      "2yiMBWnw": "done",
+      "Eq6lyGzt": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "shdbzLTz": "done"
+    },
+    "원예준988": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이은효237": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "AjShwtBe": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "XnwpDKFr": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "k6hcwtBe": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "s3aJwtBe": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "이현서551": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "진성윤057": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "5zcppfy4": "done",
+      "6Sagpfy4": "skip",
+      "BZ8Tpfvy": "done",
+      "JA2Epfy4": "done",
+      "S8l6pfy4": "done",
+      "Yb4Fpfvy": "done",
+      "cq4gpfy4": "done",
+      "eEZKpfy4": "done",
+      "jVhfpfy4": "done",
+      "vqJrpfy4": "done",
+      "y0bHpfvy": "done",
+      "zcKVpfy4": "done"
+    }
+  },
+  "2025-12-31": {
+    "김가현990": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김도영642": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채965": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김유민614": {
+      "0x6ZBWzV": "done",
+      "6I0FBWzV": "done",
+      "70tBBWzV": "done",
+      "QdRXBWzW": "done",
+      "WFm4BWzW": "done",
+      "p3xUDKFr": "interrupted",
+      "yYxSBWA4": "done"
+    },
+    "김지우296": {
+      "0x6ZBWzV": "done",
+      "6I0FBWzV": "done",
+      "70tBBWzV": "done",
+      "WFm4BWzW": "interrupted",
+      "yYxSBWA4": "done"
+    },
+    "김지후802": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "문종호734": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "민주혜499": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "백지호424": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BHPnxR9g": "done",
+      "DgE5xR9g": "done",
+      "E0s3xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "양연준902": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "오세현078": {
+      "2yiMBWnw": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "yxIVEudj": "done"
+    },
+    "오형임864": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "interrupted",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "원예준988": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "유현동053": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이규민455": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done"
+    },
+    "이은효570": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "2vAJFWt4": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BRvcFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "Rrn7FWt4": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "WaddFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pPVGFWt4": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "이정무756": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이현서551": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임서진067": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임지유363": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정석원934": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "정지효286": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "MxkLIl6a": "done",
+      "Om1byGFT": "done",
+      "SlUAvLKi": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "Xz3FvKd0": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yxIVEudj": "done"
+    },
+    "채희윤254": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "한용원832": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "홍예준249": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "5zcppfy4": "done",
+      "6Sagpfy4": "skip",
+      "BZ8Tpfvy": "done",
+      "JA2Epfy4": "done",
+      "S8l6pfy4": "done",
+      "Yb4Fpfvy": "done",
+      "cq4gpfy4": "done",
+      "eEZKpfy4": "done",
+      "jVhfpfy4": "done",
+      "sU3tpfy4": "done",
+      "vqJrpfy4": "done",
+      "y0bHpfvy": "done",
+      "zcKVpfy4": "done"
+    }
+  },
+  "2026-01-02": {
+    "null": {},
+    "강규현936": {
+      "kaNYBk5Z": "done"
+    },
+    "김민채965": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김유민049": {
+      "xUQuBr0r": "done"
+    },
+    "김유민614": {
+      "kaNYBk5Z": "done"
+    },
+    "김지우296": {
+      "UoX7BmDz": "interrupted",
+      "kaNYBk5Z": "done"
+    },
+    "김태준033": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태희406": {},
+    "김태희646": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김하임033": {
+      "BZ8Tpfvy": "done"
+    },
+    "남보영031": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남소영220": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "민주혜499": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "fl3NznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박성준439": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박시은394": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박정한392": {
+      "BZ8Tpfvy": "interrupted"
+    },
+    "백지호424": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BBmzxR9g": "done",
+      "BHPnxR9g": "done",
+      "DgE5xR9g": "done",
+      "E0s3xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "변지민395": {
+      "kaNYBk5Z": "done"
+    },
+    "서하영092": {
+      "uDK9znMh": "done"
+    },
+    "안정민330": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "왕수연084": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "interrupted",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이규민455": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "이서하137": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이은효570": {
+      "0DSYFWt4": "done",
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "2vAJFWt4": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BRvcFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "P8a5FWt4": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "Rrn7FWt4": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "WaddFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pPVGFWt4": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "이정무756": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이현서551": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이현우941": {
       "TaGivvBZ": "done",
       "mfcYvvBZ": "done",
-      "AjShwtBe": "done",
+      "qpbjvH6f": "done"
+    },
+    "임서진067": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임서진209": {},
+    "장세현483": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "전수민451": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정석원129": {},
+    "정은찬321": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정주현143": {},
+    "정지효286": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "천경준116": {
+      "kaNYBk5Z": "interrupted"
+    },
+    "최창민720": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "한용원960": {
+      "kaNYBk5Z": "done"
+    }
+  },
+  "2026-01-03": {
+    "null": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "interrupted",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done"
+    },
+    "강규현936": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "강지후347": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "권태은025": {},
+    "권태은523": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채965": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김연후129": {
+      "lkmABtrW": "done"
+    },
+    "김연후279": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김유민614": {
+      "0x6ZBWzV": "done",
+      "6I0FBWzV": "done",
+      "70tBBWzV": "done",
+      "QdRXBWzW": "done",
+      "WFm4BWzW": "done",
+      "p3xUDKFr": "done",
+      "yYxSBWA4": "done"
+    },
+    "김지우981": {
+      "lkmABtrW": "interrupted"
+    },
+    "김태우955": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태준825": {
+      "lkmABtrW": "done"
+    },
+    "남보영031": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "남소영220": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "명우진570": {
+      "kaNYBk5Z": "done"
+    },
+    "박상준127": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "박슬우645": {
+      "kaNYBk5Z": "done"
+    },
+    "서하영092": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "양연준363": {
+      "kaNYBk5Z": "done"
+    },
+    "오수민436": {
+      "4AkxxR9f": "done",
+      "NcArxR9f": "done"
+    },
+    "왕수연567": {
+      "kaNYBk5Z": "done"
+    },
+    "용해은550": {
+      "kaNYBk5Z": "done"
+    },
+    "원예준988": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이서하151": {
+      "kaNYBk5Z": "done"
+    },
+    "이현우941": {
       "Mf54w89F": "done",
-      "s3aJwtBe": "done",
-      "k6hcwtBe": "done",
-      "3ySZwtBe": "done",
-      "NDHnwtBe": "done",
-      "umKtwOe7": "skip",
-      "Eog3zLTz": "done",
-      "xw1OzLTz": "done",
-      "u5hGAnd5": "done",
-      "M7cVAnd5": "done",
-      "bjKZAnd5": "done",
-      "K32pAnd5": "done",
-      "yKo1BWnw": "done",
-      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "YYwawOe7": "done",
+      "mfcYvvBZ": "done",
+      "qpbjvH6f": "done",
+      "veRhwOe7": "done"
+    },
+    "임서진209": {
+      "kaNYBk5Z": "done"
+    },
+    "임지유363": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임하영964": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "전강우282": {
       "1foyDKFr": "done",
-      "RFokDKFr": "done",
+      "3ySZwtBe": "done",
       "44DsDKFr": "done",
-      "XnwpDKFr": "done",
-      "mkJfFsg4": "done",
-      "rHW7Fsg4": "done",
-      "RgayFsCU": "done",
-      "BGs1RaGN": "done",
-      "ZkWVRaGz": "done",
-      "K3D2WdS3": "done",
-      "k5mrWdSy": "done",
-      "dIsIHZ58": "done",
       "8C0VWXme": "done",
-      "dbbzWXlR": "done",
-      "AnwuWXk2": "done",
-      "t67YHZ7L": "done",
-      "wRyRHZEi": "done",
       "8xEm4OWF": "done",
-      "GhY14PJS": "done",
-      "Wc3F72Oi": "done",
-      "NTvB73gc": "done",
-      "Wip08TfD": "done",
-      "bjpO8Thm": "done",
+      "AnwuWXk2": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
       "EziQ8U3j": "done",
-      "ljfN9ToH": "done",
+      "GhY14PJS": "done",
       "HipI9UhK": "done",
-      "jWBK9Uwz": "done",
-      "hcOkbqSR": "done",
       "JJX8brpR": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "NTvB73gc": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "Wc3F72Oi": "done",
+      "Wip08TfD": "done",
+      "XnwpDKFr": "done",
       "Y2pMbsxg": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "bjpO8Thm": "done",
+      "dIsIHZ58": "done",
+      "dbbzWXlR": "done",
+      "hcOkbqSR": "done",
       "j3EbbsxP": "done",
-      "lSBIdhhi": "done"
+      "jWBK9Uwz": "done",
+      "k5mrWdSy": "done",
+      "k6hcwtBe": "done",
+      "lSBIdhhi": "done",
+      "ljfN9ToH": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "t67YHZ7L": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "done",
+      "wRyRHZEi": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "전수민303": {
+      "kaNYBk5Z": "done"
+    },
+    "정유진645": {
+      "BZ8Tpfvy": "interrupted"
+    },
+    "정유진790": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "fzzfydJS": "done"
+    },
+    "정주현189": {},
+    "조재민315": {
+      "uDK9znMh": "done"
+    },
+    "주아린938": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done"
+    },
+    "지병찬417": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "지준오064": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "FHmEIn7n": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "MxkLIl6a": "done",
+      "Om1byGFT": "done",
+      "SlUAvLKi": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "UgF3KvZQ": "done",
+      "V89JznVt": "done",
+      "Xz3FvKd0": "done",
+      "arXSKwzk": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yxIVEudj": "done"
+    },
+    "최수인517": {
+      "0FbXydJS": "done",
+      "E2GKydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done"
+    },
+    "최유진811": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "피지윤538": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done"
+    },
+    "황유림974": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "황정원121": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    }
+  },
+  "2026-01-04": {
+    "강지후347": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "권태은523": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김도영642": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김시은091": {
+      "kaNYBk5Z": "done"
+    },
+    "명우진570": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "문종호246": {
+      "kaNYBk5Z": "done"
+    },
+    "민주혜499": {
+      "7A0UznMh": "done",
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "fl3NznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박성준341": {
+      "lkmABtrW": "done"
+    },
+    "박시은394": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "서지우148": {
+      "Eq6lyGzt": "skip",
+      "Om1byGFT": "skip",
+      "V89JznVt": "skip",
+      "b2WUznVt": "done",
+      "cBwPznVt": "skip",
+      "shdbzLTz": "interrupted"
+    },
+    "안호율866": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "왕수연567": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "용해은235": {
+      "uDK9znMh": "done"
+    },
+    "이규민114": {
+      "BZ8Tpfvy": "done"
+    },
+    "이서진571": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "skip",
+      "6e7exR9f": "skip",
+      "MAqCxR9f": "skip",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "skip",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "이서하151": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "이은효237": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "XnwpDKFr": "done",
+      "YYwawOe7": "skip",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "dIsIHZ58": "done",
+      "k5mrWdSy": "done",
+      "k6hcwtBe": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "done",
+      "veRhwOe7": "skip",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "임하영964": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "전수민303": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "정유진645": {
+      "BZ8Tpfvy": "done",
+      "y0bHpfvy": "interrupted"
+    },
+    "정은찬321": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정주현189": {
+      "BZ8Tpfvy": "done",
+      "Yb4Fpfvy": "interrupted",
+      "y0bHpfvy": "done"
+    },
+    "정지효286": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "조재민315": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "진성윤738": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "황지훈457": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "fzzfydJS": "done"
+    }
+  },
+  "2026-01-05": {
+    "강규현849": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채965": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김수종430": {
+      "uDK9znMh": "done"
+    },
+    "김시은091": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "김연후279": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김지우296": {
+      "UoX7BmDz": "interrupted",
+      "kaNYBk5Z": "done"
+    },
+    "김태우955": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태준033": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태희406": {
+      "kaNYBk5Z": "done"
+    },
+    "김현빈103": {},
+    "명우진259": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "문경섭265": {
+      "uDK9znMh": "done"
+    },
+    "민주혜499": {
+      "7A0UznMh": "done",
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "fl3NznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박상준127": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "박새준819": {},
+    "박성준439": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박슬우182": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "jzhynneM": "done",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yxIVEudj": "done"
+    },
+    "박주연081": {
+      "uDK9znMh": "done"
+    },
+    "변지민340": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "서지우148": {},
+    "안정민330": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "양연준902": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "왕수연084": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "유현동053": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이규민455": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "이은효570": {
+      "0DSYFWt4": "done",
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "0ug0FWt4": "done",
+      "2vAJFWt4": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BRvcFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "OzhgFWt4": "done",
+      "P8a5FWt4": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "Rrn7FWt4": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "WaddFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pPVGFWt4": "done",
+      "pz8HFWt5": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "이준섭774": {
+      "4AkxxR9f": "skip",
+      "6e7exR9f": "skip",
+      "BBmzxR9g": "skip",
+      "DPO0xR9g": "skip",
+      "DgE5xR9g": "skip",
+      "E0s3xR9g": "skip",
+      "MAqCxR9f": "skip",
+      "NcArxR9f": "skip",
+      "WkTfxR9f": "skip",
+      "sXRSxR9g": "done"
+    },
+    "이준희128": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done"
+    },
+    "이현서551": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "이현우149": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "QZoCydJS": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "임승우859": {},
+    "임지유363": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "장세현483": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "전강우334": {},
+    "전수민451": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "정석원934": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "정은찬321": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "진하임763": {
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "sXRSxR9g": "interrupted"
+    },
+    "채지훈414": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "9KBXvJPV": "done",
+      "Eq6lyGzt": "done",
+      "FHmEIn7n": "done",
+      "K7MOFPCV": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "MxkLIl6a": "done",
+      "Om1byGFT": "done",
+      "PUTtz0pu": "done",
+      "SlUAvLKi": "done",
+      "SoqmFPCV": "done",
+      "UBaUBWnw": "done",
+      "UgF3KvZQ": "done",
+      "V89JznVt": "done",
+      "Xz3FvKd0": "done",
+      "arXSKwzk": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "cHbsKybr": "done",
+      "gp9OIn8K": "done",
+      "jzhynneM": "done",
+      "qDhRI1Pa": "done",
+      "qJ2lI0t8": "done",
+      "rWOuFPCV": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "uZjBnng1": "done",
+      "yxIVEudj": "done"
+    },
+    "채희윤254": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "최수빈145": {
+      "xUQuBr0r": "done"
+    },
+    "최수인517": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "E2GKydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "OiILydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "최유진811": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "최창민877": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "한용원960": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "홍예준249": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    }
+  },
+  "2026-01-07": {
+    "강규현849": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김도영642": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김민채965": {
+      "44omxR9g": "done",
+      "4AkxxR9f": "done",
+      "6e7exR9f": "done",
+      "BHPnxR9g": "done",
+      "DgE5xR9g": "done",
+      "MAqCxR9f": "done",
+      "NcArxR9f": "done",
+      "WkTfxR9f": "done",
+      "by5yxR9g": "done",
+      "rbtDxR9g": "done",
+      "sXRSxR9g": "done"
+    },
+    "김시은938": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "interrupted",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김연후279": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김유민614": {
+      "0x6ZBWzV": "done",
+      "6I0FBWzV": "done",
+      "70tBBWzV": "done",
+      "A7bUEuaD": "done",
+      "B1GLEuaD": "done",
+      "GUHsDKKL": "done",
+      "GWjHDKFr": "done",
+      "QdRXBWzW": "done",
+      "WFm4BWzW": "done",
+      "emaZEuaD": "done",
+      "hrFTDKFr": "done",
+      "p3xUDKFr": "done",
+      "yYxSBWA4": "done"
+    },
+    "김지우981": {
+      "0i2pDbV7": "interrupted",
+      "lkmABtrW": "done"
+    },
+    "김태우955": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "김태준825": {
+      "0i2pDbV7": "done",
+      "lkmABtrW": "done"
+    },
+    "남보영236": {
+      "kaNYBk5Z": "done"
+    },
+    "문경섭768": {
+      "kaNYBk5Z": "done"
+    },
+    "민주혜499": {
+      "7A0UznMh": "done",
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "UwBQznMh": "done",
+      "YS9yznMh": "done",
+      "fl3NznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "박새준503": {
+      "kaNYBk5Z": "done"
+    },
+    "박성준341": {
+      "0i2pDbV7": "done",
+      "lkmABtrW": "done"
+    },
+    "박슬우645": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "박주연552": {
+      "xUQuBr0r": "done"
+    },
+    "배이현940": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "변지민395": {
+      "UoX7BmDz": "done",
+      "deffDjkx": "done",
+      "kaNYBk5Z": "done"
+    },
+    "서지우148": {
+      "xUQuBr0r": "done"
+    },
+    "양연준902": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "오세현078": {
+      "2yiMBWnw": "done",
+      "644pkuJU": "done",
+      "8N1nkuJU": "done",
+      "Eq6lyGzt": "done",
+      "KPTbEuaD": "done",
+      "L02HBWzW": "done",
+      "Om1byGFT": "done",
+      "UBaUBWnw": "done",
+      "V89JznVt": "done",
+      "b2WUznVt": "done",
+      "cBwPznVt": "done",
+      "rxE2kuJT": "done",
+      "shdbzLTz": "done",
+      "u6OCFPCV": "done",
+      "yxIVEudj": "done"
+    },
+    "오세현662": {
+      "kaNYBk5Z": "done"
+    },
+    "오형임864": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "용해은550": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "이서진247": {},
+    "이승현313": {
+      "kaNYBk5Z": "done"
+    },
+    "이은효570": {
+      "0DSYFWt4": "done",
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "0ug0FWt4": "done",
+      "2vAJFWt4": "done",
+      "4P4tydJS": "done",
+      "4iQlFWt4": "done",
+      "8mGsydJS": "done",
+      "8mgjFWt4": "done",
+      "BRvcFWt4": "done",
+      "BdAdydJS": "done",
+      "BtypFWt4": "done",
+      "CxlKFWt4": "done",
+      "DJPCFWt4": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "M44zFWt4": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "OzhgFWt4": "done",
+      "P8a5FWt4": "done",
+      "PcS4FWt4": "done",
+      "QZoCydJS": "done",
+      "R5r9FWt4": "done",
+      "Rrn7FWt4": "done",
+      "ThiGFWt4": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "WaddFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jVcFFWt4": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "pE16FWt4": "done",
+      "pPVGFWt4": "done",
+      "pz8HFWt5": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "이정무723": {
+      "kaNYBk5Z": "done"
+    },
+    "이현우149": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "4P4tydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "F4smFWt4": "done",
+      "G4vDydJS": "done",
+      "LZ4kFWt4": "done",
+      "Ll5lydJS": "done",
+      "N0LRydJS": "done",
+      "OiILydJS": "done",
+      "QZoCydJS": "done",
+      "TorbydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "VFKdFWt4": "done",
+      "Y2QNydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "ipsqydJS": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "kxcDydJS": "done",
+      "uc0aydJS": "done",
+      "uh7hydJS": "done"
+    },
+    "임서진067": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "임승우655": {
+      "kaNYBk5Z": "done"
+    },
+    "임하영964": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "interrupted",
+      "uDK9znMh": "done"
+    },
+    "장세현483": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "장헌태611": {
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "전강우282": {
+      "1foyDKFr": "done",
+      "3ySZwtBe": "done",
+      "44DsDKFr": "done",
+      "8C0VWXme": "done",
+      "8xEm4OWF": "done",
+      "AnwuWXk2": "done",
+      "BGs1RaGN": "done",
+      "Eog3zLTz": "done",
+      "EziQ8U3j": "done",
+      "GhY14PJS": "done",
+      "HipI9UhK": "done",
+      "JJX8brpR": "done",
+      "K32pAnd5": "done",
+      "K3D2WdS3": "done",
+      "M7cVAnd5": "done",
+      "Mf54w89F": "done",
+      "NDHnwtBe": "done",
+      "NTvB73gc": "done",
+      "RFokDKFr": "done",
+      "RgayFsCU": "done",
+      "SGsKDKFr": "done",
+      "TaGivvBZ": "done",
+      "Wc3F72Oi": "done",
+      "Wip08TfD": "done",
+      "XnwpDKFr": "done",
+      "Y2pMbsxg": "done",
+      "ZkWVRaGz": "done",
+      "bjKZAnd5": "done",
+      "bjpO8Thm": "done",
+      "dIsIHZ58": "done",
+      "dbbzWXlR": "done",
+      "hcOkbqSR": "done",
+      "j3EbbsxP": "done",
+      "jWBK9Uwz": "done",
+      "k5mrWdSy": "done",
+      "k6hcwtBe": "done",
+      "lSBIdhhi": "done",
+      "ljfN9ToH": "done",
+      "mfcYvvBZ": "done",
+      "mkJfFsg4": "done",
+      "qpbjvH6f": "done",
+      "rHW7Fsg4": "done",
+      "t67YHZ7L": "done",
+      "u5hGAnd5": "done",
+      "umKtwOe7": "done",
+      "wRyRHZEi": "done",
+      "xw1OzLTz": "done",
+      "yKo1BWnw": "done"
+    },
+    "전수민303": {
+      "UoX7BmDz": "done",
+      "deffDjkx": "done",
+      "kaNYBk5Z": "done"
+    },
+    "정주현143": {
+      "E2GKydJS": "done",
+      "Ll5lydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "정지효446": {
+      "lkmABtrW": "done"
+    },
+    "조승연712": {
+      "BZ8Tpfvy": "done"
+    },
+    "지준오064": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "진성윤057": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "채지훈571": {
+      "0i2pDbV7": "done",
+      "lkmABtrW": "done"
+    },
+    "채희윤254": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "천경준116": {
+      "UoX7BmDz": "done",
+      "kaNYBk5Z": "done"
+    },
+    "최수빈228": {
+      "0FbXydJS": "done",
+      "8mGsydJS": "done",
+      "E2GKydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "N0LRydJS": "done",
+      "UPDkydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "jzbXydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "최수인517": {
+      "0FbXydJS": "done",
+      "0ZwlydJS": "done",
+      "8mGsydJS": "done",
+      "BdAdydJS": "done",
+      "Dk4GydJS": "done",
+      "E2GKydJS": "done",
+      "G4vDydJS": "done",
+      "Ll5lydJS": "done",
+      "OiILydJS": "done",
+      "UPDkydJS": "done",
+      "UzgrydJS": "done",
+      "c5PxydJS": "done",
+      "fzzfydJS": "done",
+      "kLntydJS": "done",
+      "uc0aydJS": "done"
+    },
+    "최창민720": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "한용원832": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "홍예준249": {
+      "BPPuznMh": "done",
+      "uDK9znMh": "done"
+    },
+    "황유림974": {
+      "0FbXydJS": "done",
+      "Ll5lydJS": "done"
+    },
+    "황정원121": {
+      "8cYkznMh": "done",
+      "BPPuznMh": "done",
+      "IyiTznMh": "done",
+      "Od8kznMh": "done",
+      "YS9yznMh": "done",
+      "nqxGznMh": "done",
+      "uDK9znMh": "done"
+    }
+  },
+  "2026-01-09": {
+    "이승현155": {
+      "uDK9znMh": "done"
+    },
+    "장민서057": {
+      "4AkxxR9f": "skip",
+      "6e7exR9f": "skip",
+      "MAqCxR9f": "skip",
+      "NcArxR9f": "skip",
+      "WkTfxR9f": "skip"
+    },
+    "채지훈571": {
+      "lkmABtrW": "done",
+      "0i2pDbV7": "done",
+      "yCh6DdOr": "done"
     }
   }
 }

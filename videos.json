@@ -237,10 +237,10 @@
     "chapter": 18,
     "curriculum": "공수1",
     "id": 76,
-    "mid": "3wDIxhOS",
+    "mid": "E2GKydJS",
     "subCurriculum": "APEX",
     "title": "이차함수의 해석1",
-    "url": "https://v.kr.kollus.com/3wDIxhOS?"
+    "url": "https://v.kr.kollus.com/E2GKydJS?"
   },
   {
     "chapter": 19,
@@ -450,7 +450,7 @@
     "url": "https://v.kr.kollus.com/P8a5FWt4?"
   },
   {
-    "chapter": 41,
+    "chapter": 42,
     "curriculum": "공수1",
     "id": 139,
     "mid": "0DSYFWt4",
@@ -459,7 +459,7 @@
     "url": "https://v.kr.kollus.com/0DSYFWt4?"
   },
   {
-    "chapter": 42,
+    "chapter": 43,
     "curriculum": "공수1",
     "id": 140,
     "mid": "pz8HFWt5",
@@ -468,7 +468,7 @@
     "url": "https://v.kr.kollus.com/pz8HFWt5?"
   },
   {
-    "chapter": 43,
+    "chapter": 44,
     "curriculum": "공수1",
     "id": 141,
     "mid": "OzhgFWt4",
@@ -477,7 +477,7 @@
     "url": "https://v.kr.kollus.com/OzhgFWt4?"
   },
   {
-    "chapter": 44,
+    "chapter": 45,
     "curriculum": "공수1",
     "id": 142,
     "mid": "0ug0FWt4",
@@ -486,18 +486,9 @@
     "url": "https://v.kr.kollus.com/0ug0FWt4?"
   },
   {
-    "chapter": 45,
-    "curriculum": "공수1",
-    "id": 143,
-    "mid": "R5r9FWt4",
-    "subCurriculum": "APEX",
-    "title": "조합2",
-    "url": "https://v.kr.kollus.com/R5r9FWt4?"
-  },
-  {
     "chapter": 46,
     "curriculum": "공수1",
-    "id": 144,
+    "id": 143,
     "mid": "R5r9FWt4",
     "subCurriculum": "APEX",
     "title": "조합3",
@@ -716,10 +707,10 @@
       "하": 58
     },
     "id": 17,
-    "mid": "AjShwtBe",
+    "mid": "veRhwOe7",
     "subCurriculum": "APEX",
     "title": "도형과 평면좌표",
-    "url": "https://v.kr.kollus.com/AjShwtBe?"
+    "url": "https://v.kr.kollus.com/veRhwOe7?"
   },
   {
     "chapter": 5,
@@ -744,10 +735,10 @@
       "하": 76
     },
     "id": 19,
-    "mid": "s3aJwtBe",
+    "mid": "YYwawOe7",
     "subCurriculum": "APEX",
     "title": "직선의 방정식",
-    "url": "https://v.kr.kollus.com/s3aJwtBe?"
+    "url": "https://v.kr.kollus.com/YYwawOe7?"
   },
   {
     "chapter": 7,
@@ -1437,7 +1428,7 @@
     "id": 101,
     "mid": "p3xUDKFr",
     "subCurriculum": "APEX",
-    "title": "극한의 해석",
+    "title": "[고] 극한의 해석",
     "url": "https://v.kr.kollus.com/p3xUDKFr?"
   },
   {
@@ -2460,9 +2451,117 @@
       "하": 11
     },
     "id": 227,
-    "mid": "Xz3FvKd0",
+    "mid": "SlUAvLKi",
     "subCurriculum": "APEX",
     "title": "삼각함수의 그래프",
     "url": "https://v.kr.kollus.com/SlUAvLKi?"
+  },
+  {
+    "chapter": 32,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 125,
+      "중": 128,
+      "하": 120
+    },
+    "id": 228,
+    "mid": "PUTtz0pu",
+    "subCurriculum": "APEX",
+    "title": "삼각형의 넓이",
+    "url": "https://v.kr.kollus.com/BnpABPOX?"
+  },
+  {
+    "chapter": 33,
+    "curriculum": "대수",
+    "exNum": {
+      "상": 138,
+      "중": 133
+    },
+    "id": 229,
+    "mid": "Mv6Mz1da",
+    "subCurriculum": "APEX",
+    "title": "[고] 복잡한 삼각형의 해석",
+    "url": "https://v.kr.kollus.com/wIkcBPO6?"
+  },
+  {
+    "chapter": 1,
+    "curriculum": "미적분1",
+    "id": 230,
+    "mid": "kaNYBk5Z",
+    "subCurriculum": "A:Ble",
+    "title": "함수의 극한",
+    "url": "https://v.kr.kollus.com/kaNYBk5Z?"
+  },
+  {
+    "chapter": 2,
+    "curriculum": "미적분1",
+    "id": 231,
+    "mid": "UoX7BmDz",
+    "subCurriculum": "A:Ble",
+    "title": "극한값의 계산과 활용",
+    "url": "https://v.kr.kollus.com/UoX7BmDz?"
+  },
+  {
+    "chapter": 1,
+    "curriculum": "기하",
+    "id": 232,
+    "mid": "lkmABtrW",
+    "subCurriculum": "A:Ble",
+    "title": "포물선",
+    "url": "https://v.kr.kollus.com/lkmABtrW?"
+  },
+  {
+    "chapter": 1,
+    "curriculum": "확통",
+    "id": 233,
+    "mid": "xUQuBr0r",
+    "subCurriculum": "A:Ble",
+    "title": "중복순열과 같은 것이 있는 순열",
+    "url": "https://v.kr.kollus.com/xUQuBr0r?"
+  },
+  {
+    "chapter": 3,
+    "curriculum": "미적분1",
+    "id": 235,
+    "mid": "deffDjkx",
+    "subCurriculum": "A:Ble",
+    "title": "연속",
+    "url": "https://v.kr.kollus.com/deffDjkx?"
+  },
+  {
+    "chapter": 3,
+    "curriculum": "기하",
+    "id": 236,
+    "mid": "yCh6DdOr",
+    "subCurriculum": "A:Ble",
+    "title": "쌍곡선",
+    "url": "https://v.kr.kollus.com/yCh6DdOr?"
+  },
+  {
+    "chapter": 2,
+    "curriculum": "확통",
+    "id": 237,
+    "mid": "yrKdDh22",
+    "subCurriculum": "A:Ble",
+    "title": "중복조합",
+    "url": "https://v.kr.kollus.com/yrKdDh22?"
+  },
+  {
+    "chapter": 2,
+    "curriculum": "기하",
+    "id": 238,
+    "mid": "0i2pDbV7",
+    "subCurriculum": "A:Ble",
+    "title": "타원",
+    "url": "https://v.kr.kollus.com/0i2pDbV7?"
+  },
+  {
+    "id": 239,
+    "mid": "PLAfE2oA",
+    "curriculum": "확통",
+    "subCurriculum": "A:Ble",
+    "chapter": 3,
+    "title": "이항정리",
+    "url": "https://v.kr.kollus.com/PLAfE2oA?"
   }
 ]

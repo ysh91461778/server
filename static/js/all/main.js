@@ -1,4 +1,5 @@
-﻿import { $ } from './core/utils.js';
+﻿// static/js/all/main.js
+import { $ } from './core/utils.js';
 import { loadAll, state } from './core/state.js';
 import { renderYoilStats } from './features/yoilStats.js';
 import { renderTable } from './features/table.js';
@@ -9,6 +10,7 @@ import { hookAllSort } from './features/sortHelpers.js';
 import { hookDeleteButtons } from './features/deleteButtons.js';
 import './features/escClose.js';
 import { mountNewStudentBar } from './features/addStudent.js';
+import { initCloneStudentModal } from './features/CloneStudentModal.js';
 
 /** 이름+학교 기준으로 학생 dedup용 키 (table.js와 동일 로직) */
 function dedupKeyForStudent(s) {
@@ -40,7 +42,6 @@ function dedupKeyForStudent(s) {
 
 /** 전체 학생 수 라벨 갱신 (state.students 기준) */
 function updateAllCount() {
-  // state.students가 우선, 없으면 window.students fallback
   const studs = (state?.students && state.students.length ? state.students : window.students) || [];
   const uniq = new Set();
 
@@ -53,19 +54,28 @@ function updateAllCount() {
   if (el) el.textContent = `전체 학생 수: ${uniq.size}명`;
 }
 
+function renderAll() {
+  updateAllCount();
+  renderTable();
+  renderYoilStats();
+  hookAllSort();
+  hookDeleteButtons();
+  mountNewStudentBar();
+}
+
 (async function init() {
   try {
     await loadAll();
+    renderAll();
 
-    // 최초 1회 전체 학생 수 / 테이블 / 통계 렌더
-    updateAllCount();
-    renderTable();
-    renderYoilStats();
-    hookAllSort();
-    hookDeleteButtons();
-    mountNewStudentBar();
+    // ✅ 표 밖(상단 버튼)으로 "커리 복제" 모달 초기화
+    initCloneStudentModal({
+      onCloned: async () => {
+        await loadAll();
+        renderAll();
+      }
+    });
 
-    // 혹시 다른 모듈에서 admin:refresh 날리면 전체 학생 수만 다시 계산
     document.addEventListener('admin:refresh', () => {
       updateAllCount();
     });

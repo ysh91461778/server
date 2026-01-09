@@ -1,22 +1,53 @@
 // /js/admin/features/logModal.js
 // 수업 기록 모달 (저장/완료 포함)
 // - 진도 드래그 구간 변경
-// - Ctrl/Cmd+Enter → 완료
-// - 숙제: "표" 형식(숙제명/단원명/진행률/남은 숙제) + 행 추가/삭제
-// - ✅ 숙제명(교재명)은 한 번 추가하면 유지 (nameCarry)
-// - ✅ 단원명~남은숙제는 "최근 기록"을 placeholder 로만 표시 (오늘 값은 value만)
-// - 지난번 특이사항도 placeholder 로만 표시
-// - 구형 homework(문자열) 호환: 남은 숙제 칸에 1행으로 보여줌 + 저장 시 homework 문자열도 같이 유지
-// - ✅ 숙제 진행률: range(0~100, step 10) + 숫자칸 동기화
+// - Ctrl/Cmd+Enter → 완료(=하원)
+// - 숙제: "2줄" 형식(정확히 반반)
+//    1줄: 교재 / 이번 숙제(+진행률바 같은 줄, 오른쪽) / 삭제
+//    2줄: 코멘트(50%) / 다음 숙제(50%) / 삭제
+// - ✅ 교재(교재명)은 한 번 추가하면 유지 (bookCarry)
+// - ✅ 이번숙제~다음숙제는 "최근 기록"을 placeholder 로만 표시 (오늘 값은 value만)
+// - ✅ '다음 숙제'에 기입한 내용이 다음 수업 때 '이번 숙제' placeholder로 뜸
+// - 구형 homework(문자열) 호환: 코멘트 칸에 1행 + 저장 시 homework 문자열도 같이 유지
+// - 구형 homeworkTable(4칸: name/unit/pct/rem) 호환: 교재=name, 이번숙제=unit, 코멘트=rem 로 매핑
+// - ✅ 숙제 진행률: range(0~100, step 10)만 유지 + 바 위에 % bubble 표시
+// - ✅ "완료" 대신 "하원" 표기 + 하원 시간 기록
+// - ✅ (변경) "저장"은 그냥 저장만
+// - ✅ (추가) "숙제 배정 완료" 버튼: 저장 + hwAssigned 체크
+// - ✅ (유지) "숙제 검사 완료" 버튼: 저장 + hwChecked 체크(+ hwAssigned도 함께 체크)
+// - ✅ (핵심) logs 저장은 /api/logs/patch(부분 저장)만 사용 => 동시 작업 날아감 방지
 /* global fetch */
 
 import { $, toast, postJSON, todayLocalKey } from '../core/utils.js';
 import { state } from '../core/state.js';
 
-console.log('[logModal] HW-TABLE v2 (name persist + placeholders)');
+console.log('[logModal] HW-TABLE v6.5 (PATCH logs to prevent overwrite)');
 
 let editingLogSid = null;
-let logKeybound = false; // Ctrl+Enter 전역 바인딩 중복 방지
+let logKeybound = false; // Ctrl/Cmd+Enter 전역 바인딩 중복 방지
+
+function pad2(n) { return String(n).padStart(2, '0'); }
+function nowHHMM() {
+  const d = new Date();
+  return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+}
+function nowISO() { return new Date().toISOString(); }
+
+async function patchLogEntry(date, sid, entry, clearKeys) {
+  const body = { date, sid, entry: entry || {} };
+  if (Array.isArray(clearKeys) && clearKeys.length) body.__clear = clearKeys;
+  const res = await fetch('/api/logs/patch', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  let data = null;
+  try { data = await res.json(); } catch {}
+  if (!res.ok || !data?.ok) {
+    const msg = data?.error ? `patch 실패: ${data.error}` : 'patch 실패';
+    throw new Error(msg);
+  }
+}
 
 function injectStyles() {
   const old = document.getElementById('logModalStyles');
@@ -27,7 +58,7 @@ function injectStyles() {
   s.textContent = `
     #logModal{position:fixed; inset:0; z-index:99999; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center}
     #logModal .log-card{
-      position:relative; width:680px; max-width:95vw; max-height:82vh; overflow:auto;
+      position:relative; width:760px; max-width:96vw; max-height:82vh; overflow:auto;
       padding:12px; border-radius:12px; border:1px solid #e5e7eb; background:#ffffff; color:#0f172a;
       box-shadow:0 12px 34px rgba(0,0,0,.34);
     }
@@ -36,9 +67,8 @@ function injectStyles() {
     #logModal h3{ margin:6px 0 10px; font-size:18px; font-weight:800; }
     #logModal label{ display:block; margin:10px 0 8px; font-size:14px; }
 
-    /* ✅ range + (숫자칸 hwPctNum)은 width:100%에서 제외 */
     #logModal textarea,
-    #logModal input:not([type="range"]):not(.hwPctNum){
+    #logModal input:not([type="range"]){
       width:100%;
       box-sizing:border-box;
       border-radius:10px;
@@ -49,7 +79,7 @@ function injectStyles() {
       color:#0f172a;
     }
     body.dark #logModal textarea,
-    body.dark #logModal input:not([type="range"]):not(.hwPctNum){
+    body.dark #logModal input:not([type="range"]){
       border-color:#475569;
       background:#0b1220;
       color:#e5e7eb;
@@ -83,57 +113,118 @@ function injectStyles() {
       background:color-mix(in srgb, #ff0000ff 20%, transparent); border-color:#b91c1c; color:#fee2e2;
     }
 
-    /* 숙제 표 */
+    /* ─────────────────────────────
+      숙제(2줄)
+    ───────────────────────────── */
     #hwWrap{ margin-top:6px; }
-    #hwTable{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0;
+    #hwBox{
       border:1px solid #e5e7eb;
       border-radius:12px;
       overflow:hidden;
+      background:#fff;
     }
-    body.dark #hwTable{ border-color:#334155; }
+    body.dark #hwBox{ border-color:#334155; background:#0b1220; }
 
-    #hwTable thead th{
-      text-align:left;
-      font-size:12px;
-      color:#64748b;
-      font-weight:900;
+    .hwHeader{
       padding:10px 10px;
       background:#f8fafc;
       border-bottom:1px solid #e5e7eb;
     }
-    body.dark #hwTable thead th{
+    body.dark .hwHeader{
       background:#0b1220;
-      color:#94a3b8;
       border-bottom-color:#334155;
     }
 
-    #hwTable td{
-      padding:8px 8px;
-      border-bottom:1px solid #e5e7eb;
-      vertical-align:middle;
+    .hwHeaderTop, .hwHeaderBot{
+      display:grid;
+      gap:8px 12px;
+      align-items:start;
     }
-    body.dark #hwTable td{ border-bottom-color:#334155; }
-    #hwTable tbody tr:last-child td{ border-bottom:none; }
+    .hwHeaderTop{ grid-template-columns: 1.1fr 1fr 44px; }
+    .hwHeaderBot{ grid-template-columns: 1fr 1fr 44px; margin-top:8px; }
 
-    /* 4컬럼 + 삭제 */
-#hwTable .hw-name{ width:20%; }
-#hwTable .hw-unit{ width:18%; }
-#hwTable .hw-pct{  width:22%; }  /* 진행률 줄이고 */
-#hwTable .hw-rem{  width:36%; }  /* ✅ 남은 숙제 크게 */
-#hwTable .hw-del{  width:4%; }
+    .hwHeader .h{
+      font-size:12px;
+      color:#64748b;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    body.dark .hwHeader .h{ color:#94a3b8; }
+    .hwHeader .h-del{ text-align:right; opacity:.65; }
 
+    #hwBody{
+      padding:10px 10px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
 
-    #hwTable input{ height:36px; border-radius:10px; padding:7px 10px; box-sizing:border-box; }
-    #hwTable input::placeholder{ color:#94a3b8; }
-    body.dark #hwTable input::placeholder{ color:#64748b; }
+    .hwItem{ display:flex; flex-direction:column; gap:8px; }
 
-    .pctBox{ display:flex; align-items:center; gap:10px; width:100%; }
+    .hwTop{
+      display:grid;
+      grid-template-columns: 1.1fr 1fr 44px;
+      gap:8px 12px;
+      align-items:start;
+    }
+    .hwBot{
+      display:grid;
+      grid-template-columns: 1fr 1fr 44px;
+      gap:8px 12px;
+      align-items:start;
+    }
+
+    .hwDelCell{
+      display:flex;
+      justify-content:flex-end;
+      align-self:start;
+      padding-top:2px;
+    }
+
+    #hwBody input{ height:36px; border-radius:10px; padding:7px 10px; box-sizing:border-box; }
+    #hwBody input::placeholder{ color:#94a3b8; }
+    body.dark #hwBody input::placeholder{ color:#64748b; }
+
+    .thisCell{
+      display:grid;
+      grid-template-columns: 1fr 210px;
+      gap:10px;
+      align-items:start;
+      min-width:0;
+    }
+    .thisCell .thisInputWrap{ min-width:0; }
+    .thisCell .thisInputWrap input{ min-width:0; }
+
+    .pctWrap{
+      position:relative;
+      padding-top:16px;
+      min-width:0;
+    }
+
+    .pctBubble{
+      position:absolute;
+      top:0;
+      left:0;
+      transform:translateX(-50%);
+      padding:2px 7px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      color:#0f172a;
+      pointer-events:none;
+      white-space:nowrap;
+    }
+    body.dark .pctBubble{
+      background:#0f172a;
+      border-color:#334155;
+      color:#e5e7eb;
+    }
+    .pctBubble.is-ph{ opacity:.55; font-weight:800; }
+
     .hwPctRange{
-      flex:1 1 auto;
-      min-width:120px;
+      width:100%;
       height:46px; padding:0; border:0; outline:none;
       background:transparent;
       cursor:grab;
@@ -143,15 +234,6 @@ function injectStyles() {
     }
     .hwPctRange:active{ cursor:grabbing; }
 
-    /* ✅ 숫자칸 고정 */
-    #hwTable .hwPctNum{
-      flex:0 0 72px;
-      width:72px;
-      text-align:right;
-      padding:7px 10px;
-    }
-
-    /* WebKit track/thumb */
     .hwPctRange::-webkit-slider-runnable-track{
       height:14px;
       border-radius:999px;
@@ -171,7 +253,6 @@ function injectStyles() {
       border-color:#0b1220;
     }
 
-    /* Firefox */
     .hwPctRange::-moz-range-track{
       height:14px; border-radius:999px; background:#e5e7eb;
     }
@@ -195,12 +276,13 @@ function injectStyles() {
     }
     body.dark .hw-del-btn{ border-color:#334155; background:#0b1220; color:#e5e7eb; }
 
-    #logModal .actions{ display:flex; gap:8px; justify-content:flex-end; margin-top:10px; }
+    #logModal .actions{ display:flex; gap:8px; justify-content:flex-end; margin-top:10px; flex-wrap:wrap; }
     #logModal .actions button{
       height:36px; padding:0 12px; border-radius:10px; border:1px solid #e5e7eb; background:#f8fafc; color:#0f172a; cursor:pointer;
+      font-weight:900; white-space:nowrap;
     }
     body.dark #logModal .actions button{ border-color:#334155; background:#1f2937; color:#e5e7eb; }
-    `;
+  `;
   document.head.appendChild(s);
 }
 
@@ -217,26 +299,31 @@ function modalTemplateHTML() {
 
           <label>숙제</label>
           <div id="hwWrap">
-            <table id="hwTable" aria-label="숙제 표">
-              <thead>
-                <tr>
-                  <th class="hw-name">숙제명(교재명)</th>
-                  <th class="hw-unit">단원명</th>
-                  <th class="hw-pct">진행률(0~100%)</th>
-                  <th class="hw-rem">남은 숙제</th>
-                  <th class="hw-del"></th>
-                </tr>
-              </thead>
-              <tbody id="hwBody"></tbody>
-            </table>
+            <div id="hwBox">
+              <div class="hwHeader" aria-label="숙제 헤더">
+                <div class="hwHeaderTop">
+                  <div class="h">교재</div>
+                  <div class="h">이번 숙제 / 진행률</div>
+                  <div class="h h-del"></div>
+                </div>
+                <div class="hwHeaderBot">
+                  <div class="h">코멘트</div>
+                  <div class="h">다음 숙제</div>
+                  <div class="h h-del"></div>
+                </div>
+              </div>
+              <div id="hwBody" aria-label="숙제 목록"></div>
+            </div>
+
             <div class="hw-actions">
               <button type="button" id="hwAddRow">+ 추가</button>
             </div>
           </div>
 
           <div class="actions">
+            <button type="button" id="logCompleteBtn">숙제 검사 완료</button>
+            <button type="button" id="logAssignBtn">숙제 배정 완료</button>
             <button type="button" id="logSave">저장</button>
-            <button type="button" id="logdoneBtn">완료</button>
             <button type="button" id="logClose">닫기</button>
           </div>
         </div>
@@ -276,8 +363,8 @@ function pickWatchForSid(watchAll, sid, todayStr) {
 }
 
 /* ─────────────────────────────
-* 숙제 표 helpers
-* ───────────────────────────── */
+ * 숙제 helpers
+ * ───────────────────────────── */
 function escapeAttr(s) {
   return String(s ?? '')
     .replace(/&/g, '&amp;')
@@ -289,10 +376,24 @@ function escapeAttr(s) {
 function normHwRows(x) {
   if (!Array.isArray(x)) return [];
   return x.map(r => ({
-    name: String(r?.name ?? '').trim(),
-    unit: String(r?.unit ?? '').trim(),
+    book: String(r?.book ?? '').trim(),
+    this: String(r?.this ?? '').trim(),
     pct: (r?.pct === '' || r?.pct == null) ? '' : String(r.pct).trim(),
-    rem: String(r?.rem ?? '').trim(),
+    comment: String(r?.comment ?? '').trim(),
+    next: String(r?.next ?? '').trim(),
+    _deleted: !!(r?._deleted || r?._del || r?.deleted),
+  }));
+}
+
+function normOldHwRows4(x) {
+  if (!Array.isArray(x)) return [];
+  return x.map(r => ({
+    book: String(r?.name ?? '').trim(),
+    this: String(r?.unit ?? '').trim(),
+    pct: (r?.pct === '' || r?.pct == null) ? '' : String(r.pct).trim(),
+    comment: String(r?.rem ?? '').trim(),
+    next: '',
+    _deleted: false,
   }));
 }
 
@@ -302,192 +403,238 @@ function snap10(n) {
   return Math.max(0, Math.min(100, Math.round(n / 10) * 10));
 }
 
-function defaultPctValue(v) {
-  const s = (v === '' || v == null) ? '' : String(v).trim();
-  if (s === '') return '';
-  const n = Number(s);
-  if (!Number.isFinite(n)) return '';
-  return String(Math.max(0, Math.min(100, Math.round(n))));
-}
-
-// ✅ 오늘(todayRows): value
-// ✅ 최근(latestRows): placeholder(단원/진행률/남은숙제)
-// ✅ nameCarryRows: 숙제명 유지(오늘이 비어있을 때도 name을 value로 끌고옴)
-function mergeHwRows({ todayRows, latestRows, nameCarryRows }) {
+function mergeHwRows({ todayRows, latestRows, bookCarryRows }) {
   const a = normHwRows(todayRows);
   const b = normHwRows(latestRows);
-  const c = normHwRows(nameCarryRows);
+  const c = normHwRows(bookCarryRows);
 
   const n = Math.max(a.length, b.length, c.length, 1);
   const out = [];
 
   for (let i = 0; i < n; i++) {
-    const t = a[i] || { name: '', unit: '', pct: '', rem: '' };
-    const l = b[i] || { name: '', unit: '', pct: '', rem: '' };
-    const nc = c[i] || { name: '', unit: '', pct: '', rem: '' };
+    const t = a[i] || { book: '', this: '', pct: '', comment: '', next: '', _deleted: false };
+    const l = b[i] || { book: '', this: '', pct: '', comment: '', next: '', _deleted: false };
+    const bc = c[i] || { book: '', this: '', pct: '', comment: '', next: '', _deleted: false };
+
+    const phThis = (l.next || '').trim() ? l.next : (l.this || '');
+
+    const hasTodayRow = i < a.length;
 
     out.push({
-      // value(오늘)
-      name: t.name || nc.name || '',
-      unit: t.unit || '',
+      _deleted: !!t._deleted,
+      book: (hasTodayRow ? (t.book || '') : (bc.book || '')),
+      this: t.this || '',
       pct: t.pct || '',
-      rem: t.rem || '',
-
-      // placeholder(최근)
-      _ph: {
-        unit: l.unit || '',
-        pct: l.pct || '',
-        rem: l.rem || '',
-      }
+      comment: t.comment || '',
+      next: t.next || '',
+      _ph: { this: phThis || '', pct: l.pct || '', comment: l.comment || '', next: l.next || '' }
     });
   }
   return out;
 }
 
+function updatePctBubble(wrapEl, value, { isPlaceholder = false } = {}) {
+  if (!wrapEl) return;
+  const bubble = wrapEl.querySelector('.pctBubble');
+  if (!bubble) return;
+
+  const v = snap10(value);
+  bubble.textContent = `${v}%`;
+  bubble.classList.toggle('is-ph', !!isPlaceholder);
+  bubble.style.left = `${Math.max(0, Math.min(100, v))}%`;
+}
+
 function renderHwTable(mergedRows) {
-  const tbody = $('hwBody');
-  if (!tbody) return;
+  const host = $('hwBody');
+  if (!host) return;
 
   const rows = Array.isArray(mergedRows) ? mergedRows : [];
   const n = Math.max(rows.length, 1);
 
-  // ✅ "최근 숙제(placeholder)"가 하나도 없으면 "숙제 없음"
   const hasPrevAny = rows.some(r => {
     const ph = r?._ph || {};
-    return !!((ph.unit || '').trim() || (ph.pct || '').toString().trim() || (ph.rem || '').trim());
+    return !!(
+      (ph.this || '').trim() ||
+      (ph.pct || '').toString().trim() ||
+      (ph.comment || '').trim() ||
+      (ph.next || '').trim()
+    );
   });
   const EMPTY_PH_TEXT = '숙제 없음';
 
-  const rowHtml = (i) => {
-    const r = rows[i] || { name: '', unit: '', pct: '', rem: '', _ph: {} };
+  const itemHtml = (i) => {
+    const r = rows[i] || { book: '', this: '', pct: '', comment: '', next: '', _deleted: false, _ph: {} };
     const ph = r._ph || {};
 
-    const nameVal = (r.name || '').trim();
-    const unitVal = (r.unit || '').trim();
-    const remVal = (r.rem || '').trim();
+    const bookVal = (r.book || '').trim();
+    const thisVal = (r.this || '').trim();
+    const cmtVal = (r.comment || '').trim();
+    const nextVal = (r.next || '').trim();
 
-    // pct: 오늘 값은 비어있을 수 있음 (placeholder만 보여주기)
-    const pctNumVal = (r.pct === '' || r.pct == null) ? '' : String(snap10(r.pct));
-    const pctRangeVal = pctNumVal === '' ? '100' : pctNumVal;
+    const phThis = hasPrevAny ? (ph.this || '') : EMPTY_PH_TEXT;
+    const phCmt = hasPrevAny ? (ph.comment || '') : EMPTY_PH_TEXT;
+    const phNext = hasPrevAny ? (ph.next || '') : EMPTY_PH_TEXT;
 
-    const phUnit = hasPrevAny ? (ph.unit || '') : EMPTY_PH_TEXT;
-    const phPct = hasPrevAny ? (ph.pct === '' ? '' : String(ph.pct)) : EMPTY_PH_TEXT;
-    const phRem = hasPrevAny ? (ph.rem || '') : EMPTY_PH_TEXT;
+    const pctToday = (r.pct === '' || r.pct == null) ? '' : String(snap10(r.pct));
+    const pctPh = (ph.pct === '' || ph.pct == null) ? '' : String(snap10(ph.pct));
+
+    const displayPct = pctToday !== '' ? pctToday : (pctPh !== '' ? pctPh : '0');
+    const emptyFlag = (pctToday === '') ? '1' : '0';
+
+    const deleted = !!r._deleted;
+    const delAttr = deleted ? '1' : '0';
+    const hideStyle = deleted ? 'style="display:none"' : '';
 
     return `
-      <tr data-idx="${i}">
-        <td class="hw-name">
-          <input class="hwName" type="text"
-                 value="${escapeAttr(nameVal)}"
-                 placeholder="">
-        </td>
-
-        <td class="hw-unit">
-          <input class="hwUnit" type="text"
-                 value="${escapeAttr(unitVal)}"
-                 placeholder="${escapeAttr(phUnit)}">
-        </td>
-
-        <td class="hw-pct">
-          <div class="pctBox">
-            <input class="hwPctRange" type="range" min="0" max="100" step="10"
-                   value="${escapeAttr(pctRangeVal)}"
-                   aria-label="진행률 슬라이더">
-            <input class="hwPctNum" type="number" inputmode="numeric" min="0" max="100" step="10"
-                   value="${escapeAttr(pctNumVal)}"
-                   placeholder="${escapeAttr(phPct)}">
+      <div class="hwItem" data-idx="${i}" data-deleted="${delAttr}" ${hideStyle}>
+        <div class="hwTop">
+          <div class="hw-book">
+            <input class="hwBook" type="text" value="${escapeAttr(bookVal)}" placeholder="">
           </div>
-        </td>
 
-        <td class="hw-rem">
-          <input class="hwRem" type="text"
-                 value="${escapeAttr(remVal)}"
-                 placeholder="${escapeAttr(phRem)}">
-        </td>
+          <div class="hw-this">
+            <div class="thisCell">
+              <div class="thisInputWrap">
+                <input class="hwThis" type="text" value="${escapeAttr(thisVal)}" placeholder="${escapeAttr(phThis)}">
+              </div>
 
-        <td class="hw-del">
-          <button type="button" class="hw-del-btn" title="삭제">✕</button>
-        </td>
-      </tr>`;
+              <div class="pctWrap" data-empty="${emptyFlag}">
+                <span class="pctBubble"></span>
+                <input class="hwPctRange" type="range" min="0" max="100" step="10"
+                       value="${escapeAttr(displayPct)}" aria-label="진행률 슬라이더">
+              </div>
+            </div>
+          </div>
+
+          <div class="hwDelCell">
+            <button type="button" class="hw-del-btn" title="삭제">✕</button>
+          </div>
+        </div>
+
+        <div class="hwBot">
+          <div class="hw-cmt">
+            <input class="hwComment" type="text" value="${escapeAttr(cmtVal)}" placeholder="${escapeAttr(phCmt)}">
+          </div>
+
+          <div class="hw-next">
+            <input class="hwNext" type="text" value="${escapeAttr(nextVal)}" placeholder="${escapeAttr(phNext)}">
+          </div>
+
+          <div class="hwDelCell">
+            <button type="button" class="hw-del-btn" title="삭제">✕</button>
+          </div>
+        </div>
+      </div>`;
   };
 
-  tbody.innerHTML = Array.from({ length: n }, (_, i) => rowHtml(i)).join('');
+  host.innerHTML = Array.from({ length: n }, (_, i) => itemHtml(i)).join('');
+
+  host.querySelectorAll('.pctWrap').forEach(wrap => {
+    const range = wrap.querySelector('.hwPctRange');
+    if (!range) return;
+    const isPh = (wrap.dataset.empty === '1');
+    updatePctBubble(wrap, range.value, { isPlaceholder: isPh });
+  });
 }
 
+function addHwRow(bookCarry = '') {
+  const host = $('hwBody');
+  if (!host) return;
 
+  host.insertAdjacentHTML('beforeend', `
+    <div class="hwItem" data-idx="" data-deleted="0">
+      <div class="hwTop">
+        <div class="hw-book">
+          <input class="hwBook" type="text" value="${escapeAttr(bookCarry)}" placeholder="">
+        </div>
 
-function addHwRow(nameCarry = '') {
-  const tbody = $('hwBody');
-  if (!tbody) return;
+        <div class="hw-this">
+          <div class="thisCell">
+            <div class="thisInputWrap">
+              <input class="hwThis" type="text" value="" placeholder="">
+            </div>
 
-  tbody.insertAdjacentHTML('beforeend', `
-      <tr>
-        <td class="hw-name">
-          <input class="hwName" type="text" value="${escapeAttr(nameCarry)}" placeholder="">
-        </td>
-
-        <td class="hw-unit">
-          <input class="hwUnit" type="text" value="" placeholder="">
-        </td>
-
-        <td class="hw-pct">
-          <div class="pctBox">
-            <input class="hwPctRange" type="range" min="0" max="100" step="10" value="100" aria-label="진행률 슬라이더">
-            <input class="hwPctNum" type="number" inputmode="numeric" min="0" max="100" step="10" value="" placeholder="">
+            <div class="pctWrap" data-empty="0">
+              <span class="pctBubble"></span>
+              <input class="hwPctRange" type="range" min="0" max="100" step="10" value="0" aria-label="진행률 슬라이더">
+            </div>
           </div>
-        </td>
+        </div>
 
-        <td class="hw-rem">
-          <input class="hwRem" type="text" value="" placeholder="">
-        </td>
-
-        <td class="hw-del">
+        <div class="hwDelCell">
           <button type="button" class="hw-del-btn" title="삭제">✕</button>
-        </td>
-      </tr>`);
+        </div>
+      </div>
+
+      <div class="hwBot">
+        <div class="hw-cmt">
+          <input class="hwComment" type="text" value="" placeholder="">
+        </div>
+
+        <div class="hw-next">
+          <input class="hwNext" type="text" value="" placeholder="">
+        </div>
+
+        <div class="hwDelCell">
+          <button type="button" class="hw-del-btn" title="삭제">✕</button>
+        </div>
+      </div>
+    </div>
+  `);
+
+  const lastWrap = host.querySelector('.hwItem:last-child .pctWrap');
+  if (lastWrap) {
+    const range = lastWrap.querySelector('.hwPctRange');
+    updatePctBubble(lastWrap, range?.value ?? 0, { isPlaceholder: false });
+  }
 }
 
 function collectHwTable() {
-  const tbody = $('hwBody');
-  if (!tbody) return [];
+  const host = $('hwBody');
+  if (!host) return [];
   const out = [];
 
-  tbody.querySelectorAll('tr').forEach(tr => {
-    const name = (tr.querySelector('.hwName')?.value || '').trim();
-    const unit = (tr.querySelector('.hwUnit')?.value || '').trim();
-    const rem = (tr.querySelector('.hwRem')?.value || '').trim();
+  host.querySelectorAll('.hwItem').forEach(item => {
+    const deleted = item.dataset.deleted === '1';
 
-    // 숫자박스 기준 저장 (비면 저장도 비게)
-    let pctRaw = (tr.querySelector('.hwPctNum')?.value ?? '').toString().trim();
-    let pct = '';
-    if (pctRaw !== '') {
-      let n = Number(pctRaw);
-      if (Number.isFinite(n)) {
-        n = snap10(Math.max(0, Math.min(100, n)));
-        pct = String(n);
-      }
+    const book = (item.querySelector('.hwBook')?.value || '').trim();
+    const thisHw = (item.querySelector('.hwThis')?.value || '').trim();
+    const comment = (item.querySelector('.hwComment')?.value || '').trim();
+    const next = (item.querySelector('.hwNext')?.value || '').trim();
+
+    const wrap = item.querySelector('.pctWrap');
+    const range = item.querySelector('.hwPctRange');
+    const raw = range ? snap10(range.value) : 0;
+
+    const empty = (wrap?.dataset?.empty === '1');
+    const pct = empty ? '' : String(raw);
+
+    if (deleted) {
+      out.push({ book: '', this: '', pct: '', comment: '', next: '', _deleted: true });
+      return;
     }
 
-    // 완전 빈 행 제거
-    if (!name && !unit && !pct && !rem) return;
-
-    out.push({ name, unit, pct, rem });
+    if (!book && !thisHw && !pct && !comment && !next) return;
+    out.push({ book, this: thisHw, pct, comment, next, _deleted: false });
   });
 
   return out;
 }
 
 function hwRowToSummary(r) {
-  const name = (r.name || '').trim();
-  const unit = (r.unit || '').trim();
+  if (r?._deleted) return '';
+  const book = (r.book || '').trim();
+  const thisHw = (r.this || '').trim();
   const pct = (r.pct === '' ? '' : `${String(r.pct).trim()}%`);
-  const rem = (r.rem || '').trim();
+  const cmt = (r.comment || '').trim();
+  const next = (r.next || '').trim();
 
   const parts = [];
-  if (name) parts.push(name);
-  if (unit) parts.push(unit);
+  if (book) parts.push(`[${book}]`);
+  if (thisHw) parts.push(thisHw);
   if (pct) parts.push(pct);
-  if (rem) parts.push(rem);
+  if (cmt) parts.push(`(${cmt})`);
+  if (next) parts.push(`→ ${next}`);
   return parts.join(' ');
 }
 
@@ -499,6 +646,36 @@ function buildHwSummary(rows) {
   return lines.join(' / ');
 }
 
+/* ─────────────────────────────────────────────
+ * ✅ hwAssigned / hwChecked PATCH (부분 저장)
+ * ────────────────────────────────────────────*/
+async function markHwFlagsRemote(dateKey, sid, { assigned, checked }) {
+  const date = dateKey || todayLocalKey();
+  const ksid = String(sid);
+  const t = nowHHMM();
+
+  // ✅ flags만 patch
+  const entry = {};
+  if (assigned) {
+    entry.hwAssigned = true;
+    entry.hwAssignedAt = t;
+  }
+  if (checked) {
+    entry.hwChecked = true;
+    entry.hwCheckedAt = t;
+    // 검사 완료면 배정도 같이 true로 맞춰버림(원래 요구사항)
+    entry.hwAssigned = true;
+    entry.hwAssignedAt = entry.hwAssignedAt || t;
+  }
+
+  await patchLogEntry(date, ksid, entry);
+
+  // state.logs도 부분 반영(화면 갱신/내보내기 계산용)
+  state.logs = state.logs || {};
+  state.logs[date] = state.logs[date] || {};
+  state.logs[date][ksid] = { ...(state.logs[date][ksid] || {}), ...entry };
+}
+
 export function initLogModal() {
   ensureModal();
 
@@ -506,90 +683,74 @@ export function initLogModal() {
   const logTitle = $('logTitle');
   const logNotes = $('logNotes');
   const logSave = $('logSave');
-  const logDone = $('logdoneBtn');
+  const logAssign = $('logAssignBtn');
   const logClose = $('logClose');
   const progEl = $('logProgress');
+  const logComplete = $('logCompleteBtn');
 
-  // ─────────────────────────────
-  // 숙제 이벤트(위임)
-  // ─────────────────────────────
-  $('hwBody')?.addEventListener('click', (e) => {
-    const btn = e.target.closest('.hw-del-btn');
-    if (!btn) return;
-    btn.closest('tr')?.remove();
-
-    const tbody = $('hwBody');
-    if (tbody && tbody.querySelectorAll('tr').length === 0) addHwRow('');
-  });
-
-  // ✅ range ↔ number 동기화
-  // - range를 움직이면 number에 value 넣어줌
-  // - number는 입력 중 공백 허용, change에서 snap10 적용
-  $('hwBody')?.addEventListener('input', (e) => {
-    const t = e.target;
-    const tr = t.closest('tr');
-    if (!tr) return;
-
-    const range = tr.querySelector('.hwPctRange');
-    const num = tr.querySelector('.hwPctNum');
-    if (!range || !num) return;
-
-    if (t.classList.contains('hwPctRange')) {
-      num.value = String(range.value);
-    } else if (t.classList.contains('hwPctNum')) {
-      if (num.value === '') return;
-      let v = Number(num.value);
-      if (!Number.isFinite(v)) v = 0;
-      v = Math.max(0, Math.min(100, v));
-      num.value = String(v);
-      range.value = String(v);
-    }
-  });
-
-  $('hwBody')?.addEventListener('change', (e) => {
-    const t = e.target;
-    const tr = t.closest('tr');
-    if (!tr) return;
-
-    const range = tr.querySelector('.hwPctRange');
-    const num = tr.querySelector('.hwPctNum');
-    if (!range || !num) return;
-
-    if (t.classList.contains('hwPctNum')) {
-      if (num.value === '') return;
-      let v = Number(num.value);
-      if (!Number.isFinite(v)) return;
-      v = snap10(Math.max(0, Math.min(100, v)));
-      num.value = String(v);
-      range.value = String(v);
-    }
-  });
-
-  $('hwAddRow')?.addEventListener('click', () => {
-    // 현재 마지막 name을 들고 가서 다음 줄 기본값으로 유지(원하면 빈칸으로 바꿔도 됨)
-    const lastName = Array.from(document.querySelectorAll('#hwBody .hwName'))
-      .map(i => (i.value || '').trim())
-      .filter(Boolean)
-      .slice(-1)[0] || '';
-    addHwRow(lastName);
-  });
-
-  // Ctrl+Enter / Cmd+Enter → 완료
-  if (!logKeybound) {
-    logKeybound = true;
-    document.addEventListener('keydown', (e) => {
-      if (e.key !== 'Enter' || (!e.ctrlKey && !e.metaKey)) return;
-
-      const modal = document.getElementById('logModal');
-      if (!modal) return;
-      const visible = window.getComputedStyle(modal).display !== 'none';
-      if (!visible) return;
+  // ✅ 삭제(전역 위임 + 캡처) - remove 대신 tombstone 처리
+  if (!window.__hwDelDelegatedBound) {
+    window.__hwDelDelegatedBound = true;
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button.hw-del-btn');
+      if (!btn) return;
+      if (!btn.closest('#logModal')) return;
 
       e.preventDefault();
       e.stopPropagation();
-      document.getElementById('logdoneBtn')?.click();
+
+      const item = btn.closest('.hwItem');
+      if (!item) return;
+
+      item.dataset.deleted = '1';
+      item.style.display = 'none';
+
+      const book = item.querySelector('.hwBook'); if (book) book.value = '';
+      const th = item.querySelector('.hwThis'); if (th) th.value = '';
+      const cmt = item.querySelector('.hwComment'); if (cmt) cmt.value = '';
+      const nx = item.querySelector('.hwNext'); if (nx) nx.value = '';
+      const wrap = item.querySelector('.pctWrap');
+      const range = item.querySelector('.hwPctRange');
+      if (wrap) wrap.dataset.empty = '1';
+      if (range) range.value = '0';
+      if (wrap) updatePctBubble(wrap, 0, { isPlaceholder: true });
+
+      const host = document.getElementById('hwBody');
+      if (host) {
+        const visible = Array.from(host.querySelectorAll('.hwItem'))
+          .some(x => x.dataset.deleted !== '1' && x.style.display !== 'none');
+        if (!visible) addHwRow('');
+      }
     }, true);
   }
+
+  document.getElementById('hwBody')?.addEventListener('input', (e) => {
+    const t = e.target;
+    if (!t.classList.contains('hwPctRange')) return;
+    const wrap = t.closest('.pctWrap');
+    if (!wrap) return;
+    wrap.dataset.empty = '0';
+    updatePctBubble(wrap, t.value, { isPlaceholder: false });
+  });
+
+  document.getElementById('hwBody')?.addEventListener('change', (e) => {
+    const t = e.target;
+    if (!t.classList.contains('hwPctRange')) return;
+    const wrap = t.closest('.pctWrap');
+    if (!wrap) return;
+    const v = snap10(t.value);
+    t.value = String(v);
+    wrap.dataset.empty = '0';
+    updatePctBubble(wrap, v, { isPlaceholder: false });
+  });
+
+  $('hwAddRow')?.addEventListener('click', () => {
+    const lastBook = Array.from(document.querySelectorAll('#hwBody .hwBook'))
+      .map(i => (i.value || '').trim())
+      .filter(Boolean)
+      .slice(-1)[0] || '';
+    addHwRow(lastBook);
+  });
 
   const nextStateOf = (s) =>
     s === 'none' ? 'done'
@@ -669,7 +830,6 @@ export function initLogModal() {
     if (!cell) return;
 
     rebuildDragCells();
-
     startIndex = dragCells.indexOf(cell);
     if (startIndex === -1) return;
 
@@ -692,7 +852,6 @@ export function initLogModal() {
     logTitle.textContent = `${stu.name} – ${stu.curriculum}`;
     const today = todayLocalKey();
 
-    // 날짜 목록: progress + logs 합집합
     const dates = Array.from(new Set([
       ...Object.keys(state.progress || {}),
       ...Object.keys(state.logs || {}),
@@ -700,18 +859,15 @@ export function initLogModal() {
       .filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d) && d <= today)
       .sort();
 
-    // 1) 누적 진도상태(오늘 포함) 취합
     const progEntry = {};
     dates.forEach(d => {
       const day = (state.progress?.[d] || {})[editingLogSid] || {};
       Object.entries(day).forEach(([mid, st]) => { progEntry[String(mid)] = st; });
     });
 
-    // 2) 오늘 로그값
     const logEntry = (state.logs[today] || {})[editingLogSid] || {};
     logNotes.value = logEntry.notes || '';
 
-    // 특이사항 placeholder
     logNotes.placeholder = '';
     if (!logEntry.notes) {
       for (let i = dates.length - 1; i >= 0; i--) {
@@ -722,24 +878,21 @@ export function initLogModal() {
       }
     }
 
-    // ─────────────────────────────
-    // 숙제: 규칙
-    // - 숙제명(교재명): 한번 입력하면 유지 (nameCarry)
-    // - 단원/진행률/남은숙제: 최근 과거를 placeholder로만 표시
-    // - 오늘 값은 value로만 표시
-    // ─────────────────────────────
+    // 숙제 로드
     let todayRows = [];
-    if (Array.isArray(logEntry.homeworkTable)) {
-      todayRows = normHwRows(logEntry.homeworkTable);
+    if (Array.isArray(logEntry.homeworkTable) && logEntry.homeworkTable.length) {
+      const first = logEntry.homeworkTable[0] || {};
+      if (Object.prototype.hasOwnProperty.call(first, 'book') || Object.prototype.hasOwnProperty.call(first, 'this')) {
+        todayRows = normHwRows(logEntry.homeworkTable);
+      } else {
+        todayRows = normOldHwRows4(logEntry.homeworkTable);
+      }
     } else if (typeof logEntry.homework === 'string' && logEntry.homework.trim()) {
-      // 구형 호환(남은숙제에 1행)
-      todayRows = [{ name: '', unit: '', pct: '', rem: logEntry.homework.trim() }];
+      todayRows = [{ book: '', this: '', pct: '', comment: logEntry.homework.trim(), next: '', _deleted: false }];
     }
 
-    // 최신 과거(placeholder용: unit/pct/rem)
     let latestRows = [];
-    // nameCarry용: name만 유지시키기 위해 "가장 최근에 name이 있었던 행들"을 긁어옴
-    let nameCarryRows = [];
+    let bookCarryRows = [];
 
     for (let i = dates.length - 1; i >= 0; i--) {
       const d = dates[i];
@@ -748,28 +901,30 @@ export function initLogModal() {
       if (!prev) continue;
 
       if (Array.isArray(prev.homeworkTable) && prev.homeworkTable.length) {
-        const rows = normHwRows(prev.homeworkTable);
-
-        // placeholder는 최신 1개만
-        if (latestRows.length === 0) latestRows = rows;
-
-        // nameCarry는 name이 있는 최신 1개만
-        if (nameCarryRows.length === 0 && rows.some(r => (r.name || '').trim())) {
-          nameCarryRows = rows.map(r => ({ name: r.name, unit: '', pct: '', rem: '' }));
+        let rows = [];
+        const first = prev.homeworkTable[0] || {};
+        if (Object.prototype.hasOwnProperty.call(first, 'book') || Object.prototype.hasOwnProperty.call(first, 'this')) {
+          rows = normHwRows(prev.homeworkTable);
+        } else {
+          rows = normOldHwRows4(prev.homeworkTable);
         }
 
-        if (latestRows.length && nameCarryRows.length) break;
+        if (latestRows.length === 0) latestRows = rows;
+
+        if (bookCarryRows.length === 0 && rows.some(r => (r.book || '').trim())) {
+          bookCarryRows = rows.map(r => ({ book: r.book, this: '', pct: '', comment: '', next: '', _deleted: false }));
+        }
+
+        if (latestRows.length && bookCarryRows.length) break;
       }
 
-      // 구형 문자열
       if (typeof prev.homework === 'string' && prev.homework.trim()) {
-        if (latestRows.length === 0) latestRows = [{ name: '', unit: '', pct: '', rem: prev.homework.trim() }];
-        // nameCarry는 만들 수 없으니 스킵
+        if (latestRows.length === 0) latestRows = [{ book: '', this: '', pct: '', comment: prev.homework.trim(), next: '', _deleted: false }];
         if (latestRows.length) break;
       }
     }
 
-    const merged = mergeHwRows({ todayRows, latestRows, nameCarryRows });
+    const merged = mergeHwRows({ todayRows, latestRows, bookCarryRows });
     renderHwTable(merged);
 
     // 진도 셀 렌더
@@ -823,7 +978,7 @@ export function initLogModal() {
   logClose.addEventListener('click', close);
   logModal.addEventListener('click', (e) => { if (e.target === logModal) close(); });
 
-  // 저장 공통
+  // ✅ 저장 공통 (progress는 기존대로 /api/progress에 저장)
   async function saveBase(doneFlag) {
     const today = todayLocalKey();
 
@@ -837,7 +992,7 @@ export function initLogModal() {
       else if (initial !== 'none' || cell.dataset.cleared === '1') newProg[mid] = 'none';
     });
 
-    // 완료 시 watch 자동 반영(기존 로직 유지)
+    // 완료(=하원) 시 watch 자동 반영(기존 유지)
     try {
       if (doneFlag) {
         const TH_DONE = 95;
@@ -872,17 +1027,11 @@ export function initLogModal() {
       console.warn('[logModal] watch merge failed:', e);
     }
 
-    // 최신 logs 다시 받아오기(기존 유지)
-    let latestLogs;
-    try { latestLogs = await fetch('/api/logs', { cache: 'no-store' }).then(r => r.json()); }
-    catch { latestLogs = state.logs || {}; }
-    state.logs = latestLogs;
-
-    // progress 저장
+    // progress 저장(기존 유지)
     if (!state.progress) state.progress = {};
     state.progress[today] = state.progress[today] || {};
     state.progress[today][editingLogSid] = newProg;
-    await postJSON('/api/progress', state.progress, doneFlag ? 'logDone:progress' : 'logSave:progress');
+    await postJSON('/api/progress', state.progress, doneFlag ? 'logLeave:progress' : 'logSave:progress');
 
     // 진도 요약(기존 유지)
     const oldDates = Object.keys(state.progress).filter(d => d < today);
@@ -903,49 +1052,86 @@ export function initLogModal() {
       .filter(Boolean)
       .join(', ');
 
-    // 숙제 표 저장 + 구형 문자열도 유지
+    // 숙제 저장
     const hwRows = collectHwTable();
     const hwSummary = buildHwSummary(hwRows);
 
-    const dayMap = state.logs[today] = state.logs[today] || {};
-    const prev = dayMap[editingLogSid] || {};
-    dayMap[editingLogSid] = {
-      ...prev,
+    // 기존 flags/leaveTime은 서버에 있는 걸 믿고, 여기서는 "현재 저장 내용"만 patch
+    const entry = {
       notes: logNotes.value.trim(),
       topic: summary,
-
-      // 구형 호환
       homework: hwSummary,
-
-      // 신형
       homeworkTable: hwRows,
-
       done: !!doneFlag,
-      archived: (typeof prev.archived !== 'undefined') ? prev.archived : false,
-      progress: newProg
+      progress: newProg,
+      updatedAt: nowISO(),
     };
 
-    await postJSON('/api/logs', state.logs, doneFlag ? 'logDone:logs' : 'logSave:logs');
+    // 하원 기록은 doneFlag일 때만 갱신
+    if (doneFlag) {
+      entry.leaveTime = nowHHMM();
+      entry.leaveAt = nowISO();
+    }
+
+    // ✅ logs는 PATCH로만 저장 (핵심)
+    await patchLogEntry(today, String(editingLogSid), entry);
+
+    // state.logs도 부분 반영
+    state.logs = state.logs || {};
+    state.logs[today] = state.logs[today] || {};
+    state.logs[today][String(editingLogSid)] = {
+      ...(state.logs[today][String(editingLogSid)] || {}),
+      ...entry
+    };
   }
 
+  // ✅ 저장: 그냥 저장만
   logSave.addEventListener('click', async () => {
-    await saveBase(false);
-    toast('수업 기록 저장됨');
-    close();
-    document.dispatchEvent(new CustomEvent('admin:refresh'));
+    try {
+      await saveBase(false);
+      toast('수업 기록 저장됨');
+      close();
+      document.dispatchEvent(new CustomEvent('admin:refresh'));
+    } catch (err) {
+      console.error(err);
+      alert('저장 실패');
+    }
   });
 
-  logDone.addEventListener('click', async () => {
-    await saveBase(true);
-    toast('완료 처리됨');
-    close();
-    document.dispatchEvent(new CustomEvent('admin:refresh'));
+  // ✅ 숙제 배정 완료: 저장 + hwAssigned 체크
+  logAssign?.addEventListener('click', async () => {
+    try {
+      await saveBase(false);
+      const today = todayLocalKey();
+      await markHwFlagsRemote(today, editingLogSid, { assigned: true, checked: false });
+      toast(`숙제 배정 완료 (${nowHHMM()})`);
+      close();
+      document.dispatchEvent(new CustomEvent('admin:refresh'));
+    } catch (err) {
+      console.error(err);
+      alert('숙제 배정 완료 저장 실패');
+    }
+  });
+
+  // ✅ 숙제 검사 완료: 저장 + hwChecked 체크(+ hwAssigned도 같이 체크)
+  logComplete.addEventListener('click', async () => {
+    try {
+      await saveBase(false);
+      const today = todayLocalKey();
+      await markHwFlagsRemote(today, editingLogSid, { assigned: true, checked: true });
+      toast(`숙제 검사 완료 (${nowHHMM()})`);
+      close();
+      document.dispatchEvent(new CustomEvent('admin:refresh'));
+    } catch (err) {
+      console.error(err);
+      alert('숙제 검사 완료 저장 실패');
+    }
   });
 }
 
 /* ─────────────────────────────────────────────
-* 자동 판정 애드온(견고 버전): 날짜키/타입 불일치 + 렌더 타이밍 보강
-* ────────────────────────────────────────────*/
+ * 자동 판정 애드온(견고 버전): 날짜키/타입 불일치 + 렌더 타이밍 보강
+ * ────────────────────────────────────────────*/
 (() => {
   const WATCH_URL = '/api/watch';
   const TH_DONE = 95, TH_INTERRUPTED = 5;

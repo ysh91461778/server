@@ -257,12 +257,14 @@ window.todayLocalKey = function () {
     if (absSet.has(sidStr)) return false;
 
     // 3) 오늘 로그가 done=true면 자유의 몸 → 안 됨
+    // 3) 오늘 로그가 archived=true면 안 됨 (done은 허용!)
     const logsToday = (logsCache || {})[today] || {};
     const entry = logsToday[sidStr] || logsToday[sidVal] || {};
-    const done = entry.done === true || entry.done === 'true';
-    if (done) return false;
+    const archived = entry.archived === true || entry.archived === 'true';
+    if (archived) return false;
 
     return true;
+
   }
 
   // updates 전체에서 이 sid의 "마지막 배정" 찾기 (sid 키 숫자/문자 둘 다 허용)
@@ -604,6 +606,30 @@ window.todayLocalKey = function () {
     const frame = $('player');
 
     const today = todayLocalKey();
+
+    // ❌ 결석이면 오늘 영상 표시 금지
+    {
+      const absList = (absentByDateCache?.[today] || []);
+      const absSet = new Set(absList.map(String));
+      if (absSet.has(String(sid))) {
+        if (listBox) listBox.innerHTML = "<li style='opacity:.65'>오늘 결석 처리되었습니다</li>";
+        if (frame) frame.src = "";
+        return;
+      }
+    }
+
+    // ❌ archived이면 오늘 영상 표시 금지 (done 여부와 무관)
+    {
+      const logsToday = (logsCache || {})[today] || {};
+      const entry = logsToday[String(sid)] || logsToday[sid] || {};
+      const archived = entry.archived === true || entry.archived === 'true';
+      if (archived) {
+        if (listBox) listBox.innerHTML = "<li style='opacity:.65'>오늘 영상이 없습니다</li>";
+        if (frame) frame.src = "";
+        return;
+      }
+    }
+
 
     // 🔐 여기서는 "오늘 학생 여부"로 막지 않는다.
     //     수동 배정이 있으면 무조건 보여주고,

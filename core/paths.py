@@ -32,6 +32,8 @@ ANNS_PATH  = ensure_json(BASE / "announcements.json", [])
 ANN_STATUS_PATH = ensure_json(BASE / "announce_status.json", {})
 WEEKEND_SLOTS_PATH = ensure_json(BASE / "weekend_slots.json", {})
 WATCH_PATH = ensure_json(BASE / "watch.json", {})
+ATTENDANCE_PATH = ensure_json(BASE / "attendance.json", {})
+ARRIVE_TIME_PATH = ensure_json(BASE / "arrive_time.json", {})
 
 TESTS_CFG_PATH = ensure_json(BASE / "tests-config.json", {"categories": {}})
 

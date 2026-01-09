@@ -1,5 +1,8 @@
 {
   "김가현990": {
     "pw_hash": "scrypt:32768:8:1$BCGRHDGYGRdonrK4$b3da4270ad162f3d3ca65e429660488bf201e75fdd2b62373922ea75deda5a0eb8b77c3f51439444a8d1a2f5af02bc23967a23a76c6a44dc1062b684ff805ec1"
+  },
+  "전강우334": {
+    "pw_hash": "scrypt:32768:8:1$JOvuVweGDQJNs2nA$78999dc1c596f00913ccac5110e395fd27a75e5db91aff98b134acdf3644f310cd549e45ba63705696e10b4b4ec268dd07f22e8040faa1dddd3a4e33f9a0f988"
   }
 }

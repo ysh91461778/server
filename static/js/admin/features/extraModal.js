@@ -1,5 +1,5 @@
 // /js/admin/features/extraModal.js
-// 오늘 보강 학생 모달 (주말: 1·2·3 복수 슬롯 선택 지원) — 라이트/다크 테마 대응
+// 오늘 보강 학생 모달 (요일 슬롯: 월1/월2 ... 토1/토2, 일1/일2) — 라이트/다크 테마 대응
 import { $, CT, toast, todayLocalKey } from '../core/utils.js';
 import { state } from '../core/state.js';
 
@@ -18,7 +18,6 @@ async function clearTodayOrder(dateStr) {
 function ensure() {
   if ($('#extraModal')) return;
 
-  // ✨ 인라인 색 제거, 카드/배경은 클래스 기반
   document.body.insertAdjacentHTML('beforeend', `
     <div id="extraModal" class="extra-backdrop" style="display:none" aria-modal="true" role="dialog">
       <div class="extra-panel">
@@ -32,7 +31,6 @@ function ensure() {
     </div>
   `);
 
-  // 라이트/다크 테마 CSS
   const s = document.createElement('style');
   s.id = 'extraModalTheme';
   s.textContent = `
@@ -45,12 +43,12 @@ function ensure() {
     width:360px; max-width:92vw; max-height:80vh; overflow:auto;
     border-radius:12px; padding:14px; box-sizing:border-box;
     border:1px solid var(--line, #334155);
-    background:var(--card-dark, #0f172a);            /* dark 기본 */
+    background:var(--card-dark, #0f172a);
     color:var(--text-dark, #e5e7eb);
     box-shadow:0 12px 34px rgba(0,0,0,.34);
   }
   body:not(.dark) #extraModal .extra-panel{
-    background:var(--card-light, #ffffff);           /* light */
+    background:var(--card-light, #ffffff);
     color:var(--text, #0f172a);
     border-color:var(--line, #e5e7eb);
   }
@@ -94,19 +92,20 @@ function ensure() {
   }
 
   #exZone .row label{ display:flex; align-items:center; gap:8px; cursor:pointer; flex:1; color:inherit }
-  #exZone .row small{ opacity:.75; color:inherit }        /* 흐리게만, 색은 상속 */
+  #exZone .row small{ opacity:.75; color:inherit }
 
   #exZone input[type="checkbox"]{
     width:16px; height:16px; accent-color:var(--accent,#2563eb); margin:0;
   }
 
-  /* ── 슬롯 버튼(1·2·3) ─────────────────────────────── */
-  #exZone .slot-box{ display:flex; gap:8px }
+  /* ── 슬롯 버튼(요일1·요일2) ─────────────────────────── */
+  #exZone .slot-box{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end }
   #exZone .slot-btn{
-    min-width:36px; height:34px; padding:0 10px; border-radius:10px; cursor:pointer; font-weight:800;
+    min-width:42px; height:34px; padding:0 10px; border-radius:10px; cursor:pointer; font-weight:900;
     border:1px solid var(--line,#334155);
     background:color-mix(in oklab, var(--chip, rgba(96,165,250,.12)) 70%, transparent);
     color:inherit;
+    white-space:nowrap;
   }
   body:not(.dark) #exZone .slot-btn{
     border-color:var(--line,#e5e7eb);
@@ -131,11 +130,14 @@ export function initExtraModal() {
 
   // 유틸
   const WCHR = '일월화수목금토';
-  const yoil = (dateStr) => WCHR[new Date(dateStr).getDay()];
-  const isWeekend = (dateStr) => ['토', '일'].includes(yoil(dateStr));
+  const yoilChar = (dateStr) => WCHR[new Date(dateStr).getDay()];
+  const slotLabel = (dateStr, n) => `${yoilChar(dateStr)}${n}`;
 
-  // 최신 weekend-slots 로드
-  async function loadWeekendSlots() {
+  // ✅ 이제 슬롯은 전 요일 공통 1,2
+  const SLOT_NUMS = [1, 2];
+
+  // 최신 slots 로드(엔드포인트명은 유지)
+  async function loadDaySlots() {
     try { return await fetch('/api/weekend-slots', { cache: 'no-store' }).then(r => r.json()); }
     catch { return {}; }
   }
@@ -143,9 +145,10 @@ export function initExtraModal() {
   // 열기
   btn.addEventListener('click', async () => {
     const today = todayLocalKey();
-    const weekend = isWeekend(today);
-    const weekendMap = await loadWeekendSlots();
-    const perDay = weekendMap[today] || {};
+
+    const slotMap = await loadDaySlots();
+    const perDay = slotMap[today] || {};
+
     const checked = (state.extra[today] || []).map(String);
 
     const sorted = (state.students || []).slice()
@@ -154,14 +157,22 @@ export function initExtraModal() {
     exZone.innerHTML = sorted.map(s => {
       const sid = String(s.id);
       const isOn = checked.includes(sid);
+
       const raw = perDay[sid];
       const slots = Array.isArray(raw) ? raw.map(Number) : Number.isInteger(raw) ? [raw] : [];
-      const slotBox = weekend ? `
-        <div class="slot-box">
-          ${[1, 2, 3].map(n => `
-            <button type="button" class="slot-btn ${slots.includes(n) ? 'on' : ''}" data-n="${n}">${n}</button>
+
+      const slotBox = `
+        <div class="slot-box" aria-label="슬롯 선택">
+          ${SLOT_NUMS.map(n => `
+            <button type="button"
+                    class="slot-btn ${slots.includes(n) ? 'on' : ''}"
+                    data-n="${n}"
+                    title="${slotLabel(today, n)}">
+              ${slotLabel(today, n)}
+            </button>
           `).join('')}
-        </div>` : '';
+        </div>`;
+
       return `
         <div class="row ${isOn ? 'on' : ''}" data-sid="${sid}">
           <label>
@@ -192,7 +203,9 @@ export function initExtraModal() {
   document.body.addEventListener('click', (e) => {
     const b = e.target.closest('#exZone .slot-btn'); if (!b) return;
     const row = b.closest('.row'); if (!row) return;
+
     b.classList.toggle('on');
+
     const chk = row.querySelector('.chk-sid');
     if (chk && !chk.checked) {
       chk.checked = true;
@@ -203,7 +216,6 @@ export function initExtraModal() {
   // 저장
   $('exSave').addEventListener('click', async () => {
     const today = todayLocalKey();
-    const weekend = isWeekend(today);
 
     // 선택 학생
     const rows = Array.from(document.querySelectorAll('#exZone .row'));
@@ -214,30 +226,28 @@ export function initExtraModal() {
     state.extra[today] = selectedIds;
     await fetch('/api/extra-attend', { method: 'POST', headers: CT, body: JSON.stringify(state.extra) });
 
-    // 2) 주말이면 슬롯 저장(복수 가능)
-    if (weekend) {
-      let weekendMap = {};
-      try { weekendMap = await fetch('/api/weekend-slots', { cache: 'no-store' }).then(r => r.json()); } catch { }
-      const perDay = weekendMap[today] || {};
+    // 2) ✅ 요일 슬롯 저장(1,2)
+    let slotMap = {};
+    try { slotMap = await fetch('/api/weekend-slots', { cache: 'no-store' }).then(r => r.json()); } catch { }
+    const perDay = slotMap[today] || {};
 
-      // 해제된 학생 삭제
-      Object.keys(perDay).forEach(sid => { if (!selectedIds.includes(String(sid))) delete perDay[sid]; });
+    // 해제된 학생 삭제
+    Object.keys(perDay).forEach(sid => { if (!selectedIds.includes(String(sid))) delete perDay[sid]; });
 
-      // 선택된 학생: on 버튼 수집(없으면 [1])
-      for (const row of selectedRows) {
-        const sid = String(row.dataset.sid);
-        const nums = Array.from(row.querySelectorAll('.slot-btn.on'))
-          .map(b => parseInt(b.dataset.n, 10))
-          .filter(n => [1, 2, 3].includes(n))
-          .sort((a, b) => a - b);
-        perDay[sid] = nums.length ? nums : [1];
-      }
-
-      weekendMap[today] = perDay;
-      await fetch('/api/weekend-slots', {
-        method: 'POST', headers: CT, body: JSON.stringify({ [today]: perDay })
-      });
+    // 선택된 학생: on 버튼 수집(없으면 [1])
+    for (const row of selectedRows) {
+      const sid = String(row.dataset.sid);
+      const nums = Array.from(row.querySelectorAll('.slot-btn.on'))
+        .map(b => parseInt(b.dataset.n, 10))
+        .filter(n => SLOT_NUMS.includes(n))
+        .sort((a, b) => a - b);
+      perDay[sid] = nums.length ? nums : [1];
     }
+
+    slotMap[today] = perDay;
+    await fetch('/api/weekend-slots', {
+      method: 'POST', headers: CT, body: JSON.stringify({ [today]: perDay })
+    });
 
     // 3) 오늘 사용자 정렬 캐시 초기화 → 자동 정렬 반영
     await clearTodayOrder(today);

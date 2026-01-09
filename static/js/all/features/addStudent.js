@@ -35,6 +35,18 @@ export function mountNewStudentBar() {
     <input class="ns-input" id="ns_day4" placeholder="요일4">
     <input class="ns-input" id="ns_day5" placeholder="요일5">
 
+    <!-- ✅ 학년 추가 -->
+    <select class="ns-input" id="ns_grade">
+      <option value="">학년 선택</option>
+      <option value="중1">중1</option>
+      <option value="중2">중2</option>
+      <option value="중3">중3</option>
+      <option value="고1">고1</option>
+      <option value="고2">고2</option>
+      <option value="고3">고3</option>
+      <option value="N수">N수</option>
+    </select>
+
     <select class="ns-input" id="ns_level">
       <option value="">레벨 선택</option>
       <option value="상">상</option>
@@ -58,6 +70,10 @@ export function mountNewStudentBar() {
       subCurriculum: val('ns_sub'),
       day1: val('ns_day1'), day2: val('ns_day2'), day3: val('ns_day3'),
       day4: val('ns_day4'), day5: val('ns_day5'),
+
+      // ✅ 학년
+      grade: val('ns_grade'),
+
       level: val('ns_level'),
       school: val('ns_school'),
       docUrl: val('ns_doc'),
@@ -72,7 +88,6 @@ export function mountNewStudentBar() {
         body: JSON.stringify(body)
       });
       if (!r.ok) throw new Error(r.status);
-      // 추가 후 새로고침(통계/테이블 동기화)
       location.reload();
     } catch (e) {
       alert('추가 실패: ' + e.message);

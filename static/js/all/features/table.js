@@ -2,7 +2,7 @@
 // - "학교" 인라인 편집(자동 저장, 빈칸에서도 추가 가능)
 // - "학년" 인라인 편집(자동 저장)
 // - "커리큘럼/세부커리큘럼" 수정 가능 (고정 옵션 셀렉트)
-// - "요일" 밑 "등원시간" 행 추가 (주중 18:00 / 주말 10·14·18 기본, 수정 가능)
+// - "요일" 밑 "등원시간" 행 추가 (월1~일1=13:00 / 월2~일2=18:00 기본, 수정 가능)
 // - "독스(docUrl)" 인라인 입력/저장 + 새 탭 열기 버튼
 // - 커리별 학생 수(이름+학교 기준으로 중복 제거)
 import { $, toast } from '../core/utils.js';
@@ -43,24 +43,24 @@ function dedupKeyForStudent(s) {
 }
 
 /** 요일 문자열 -> 기본 등원시간
- *  - 주중: 18:00
- *  - 주말: 토1/일1 → 10:00, 토2/일2 → 14:00, 토3/일3 → 18:00
+ *  - (신규 규칙) 월1~일1 → 13:00, 월2~일2 → 18:00
+ *  - 숫자 없으면(구형 데이터) 기존처럼 18:00
  */
 function baseTimeForDayValue(v) {
   if (!v) return '';
   const txt = String(v).trim();
   if (!txt) return '';
 
-  const ch = txt[0];
-  if ('월화수목금'.includes(ch)) return '18:00';
+  // ✅ 월1~일1 / 월2~일2 우선 적용
+  const m = txt.match(/[1-3]/);
+  const slot = m ? parseInt(m[0], 10) : null;
+  if (slot === 1) return '13:00';
+  if (slot === 2) return '18:00';
+  if (slot === 3) return '18:00'; // 3이 오면 일단 18:00(필요하면 바꿔줘)
 
-  if ('토일'.includes(ch)) {
-    const m = txt.match(/[1-3]/);
-    const slot = m ? parseInt(m[0], 10) : 2; // 숫자 없으면 2타임(14:00) 가정
-    if (slot === 1) return '10:00';
-    if (slot === 3) return '18:00';
-    return '14:00';
-  }
+  // 구형(숫자 없이 '월'만 등) 데이터는 18:00
+  const ch = txt[0];
+  if ('일월화수목금토'.includes(ch)) return '18:00';
 
   return '';
 }
@@ -733,4 +733,3 @@ function initGradeInlineEdit() {
     }
   });
 }
-  
